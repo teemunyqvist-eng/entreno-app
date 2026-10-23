@@ -1,0 +1,19 @@
+{
+  "name": "Entreno – 10k · 16k · 21k",
+  "short_name": "Entreno",
+  "description": "Resistencia y fuerza en casa con plan del entrenador",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f1419",
+  "theme_color": "#1a7f5a",
+  "lang": "es",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
