@@ -125,7 +125,7 @@
           let h = img.naturalHeight || img.height;
           if (!w || !h) {
             URL.revokeObjectURL(url);
-            return reject(new Error('Virheellinen kuva'));
+            return reject(new Error('Imagen no válida'));
           }
           const max = o.maxEdge || 900;
           if (w > max || h > max) {

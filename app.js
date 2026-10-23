@@ -255,7 +255,7 @@
     opts = opts || {};
     const long = fb.text.length > FB_CLAMP;
     return `<div class="${opts.inline ? 'pt-fb inline' : 'card pt-fb'}" data-fb-date="${esc(fb.date)}">
-      <div class="pt-fb-head"><span>💬 PT:n palaute</span><span class="hint">${esc(feedbackDateLabel(fb.date))}</span></div>
+      <div class="pt-fb-head"><span>💬 Comentario del PT</span><span class="hint">${esc(feedbackDateLabel(fb.date))}</span></div>
       ${fb.title ? `<div class="pt-fb-title">${esc(fb.title)}</div>` : ''}
       <div class="pt-fb-text${long ? ' clamp' : ''}">${esc(fb.text)}</div>
       ${long ? '<button type="button" class="link-btn pt-fb-more">Ver todo</button>' : ''}
@@ -829,7 +829,7 @@
         if (ex.altId) {
           html += `<li><button type="button" class="ex-item" data-ex="${esc(ex.altId)}" style="opacity:0.85">
             <span><span class="ex-name">${esc((EX.getExercise(ex.altId) || {}).name || ex.alt || ex.altId)}</span>
-            <div class="ex-alt">vaihtoehto</div></span>
+            <div class="ex-alt">alternativa</div></span>
             <span class="ex-sets">${esc(ex.sets || '')}</span>
             <span class="ex-chevron">›</span>
           </button></li>`;
@@ -851,7 +851,7 @@
     } else if (kind === 'rehab') {
       badge = '<span class="badge rehab">Hombro</span>';
     } else if (optional) {
-      badge = '<span class="badge optional">Vapaaehtoinen</span>';
+      badge = '<span class="badge optional">Opcional</span>';
     }
     const teeMyos = optional && block.teeMyos
       ? '<div class="block-kicker">Haz también <span class="hint-inline">(puedes saltarlo)</span></div>'
@@ -943,7 +943,7 @@
     html += `<div class="session-details">${esc(s.details || '')}</div>`;
     if (c.cooldown) html += `<div class="coach-sub"><strong>Lopuksi:</strong> ${esc(c.cooldown)}</div>`;
     if (c.options && c.options.length) {
-      html += '<div class="section-title">Vaihtoehdot</div><ul class="coach-options">';
+      html += '<div class="section-title">Opciones</div><ul class="coach-options">';
       c.options.forEach((o, i) => {
         const btn = opts && opts.coachActions
           ? ` <button type="button" class="btn sm" data-act="coach-opt-${i}">Elegir</button>` : '';
@@ -1059,7 +1059,7 @@
           <h3>${esc(e.name)}</h3>
           <div class="meta">${catLabel[e.category] || e.category}
             · ${(e.equipment || []).length ? esc(e.equipment.join(', ')) : 'sin material'}
-            · ${hasEmbed ? 'upotus' : 'ulkoinen linkki'}</div>
+            · ${hasEmbed ? 'vídeo integrado' : 'enlace externo'}</div>
           ${e.rehab === 'shoulder' ? '<div class="meta rehab-meta">🩹 Rehab de hombro · solo en rango sin dolor</div>' : ''}
           ${shoulderOn && e.loadsShoulder ? '<div class="meta warn-meta">⚠ Carga el hombro – no en modo hombro</div>' : ''}
         </div>`;
@@ -1234,7 +1234,7 @@
     }
     if (pains.length) {
       const labels = pains.map(p => {
-        const sev = p.severity === 'mod' ? 'kohtalainen' : 'leve';
+        const sev = p.severity === 'mod' ? 'moderada' : 'leve';
         return `${p.area}${p.side ? ' (' + p.side + ')' : ''} · ${sev}`;
       }).join(', ');
       guidance += `<div class="alert warn">Aktiiviset kivut: ${esc(labels)}</div>`;
@@ -1724,7 +1724,7 @@
         <div class="action-row" style="flex-direction:column;margin-top:12px">
           <button class="btn primary block" id="coach-start">Empezar</button>
           <button class="btn block" id="coach-pause" disabled>Tauko</button>
-          <button class="btn block" id="coach-skip" disabled>Ohita liike</button>
+          <button class="btn block" id="coach-skip" disabled>Saltar ejercicio</button>
           <button class="btn ghost block" id="coach-stop">Parar</button>
         </div>
       </div>`,
@@ -2248,7 +2248,7 @@
         : (s.durationMin ? '~' + s.durationMin + ' min' : '');
       return `<div class="week-day${d.date === todayI ? ' today' : ''}${eff.completed ? ' done' : ''}${s.coach ? ' coach' : ''}" data-date="${d.date}">
         <div><div class="dow">${P.DOW_FI[d.dow]}</div><div class="date">${formatFiDate(d.date).replace(/\d{4}$/, '')}</div></div>
-        <div><div class="name">${s.coach ? '🧭 ' : ''}${esc(s.name)}</div>${detail ? `<div class="detail">${esc(detail)}</div>` : ''}${(() => { const fb = feedbackFor(d.date); return fb ? `<div class="detail pt-fb-mini">💬 PT: ${esc(fb.title || 'palaute')}</div>` : ''; })()}${(() => {
+        <div><div class="name">${s.coach ? '🧭 ' : ''}${esc(s.name)}</div>${detail ? `<div class="detail">${esc(detail)}</div>` : ''}${(() => { const fb = feedbackFor(d.date); return fb ? `<div class="detail pt-fb-mini">💬 PT: ${esc(fb.title || 'comentario')}</div>` : ''; })()}${(() => {
           const g = [];
           if (eff.garmin && eff.garmin.source === 'garmin') g.push(doneSummary({ distanceKm: eff.garmin.km, minutes: eff.garmin.min }));
           doneExtrasFor(d.date).forEach(l => g.push('+ ' + l.name + (doneSummary(l) ? ' ' + doneSummary(l) : '')));
@@ -2419,9 +2419,9 @@
       if (!photos.length) return '<div class="hint">Aún no hay fotos (máx. 2).</div>';
       return `<div class="mp-photo-previews">${photos.map((p, i) => `
         <div class="mp-photo-prev">
-          <img src="${p.dataUrl}" alt="${esc(p.kind === 'side' ? 'Sivu' : 'Etu')}" />
+          <img src="${p.dataUrl}" alt="${esc(p.kind === 'side' ? 'Lado' : 'Frente')}" />
           <div class="mp-photo-prev-actions">
-            <span class="badge">${p.kind === 'side' ? 'Sivu' : 'Etu'}</span>
+            <span class="badge">${p.kind === 'side' ? 'Lado' : 'Frente'}</span>
             <button type="button" class="btn sm ghost" data-mp-rm-photo="${i}">Eliminar</button>
           </div>
         </div>`).join('')}</div>`;
@@ -2457,11 +2457,11 @@
             <input type="file" id="mp-photo-input" accept="image/*" capture="environment" />
           </label>
           <select id="mp-photo-kind" aria-label="Kuvan tyyppi">
-            <option value="front">Etu</option>
-            <option value="side">Sivu</option>
+            <option value="front">Frente</option>
+            <option value="side">Lado</option>
           </select>
         </div>
-        <div class="hint">Pakataan JPEG max ~900 px, laatu ~0.7. Tallennus localStorageen.</div>
+        <div class="hint">Se comprime a JPEG máx. ~900 px, calidad ~0.7. Se guarda en localStorage.</div>
       </div>
       <div class="row-actions">
         <button type="button" class="btn primary" id="mp-save">Guardar</button>
@@ -2493,7 +2493,7 @@
             return;
           }
           try {
-            toast('Pakataan kuvaa…');
+            toast('Comprimiendo imagen…');
             const kind = root.querySelector('#mp-photo-kind').value || 'front';
             const res = await TP.compressImageFile(file, { maxEdge: 900, quality: 0.7 });
             photos.push({ id: uid(), dataUrl: res.dataUrl, kind });
@@ -2644,7 +2644,7 @@
           state.monthlyCheckins = getMonthlyCheckins().filter(e => e.id !== id);
           syncWeightFromCheckins();
           saveState();
-          toast('Poistettu');
+          toast('Eliminado');
           closeModal();
           renderProgress();
         };
@@ -2743,7 +2743,7 @@
         let sideBlock = '';
         if (sideA || sideB) {
           sideBlock = `
-            <div class="section-title">Sivu</div>
+            <div class="section-title">Lado</div>
             <div class="mp-compare-sidebyside">
               <div>
                 <div class="hint">${esc(older.label)}</div>
@@ -2797,8 +2797,8 @@
     const keys = Object.keys(fb).filter(k => k <= todayISO()).sort().reverse().slice(0, 10);
     if (!keys.length) return '';
     return `<div class="card pt-fb-hist">
-      <h2>💬 PT:n palautteet</h2>
-      ${keys.map(k => `<details class="pt-fb-item"><summary><span class="when">${esc(feedbackDateLabel(k))}</span> ${esc(fb[k].title || 'Palaute')}</summary>
+      <h2>💬 Comentarios del PT</h2>
+      ${keys.map(k => `<details class="pt-fb-item"><summary><span class="when">${esc(feedbackDateLabel(k))}</span> ${esc(fb[k].title || 'Comentario')}</summary>
         <div class="pt-fb-text">${esc(fb[k].text)}</div></details>`).join('')}
     </div>`;
   }
@@ -2874,8 +2874,8 @@
       <div class="stats-grid">
         <div class="stat-box"><div class="num">${weekKm}</div><div class="lbl">km esta semana</div></div>
         <div class="stat-box"><div class="num">${completedCount}</div><div class="lbl">entrenos hechos / sem</div></div>
-        <div class="stat-box"><div class="num">${strengthDone}</div><div class="lbl">voimaa / vk</div></div>
-        <div class="stat-box"><div class="num">${logKm}</div><div class="lbl">km / 4 vk</div></div>
+        <div class="stat-box"><div class="num">${strengthDone}</div><div class="lbl">fuerza / sem</div></div>
+        <div class="stat-box"><div class="num">${logKm}</div><div class="lbl">km / 4 sem</div></div>
         ${weightBox}
       </div>
       ${renderFeedbackHistory()}
@@ -3159,7 +3159,7 @@
     state.planCache = null;
     ensurePlan(true);
     saveState();
-    if (showToast !== false) toast('Tallennettu');
+    if (showToast !== false) toast('Guardado');
     updateHeader();
   }
 
@@ -3198,7 +3198,7 @@
         setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 1000);
         show('ok', 'Copia de seguridad descargada. Guarda el archivo en un sitio seguro – contiene todos tus datos.');
       } catch (err) {
-        show('warn', 'Error al exportar: ' + (err.message || err) + ' – kokeile kopiointia.');
+        show('warn', 'Error al exportar: ' + (err.message || err) + ' – prueba a copiar.');
       }
     };
     const cp = document.getElementById('backup-copy');
