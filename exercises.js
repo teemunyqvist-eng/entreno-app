@@ -1,5 +1,5 @@
 /**
- * Liikekirjasto – tekniikkavihjeet, hyödyt, virheet, videot
+ * Biblioteca de ejercicios – técnica, beneficios, errores, vídeos
  * Videot: youtube-nocookie embed kun ID varmistettu; muuten ulkoinen linkki.
  */
 (function (global) {
@@ -23,23 +23,23 @@
       loadsShoulder: true,
       name: 'Sentadilla trasera',
       category: 'voima',
-      equipment: ['tanko', 'teline'],
+      equipment: ['barra', 'rack'],
       benefits: [
-        'Kehittää jalkojen ja keskivartalon voimaa',
-        'Parantaa juoksun taloudellisuutta ja mäki-/loppuvoimaa',
-        'Tukee lonkan ja polven hallintaa rasituksessa'
+        'Desarrolla la fuerza de piernas y core',
+        'Mejora la economía de carrera y la fuerza en cuestas/final',
+        'Apoya el control de la cadera y la rodilla en el estrés'
       ],
       cues: [
-        'Tanko yläselän trapseille (high-bar) tai hieman alemmas',
-        'Rinta ylös, keskivartalo tiukkana',
-        'Polvet varpaiden suuntaan, paino koko jalkapohjalla',
-        'Syvyys vähintään vaakatasoon (reisi–lattia) jos liikkuvuus riittää',
-        'Nouse hallitusti, älä pompi pohjasta'
+        'Barra sobre trapecios (high-bar) o un poco más abajo',
+        'Pecho arriba, core firme',
+        'Mango a pie, peso a pie',
+        'Profundidad al menos de muslos paralelos si la movilidad lo permite',
+        'Sube con control; no rebotes desde abajo'
       ],
       mistakes: [
-        'Polvet romahtavat sisään',
-        'Selkä pyöristyy tai kantapäät nousevat',
-        'Liian nopea lasku ilman hallintaa'
+        'Las rodillas se hunden hacia dentro',
+        'La espalda se redondea o los talones se levantan',
+        'Bajada demasiado rápida sin control'
       ],
       video: { type: 'embed', youtubeId: 'bEv6CCg2BC8', label: 'Jeff Nippard – squat technique' }
     },
@@ -48,22 +48,22 @@
       loadsShoulder: true,
       name: 'Sentadilla frontal',
       category: 'voima',
-      equipment: ['tanko', 'teline'],
+      equipment: ['barra', 'rack'],
       benefits: [
-        'Korostaa etureisiä ja pystympää asentoa',
-        'Vahvistaa keskivartaloa etukuormalla',
-        'Hyvä vaihtoehto takakyykylle maratoonarin voimatreenissä'
+        'Destaca los muslos delanteros y la posición más vertical',
+        'Reforzar el cuerpo medio con la carga delantera',
+        'Buena alternativa a la sentadilla trasera en fuerza de corredora'
       ],
       cues: [
-        'Tanko etuhartioilla, kyynärpäät korkealla',
-        'Rinta ja kyynärpäät ylös koko liikkeen ajan',
-        'Laske polvet eteen, torso mahdollisimman pystyssä',
-        'Syvyys vähintään paralleeliin'
+        'Barley en los hombros delanteros, codos altos',
+        'El pecho y los codos en todo el movimiento',
+        'Ponte las rodillas delante de ti. Tan alto como puedas.',
+        'Profundidad mínima para paralelo'
       ],
       mistakes: [
-        'Kyynärpäät tippuvat → tanko valuu',
+        'Los codos caen → bar goteo',
         'Liiallinen etukumara',
-        'Kantapäät nousevat'
+        'Los talones están subiendo'
       ],
       video: { type: 'link', url: ytSearch('Jeff Nippard how to front squat'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -72,22 +72,22 @@
       loadsShoulder: true,
       name: 'Sentadilla goblet',
       category: 'voima',
-      equipment: ['käsipaino', 'kettlebell'],
+      equipment: ['mancuerna', 'pesa rusa'],
       benefits: [
-        'Helppo oppia, turvallinen kotona/salilla',
-        'Oppiaa kyykkypatternin ennen raskasta tankoa',
-        'Aktivoi jalkoja ja keskivartaloa kevyellä kuormalla'
+        'Fácil de aprender, segura en casa/gimnasio',
+        'Aprende a picar la batería antes de la barra pesada',
+        'Activa piernas y core con carga ligera'
       ],
       cues: [
-        'Paino rinnan edessä, kyynärpäät alas reisien väliin',
-        'Jalat hartioiden leveydellä, varpaat hieman ulos',
-        'Istu taakse-alas, rinta pystyssä',
-        'Paino koko jalkapohjalla'
+        'Peso frente al pecho, codos entre los muslos',
+        'Pies a la anchura de hombros, puntas ligeramente hacia fuera',
+        'Siéntate atrás-abajo, pecho erguido',
+        'Peso corporal a pie'
       ],
       mistakes: [
-        'Paino tippuu eteen ja selkä pyöristyy',
-        'Polvet tippuvat sisään',
-        'Liian kapea asento'
+        'Peso cae hacia delante y hacia atrás redondeado',
+        'Las rodillas entran.',
+        'Posición demasiado estrecha'
       ],
       video: { type: 'link', url: ytSearch('goblet squat form tutorial'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -96,22 +96,22 @@
       loadsShoulder: true,
       name: 'Sentadilla con banda',
       category: 'voima',
-      equipment: ['kuminauha'],
+      equipment: ['banda elástica'],
       benefits: [
-        'Vastus kasvaa ylöspäin – hyvä kotivaihtoehto',
-        'Säilyttää kyykkykuorman ilman painoja',
-        'Aktivoi pakarat nauhan sivuvastuksella'
+        'La resistencia crece hacia arriba - buena opción casera',
+        'Preserva la carga de squat sin pesos',
+        'Activa glúteos con banda a resistencia lateral'
       ],
       cues: [
-        'Seiso nauhan päällä, kahvat hartioiden korkeudella tai niskan takana',
-        'Sama kyykkypattern kuin gobletissa',
-        'Pidä jännitys nauhassa koko ajan',
-        'Hallittu tempo, erityisesti ylös'
+        'Soporte en cinta, mangos a la altura del hombro o detrás del cuello',
+        'El mismo patrón de sentadilla que el goblet',
+        'Mantenga la tensión en la cinta todo el tiempo',
+        'Tempo controlado, sobre todo al subir'
       ],
       mistakes: [
-        'Nauha lipsahtaa jalkojen alta',
-        'Polvet tippuvat sisään',
-        'Lyhyt liikerata'
+        'La cinta se deslizará bajo tus pies.',
+        'Las rodillas entran.',
+        'Corto rango'
       ],
       video: { type: 'link', url: ytSearch('band squat form resistance band'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -120,23 +120,23 @@
       loadsShoulder: true,
       name: 'Peso muerto',
       category: 'voima',
-      equipment: ['tanko'],
+      equipment: ['barra'],
       benefits: [
-        'Vahvistaa takaketjua (pakarat, takareidet, selkä)',
-        'Siirtyy juoksun voimantuottoon ja ryhtiin',
-        'Rakentaa yleistä maksimivoimaa'
+        'Fortalecer la cadena trasera (botones, muslos traseros, espalda)',
+        'Moving to running power output and posture',
+        'Construir la potencia máxima general'
       ],
       cues: [
-        'Tanko keskijalan päällä, säärret tankoa vasten',
-        'Ota ote → polvet tankoon → rinta ylös, selkä neutraali',
-        'Vedä tanko pitkin säärtä/reittä ylös',
-        'Lukitse lonkat ylhäällä ilman yliojentamista',
-        'Laske hallitusti samaa reittiä'
+        'Puño en la pierna media, piernas contra la barra',
+        'Mantener → rodillas en la barra → pecho arriba, espalda neutral',
+        'Tire la barra hacia arriba pierna / muslo',
+        'Cierra las caderas sin exagerar',
+        'Controla la misma ruta'
       ],
       mistakes: [
-        'Selkä pyöristyy nostossa',
-        'Tanko irtoaa kehosta (liian kauas)',
-        'Nykäisy selällä ilman jalkatyötä'
+        'Redondeado en ascensor',
+        'Quita el cuerpo (demasiado lejos)',
+        'Atrás sin trabajo de pie'
       ],
       video: { type: 'embed', youtubeId: 'p2OPUi4xGrM', label: 'Starting Strength – deadlift' }
     },
@@ -145,72 +145,72 @@
       loadsShoulder: true,
       name: 'Peso muerto rumano',
       category: 'voima',
-      equipment: ['tanko'],
+      equipment: ['barra'],
       benefits: [
-        'Kohdistaa takareisiin ja pakaroihin',
-        'Opettaa lonkkasaranan (hip hinge) – kriittinen juoksijalle',
-        'Vahvistaa alaselän isometristä hallintaa'
+        'Meta en los muslos y nalgas',
+        'Caminata de cadera en el teach - corredor crítico',
+        'Fortalecer el control isométrico de la espalda baja'
       ],
       cues: [
-        'Lievä polvikulma, työnnä lonkat taakse',
-        'Tanko kiinni reisissä koko ajan',
-        'Selkä neutraali, rinta auki',
-        'Laske kunnes tuntuu takareisissä (yleensä polven alle)',
-        'Nouse lonkilla eteen, älä nykäise selällä'
+        'Ángulo de rodilla leve, empuja tus caderas hacia atrás',
+        'No puedo creerlo.',
+        'Atrás neutral, pecho abierto',
+        'Calcular hasta el muslo trasero (normalmente bajo la rodilla)',
+        'Levántate de la cadera, no te muevas de la espalda.'
       ],
       mistakes: [
-        'Polvet koukistuvat liikaa (muuttuu kyykyksi)',
-        'Selän pyöristyminen',
-        'Tanko irtoaa kehosta'
+        'Las rodillas se flexionan demasiado (se convierte en sentadilla)',
+        'Redondeo atrás',
+        'La barra se aleja del cuerpo'
       ],
-      video: { type: 'embed', youtubeId: '_oyxCn2iSjU', label: 'Jeff Nippard – RDL' }
+      video: { type: 'embed', youtubeId: '_oyxCn2iSjU', label: 'Jeff Nippard - RDL' }
     },
     rdl_db: {
       id: 'rdl_db',
       loadsShoulder: true,
       name: 'Peso muerto rumano (mancuernas)',
       category: 'voima',
-      equipment: ['käsipainot', 'kuminauha'],
+      equipment: ['mancuernas', 'banda elástica'],
       benefits: [
-        'Sama hip hinge kotona kevyillä painoilla',
-        'Hyvä takaketjun aktivointi ennen juoksua',
-        'Tempoa hidastamalla kuormitus riittää ≤10 kg painoilla'
+        'Mismo bisagra de cadera en casa con pesos ligeros',
+        'Buena activación de la cadena posterior antes de correr',
+        'Al frenar el tempo, la carga es suficiente para ≤ 10 kg de peso'
       ],
       cues: [
-        'Painot reisien edessä, lievä polvikulma',
-        'Lonkat taakse, selkä neutraali',
-        'Hidasta tempoa (esim. 3 s alas)',
-        'Tunne venytys takareisissä ennen nousua'
+        'Peso frente a los muslos, ligero ángulo de rodilla',
+        'Cadera trasera, neutral',
+        'Vuelo Tempro (P.J. 3 s bajando)',
+        'Siente el estiramiento en los muslos traseros antes de levantarse'
       ],
       mistakes: [
-        'Pyöreä selkä',
-        'Painot kaukana kehosta',
-        'Liian nopea tempo ilman jännitystä'
+        'Regreso',
+        'Pesos lejos del cuerpo',
+        'Poco tempo sin emoción'
       ],
-      video: { type: 'embed', youtubeId: '_oyxCn2iSjU', label: 'Jeff Nippard – RDL (sovella käsipainoilla)' }
+      video: { type: 'embed', youtubeId: '_oyxCn2iSjU', label: 'Jeff Nippard - RDL (aplicado por tontos)' }
     },
     bench_press: {
       id: 'bench_press',
       loadsShoulder: true,
       name: 'Press de banca',
       category: 'voima',
-      equipment: ['tanko', 'käsipainot', 'penkki'],
+      equipment: ['barra', 'mancuernas', 'banco'],
       benefits: [
-        'Rintakehän, olkapäiden ja ojentajien voima',
-        'Ylävartalon työntövoima (juoksuasennon tuki)',
-        'Tasapainottaa vetoliikkeitä'
+        'La fuerza del pecho, hombros y camillas',
+        'Propulsión del cuerpo superior (apoyo de funcionamiento)',
+        'Movimientos de rueda equilibrados'
       ],
       cues: [
-        'Lapaluut taakse ja alas, jalat tukevasti maassa',
-        'Ote leveämpi kuin hartiat, rannet suorina',
-        'Laske tanko rinnan ala-/keskiosaan hallitusti',
-        'Kyynärpäät noin 45–70° vartalosta',
-        'Työnnä ylös hieman kaarevasti kohti telineitä'
+        'Atrás y abajo, pies firmemente en el suelo',
+        'Extracción más ancha que los hombros, muñecas rectas',
+        'Calcular la barra en la parte inferior / media del pecho de una manera controlada',
+        'Codos aproximadamente 45-70 ° del cuerpo',
+        'Empuje un poco curvado hacia los racks'
       ],
       mistakes: [
-        'Kyynärpäät 90° sivuille (olkapääkuorma)',
-        'Pakarat irti penkistä',
-        'Pomppu rinnasta'
+        'Codos 90 ° a lados (carga de hombro)',
+        'Quítate los traseros del asiento.',
+        'Rebote en el pecho'
       ],
       video: { type: 'embed', youtubeId: 'vcBig73ojpE', label: 'Jeff Nippard – bench press' }
     },
@@ -219,22 +219,22 @@
       loadsShoulder: true,
       name: 'Press inclinado',
       category: 'voima',
-      equipment: ['tanko', 'käsipainot', 'penkki'],
+      equipment: ['barra', 'mancuernas', 'banco'],
       benefits: [
-        'Korostaa ylärautaa ja olkapäitä',
+        'Destaca el hierro superior y los hombros',
         'Vaihtelu tasaiseen penkkiin',
-        'Hyvä työntövoiman kehittäjä'
+        'Buen desarrollo del empuje'
       ],
       cues: [
-        'Penkki 15–45° kulmaan',
-        'Sama lapaluu- ja jalkatuki kuin penkissä',
-        'Laske rinnan yläosaan',
-        'Hallittu tempo, täysi lukitus ylös'
+        'Banco a 15–45°',
+        'El mismo soporte de hombro y pie que el asiento',
+        'Bajo en el pecho superior',
+        'Tempo controlado, bloqueo completo arriba'
       ],
       mistakes: [
-        'Liian jyrkkä kulma → muuttuu pystypunnerrukseksi',
-        'Kyynärpäät liian auki',
-        'Lyhyt liikerata'
+        'Ángulo demasiado empinado → se convierte en push-up vertical',
+        'Los codos demasiado anchos',
+        'Corto rango'
       ],
       video: { type: 'link', url: ytSearch('incline bench press form Jeff Nippard'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -243,22 +243,22 @@
       loadsShoulder: true,
       name: 'Press con cable',
       category: 'voima',
-      equipment: ['kaapeli'],
+      equipment: ['polea'],
       benefits: [
-        'Tasainen vastus koko liikeradalla',
-        'Olkapääystävällisempi vaihtoehto penkille',
-        'Hyvä työntövoima kaapeliasemalla'
+        'Resistencia uniforme en todo el rango',
+        'Una alternativa más amigable con el hombro al banco',
+        'Buen empuje en polea'
       ],
       cues: [
-        'Kahvat rinnan korkeudella, askel eteen',
-        'Työnnä eteen, kyynärpäät hieman koukussa lukituksessa',
-        'Lapaluut hallinnassa, ei eteenkaatumista',
-        'Palauta hallitusti'
+        'Agarres a altura del pecho, da un paso adelante',
+        'Empuje hacia adelante, codos ligeramente enganchados en la cerradura',
+        'Control de bofetadas, sin caída delantera.',
+        'Restore Control'
       ],
       mistakes: [
-        'Liikaa vauhtia ja heilahtelua',
-        'Hartiat nousevat korviin',
-        'Selkä notkolla ilman tukea'
+        'Demasiado velocidad y oscilaciones',
+        'Hombros suben hacia las orejas',
+        'Back hoof sin soporte'
       ],
       video: { type: 'link', url: ytSearch('cable chest press form'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -267,21 +267,21 @@
       loadsShoulder: true,
       name: 'Press de suelo',
       category: 'voima',
-      equipment: ['käsipainot', 'step-lauta'],
+      equipment: ['mancuernas', 'step'],
       benefits: [
-        'Turvallinen työntö kotona ilman penkkiä',
-        'Rajoitettu liikerata säästää olkapäitä',
-        'Toimii ≤10 kg painoilla + hidas tempo'
+        'Empuje seguro en casa sin banco',
+        'La trayectoria limitada salva los hombros',
+        'Vale con ≤10 kg + tempo lento'
       ],
       cues: [
-        'Makaa lattialla/stepillä, painot rinnan yllä',
-        'Laske kunnes olkavarret koskettavat lattiaa',
-        'Tauko hetki → työnnä ylös',
-        'Lapaluut taakse, rannet suorina'
+        'Acuéstese en el suelo / paso, pesos sobre el pecho',
+        'Bajo hasta que los brazos superiores toquen el suelo',
+        'Rompe un momento → Empujar',
+        'hombro trasero, muñecas rectas'
       ],
       mistakes: [
-        'Kyynärpäät liian auki',
-        'Pomppu lattiasta',
+        'Los codos demasiado anchos',
+        'Rebote desde el suelo',
         'Ranteet taittuvat'
       ],
       video: { type: 'link', url: ytSearch('dumbbell floor press form'), label: 'Ver vídeo (búsqueda YouTube)' }
@@ -291,22 +291,22 @@
       loadsShoulder: true,
       name: 'Press con banda',
       category: 'voima',
-      equipment: ['kuminauha'],
+      equipment: ['banda elástica'],
       benefits: [
-        'Kotityöntö ilman painoja',
-        'Vastus kasvaa lopussa',
-        'Hyvä olkapääystävällinen vaihtoehto'
+        'Trabajo en casa sin pesos',
+        'La resistencia aumenta al final',
+        'Buena alternativa amable con el hombro'
       ],
       cues: [
-        'Nauha selän takana tai ankkuroitu',
-        'Työnnä eteen rinnan korkeudelta',
-        'Hallittu palautus',
-        'Pidä keskivartalo tiukkana'
+        'Tape detrás o anclado',
+        'Empujar hacia adelante desde la altura del pecho',
+        'Reembolso controlado',
+        'Mantenga su cuerpo medio apretado'
       ],
       mistakes: [
-        'Nauha liian löysä / liian kireä',
-        'Hartiat eteen',
-        'Vain osittainen liikerata'
+        'Tape demasiado flojo / demasiado apretado',
+        'Hombros hacia adelante',
+        'Solo rango parcial'
       ],
       video: { type: 'link', url: ytSearch('resistance band chest press form'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -315,22 +315,22 @@
       loadsShoulder: true,
       name: 'Press militar',
       category: 'voima',
-      equipment: ['käsipainot', 'kuminauha', 'tanko'],
+      equipment: ['mancuernas', 'banda elástica', 'barra'],
       benefits: [
-        'Olkapäiden ja ojentajien voima',
-        'Ylävartalon pystytuki juoksuasennossa',
-        'Koko kehon jännitys (core)'
+        'El poder de los hombros y camillas',
+        'Soporte vertical torso en posición de ejecución',
+        'Tensión total del cuerpo (core)'
       ],
       cues: [
-        'Painot hartioiden korkeudella, kyynärpäät hieman eteen',
-        'Purista pakarat ja vatsa',
-        'Työnnä ylös suoraan, pää väistää taakse tarvittaessa',
-        'Laske hallitusti hartioille'
+        'Peso a la altura del hombro, codos ligeramente hacia adelante',
+        'Aprietes y abdomen',
+        'Empuje recto, la cabeza detrás si es necesario',
+        'Controla tus hombros'
       ],
       mistakes: [
-        'Liiallinen notko alaselässä',
-        'Painot liian edessä',
-        'Osittainen lukitus'
+        'Excesivo hollín en la espalda inferior',
+        'Peso demasiado adelante',
+        'Locking parcial'
       ],
       video: { type: 'link', url: ytSearch('dumbbell overhead press form'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -339,22 +339,22 @@
       loadsShoulder: true,
       name: 'Jalón al pecho',
       category: 'voima',
-      equipment: ['kaapeli', 'talja'],
+      equipment: ['polea', 'polea'],
       benefits: [
-        'Leveän selän ja ylävedon voima',
-        'Tasapainottaa työntöliikkeitä',
-        'Tukee ryhtiä juoksussa'
+        'La fuerza de la espalda ancha y la tira superior',
+        'Quiero decir, quiero decir, quiero decir, quiero decir, a tener la intención de',
+        'Apoya la postura en ejecución'
       ],
       cues: [
-        'Ote hieman hartioita leveämpi',
-        'Vedä rintaan, kyynärpäät alas ja taakse',
-        'Rinta ylös, älä nojaa liikaa taakse',
-        'Hallittu palautus ylös'
+        'Extraer ligeramente más ancho que los hombros',
+        'Tire el pecho, codos hacia abajo y hacia atrás',
+        'Acelera, no te alejes demasiado.',
+        'Subida controlada'
       ],
       mistakes: [
-        'Heilahdus vartalolla',
-        'Veto niskan taakse',
-        'Liian lyhyt liikerata'
+        'Balanceo del torso',
+        'Jalón detrás del cuello',
+        'Una trayectoria demasiado corta'
       ],
       video: { type: 'link', url: ytSearch('lat pulldown proper form'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -363,22 +363,22 @@
       loadsShoulder: true,
       name: 'Remo sentado / polea baja',
       category: 'voima',
-      equipment: ['kaapeli'],
+      equipment: ['polea'],
       benefits: [
-        'Keskiselän ja latsien voima',
-        'Parantaa ryhtiä ja lapaluun hallintaa',
-        'Vastapaino penkille/punnerrukselle'
+        'El poder del juguete medio y el Latsi',
+        'Mejorar la postura y el control del hombro',
+        'Contrapeso al press de banca / flexiones'
       ],
       cues: [
-        'Istu tukevasti, rinta auki',
-        'Vedä kahva napaan/vatsaan, kyynärpäät taakse',
-        'Purista lapaluut yhteen lopussa',
-        'Älä heilahtele vartalolla'
+        'Siéntate estable, pecho abierto',
+        'Tira el mango en el ombligo, los codos atrás',
+        'Junta las escápulas al final',
+        'No balancees con tu cuerpo'
       ],
       mistakes: [
-        'Pyöreä selkä vedossa',
-        'Liikaa heiluriliikettä',
-        'Hartiat nousevat'
+        'Tirador trasero redondo',
+        'Demasiado movimiento péndulo.',
+        'Hombros se elevan'
       ],
       video: { type: 'link', url: ytSearch('seated cable row form'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -387,22 +387,22 @@
       loadsShoulder: true,
       name: 'Remo inclinado',
       category: 'voima',
-      equipment: ['tanko', 'käsipainot'],
+      equipment: ['barra', 'mancuernas'],
       benefits: [
-        'Vahva selän vetoliike vapailla painoilla',
-        'Rakentaa yläselän voimaa juoksuasentoon',
-        'Hyvä koko kehon jännitys'
+        'Tira fuerte de la espalda con pesos libres',
+        'Construir la fuerza trasera superior para la posición de funcionamiento',
+        'Buena tensión de todo el cuerpo'
       ],
       cues: [
-        'Lonkat taakse, torso ~45°',
-        'Vedä tanko/painot alavatsaan',
-        'Kyynärpäät läheltä kylkiä',
-        'Selkä neutraali koko ajan'
+        'Caderas atrás, torso ~45°',
+        'Tire la barra / pesas en el abdomen inferior',
+        'Codos cerca de las costillas',
+        'Atrás neutral todo el tiempo'
       ],
       mistakes: [
-        'Selkä pyöristyy',
-        'Veto liian korkealle rintaan',
-        'Momentumilla nykäisy'
+        'Redondeado',
+        'Tire demasiado alto en el pecho',
+        'Momentum twitch'
       ],
       video: { type: 'link', url: ytSearch('barbell bent over row form'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -411,22 +411,22 @@
       loadsShoulder: true,
       name: 'Dominada',
       category: 'voima',
-      equipment: ['leuanvetotanko'],
+      equipment: ['barra de dominadas'],
       benefits: [
-        'Ylävartalon veto- ja keskivartalon voima',
-        'Parantaa ryhtiä ja hartiarengasta',
-        'Tehokas kehonpainoliike kotona'
+        'Fuerza corporal superior y media',
+        'Mejorar la postura y el anillo de hombro',
+        'Ejercicio eficaz con peso corporal en casa'
       ],
       cues: [
-        'Ote hartioiden leveydellä, aktivoi lapaluut ensin',
-        'Vedä rintakeää kohti tankoa',
-        'Kyynärpäät alas, ei vain käsivarsilla',
-        'Laske hallitusti lähes suorille käsille'
+        'Extender ancho del hombro, activar primero las almohadillas del hombro',
+        'Tire el pecho hacia el poste',
+        'Codos abajo, no sólo en sus brazos.',
+        'Compute control a manos casi rectas'
       ],
       mistakes: [
-        'Heilahdus ja kipping ilman hallintaa',
-        'Puolikkaat toistot',
-        'Hartiat korvissa ilman lapaluuaktivaatiota'
+        'Golpear y remar sin control',
+        'Repeticiones a medias',
+        'Hombros en las orejas sin activar escápulas'
       ],
       video: { type: 'link', url: ytSearch('how to do a pull up Athlean-X'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -435,22 +435,22 @@
       loadsShoulder: true,
       name: 'Flexión',
       category: 'voima',
-      equipment: ['kehonpaino'],
+      equipment: ['peso corporal'],
       benefits: [
-        'Ylävartalon työntövoima ilman välineitä',
-        'Hartiarengas ja keskivartalo yhdessä',
-        'Helppo edetä toistoissa (baseline ~30–35)'
+        'Propulsión corporal superior sin equipo',
+        'Cintura escapular y core juntos',
+        'Fácil progresar en repeticiones (baseline ~30–35)'
       ],
       cues: [
-        'Kädet hieman hartioita leveämmällä, rinta kohti lattiaa',
-        'Vartalo suorana päästä kantapäihin',
-        'Kyynärpäät ~45° vartalosta, ei leviä sivuille',
-        'Täysi liikerata: rinta lähes lattiaan → suoriksi käsiksi'
+        'Las manos un poco más anchas que los hombros, el pecho hacia el suelo.',
+        'Cuerpo recto de la cabeza a los talones',
+        'Codos ~ 45 ° del cuerpo, sin ancho a los lados',
+        'Rango completo: pecho casi al piso → acceso directo'
       ],
       mistakes: [
-        'Lantio notkolla tai pystyssä',
-        'Puolikkaat toistot',
-        'Hartiat korvissa / niska jännittynyt'
+        'Caderas con o sin correas',
+        'Repeticiones a medias',
+        'Hombros en las orejas / cuello tenso'
       ],
       video: { type: 'link', url: ytSearch('perfect push up form tutorial'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -460,22 +460,22 @@
 
       name: 'Scapular pull (omóplatos)',
       category: 'voima',
-      equipment: ['leuanvetotanko'],
+      equipment: ['barra de dominadas'],
       benefits: [
-        'Oppii lapaluun aktivaation ennen leuanvetoja',
-        'Vahvistaa hartiarengasta',
-        'Hyvä aloitus jos leuanveto ei vielä onnistu'
+        'Aprende cómo activar el hombro antes de chin-ups',
+        'Reforzado por el anillo de hombro',
+        'Buen inicio si aún no puedes hacer dominadas'
       ],
       cues: [
-        'Ripustu suorille käsille',
-        'Vedä lapaluut alas ja yhteen ilman kyynärkoukistusta',
-        'Pidä 1–2 s → rentouta hallitusti',
-        'Rinta auki, niska rentona'
+        'Aguanta las manos rectas',
+        'Tire las cuchillas hacia abajo y juntos sin codos',
+        'Mantener 1-2 s →',
+        'Pecho abierto, cuello relajado'
       ],
       mistakes: [
-        'Kyynärpäiden koukistus (muuttuu leuanvedoksi)',
-        'Heiluminen',
-        'Hartiat jäävät korviin'
+        'La inclinación del codo (vuelva a la tira de la barbilla)',
+        'Balanceo',
+        'Los hombros se quedan en las orejas'
       ],
       video: { type: 'link', url: ytSearch('scapular pull up tutorial'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -484,22 +484,22 @@
       loadsShoulder: true,
       name: 'Dominada asistida con banda',
       category: 'voima',
-      equipment: ['leuanvetotanko', 'kuminauha'],
+      equipment: ['barra de dominadas', 'banda elástica'],
       benefits: [
-        'Mahdollistaa täyden liikeradan ennen omaa leuanvetoa',
-        'Rakentaa vetoa progressiivisesti',
-        'Säilyttää oikean liikemallin'
+        'Permite el movimiento completo antes de su chin-up',
+        'Construye tracción de forma progresiva',
+        'Mantiene el modelo de negocio adecuado'
       ],
       cues: [
-        'Nauha tankoon, polvi/jalka lenkkiin',
-        'Sama tekniikka kuin leuanvedossa',
-        'Kontrolloi lasku – älä putoa nauhan varaan',
-        'Vähennä avustusta ajan myötä'
+        'Tapa para poste, rodilla / pie para enlace',
+        'La misma técnica que en dominadas',
+        'Controlar la factura - no caer a la cinta',
+        'Reducir la subvención con el tiempo'
       ],
       mistakes: [
-        'Liian paksu nauha → ei kehitystä',
-        'Heilahdus',
-        'Osittaiset toistot'
+        'La cinta demasiado gruesa → no desarrollo',
+        'Balanceo',
+        'Repeticiones parciales'
       ],
       video: { type: 'link', url: ytSearch('band assisted pull up form'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -508,22 +508,22 @@
       loadsShoulder: true,
       name: 'Remo con banda',
       category: 'voima',
-      equipment: ['kuminauha'],
+      equipment: ['banda elástica'],
       benefits: [
-        'Kotiveto ilman taljaa',
-        'Parantaa ryhtiä ja yläselän voimaa',
-        'Helppo säätää vastusta'
+        'Jalón en casa sin polea',
+        'Mejorar la postura y la fuerza superior de la espalda',
+        'Fácil ajustar la resistencia'
       ],
       cues: [
-        'Ankkuroi nauha (ovi/tolppa) rinnan korkeudelle',
-        'Vedä kyynärpäät taakse, lapaluut yhteen',
-        'Rinta auki, torso paikallaan',
-        'Hidasta palautusta'
+        'Cinta de anclaje (puerta / poste) a altura del pecho',
+        'Devuélvete los codos.',
+        'Pecho abierto, torso quieto',
+        'Retorno lento'
       ],
       mistakes: [
-        'Heilahdus vartalolla',
-        'Hartiat nousevat',
-        'Liian lyhyt veto'
+        'Balanceo del torso',
+        'Hombros se elevan',
+        'Demasiado corto una apuesta'
       ],
       video: { type: 'link', url: ytSearch('resistance band row form'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -532,22 +532,22 @@
       loadsShoulder: true,
       name: 'Remo invertido',
       category: 'voima',
-      equipment: ['leuanvetotanko', 'tanko'],
+      equipment: ['barra de dominadas', 'barra'],
       benefits: [
         'Kehonpainoveto vaakatasossa',
-        'Hyvä silta leuanvetoon',
-        'Vahvistaa yläselkää ja corea'
+        'Buen puente hacia la dominada',
+        'Reforzar la espalda superior y el núcleo'
       ],
       cues: [
-        'Tangon alle, vartalo suorana viivana',
-        'Vedä rinta tankoon',
-        'Purista lapaluut, laske hallitusti',
-        'Helpota jalkoja koukistamalla / vaikeuta suoristamalla'
+        'Bajo el poste, la línea recta corporal',
+        'Tire el pecho en la barra',
+        'Extiende las cuchillas, cuenta de manera controlada',
+        'Facilita flexionando las piernas / dificulta estirándolas'
       ],
       mistakes: [
-        'Lantio tippuu (ei suoraa linjaa)',
-        'Vain kaulan nosto',
-        'Liian korkea tanko → liian helppo'
+        'La pelvis cae (no hay línea recta)',
+        'Solo levanta el cuello',
+        'Barra demasiado alta → demasiado fácil'
       ],
       video: { type: 'link', url: ytSearch('inverted row form tutorial'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -558,20 +558,20 @@
       category: 'voima',
       equipment: [],
       benefits: [
-        'Keskivartalon kestävyys ja ryhti',
-        'Siirtyy juoksun vartalonhallintaan',
-        'Yksinkertainen, ei välineitä'
+        'Resistencia corporal media y postura',
+        'Se traslada al control del tronco al correr',
+        'Simple, sin herramientas'
       ],
       cues: [
-        'Kyynärpäät hartioiden alla',
-        'Vartalo suorana: pää–lonkat–nilkat',
-        'Purista vatsa ja pakarat, älä notkista',
-        'Hengitä rauhallisesti, pidä aika laadukkaana'
+        'Codos debajo de los hombros',
+        'Cuerpo vivo: tobillos de la cabeza',
+        'Aprieta el estómago y las nalgas. No te dobles.',
+        'Respira con calma, prioriza la calidad del tiempo'
       ],
       mistakes: [
-        'Lantio tippuu tai nousee liikaa',
-        'Pää roikkuu',
-        'Pidä niin kauan että muoto romahtaa'
+        'La pelvis cae o se eleva demasiado',
+        'La cabeza está colgando',
+        'Aguanta hasta que la forma colapse.'
       ],
       video: { type: 'embed', youtubeId: 'xVrALzPc7dM', label: 'ATHLEAN-X – plank progression' }
     },
@@ -580,24 +580,24 @@
       loadsShoulder: true,
       name: 'Rueda abdominal',
       category: 'voima',
-      equipment: ['ab wheel'],
+      equipment: ['rueda abdominal'],
       benefits: [
         'Vahva anteriorinen core (anti-extension)',
-        'Parantaa juoksun vartalon vakautta',
-        'Progressiivinen: polvilta → varpailta'
+        'Mejora la estabilidad del cuerpo',
+        'Progresivo: de rodillas → de puntillas'
       ],
       cues: [
-        'Aloita polvilta tarvittaessa',
-        'Rullaa eteen hallitusti, lantio ei tipu',
-        'Pidä vatsa tiukkana koko ajan',
-        'Palaa samalla kontrollilla'
+        'Empieza de rodillas si lo necesitas',
+        'Ponte delante de ti de una manera controlada.',
+        'Mantenga el estómago apretado todo el tiempo.',
+        'Volver con el mismo control'
       ],
       mistakes: [
-        'Alaselkä notkahtaa (vaarallinen)',
-        'Liian pitkä rullaus liian aikaisin',
-        'Hengityksen pidättäminen paniikissa'
+        'La zona lumbar se arquea (peligroso)',
+        'Demasiado largo rollo demasiado pronto',
+        'Contener la respiración por pánico'
       ],
-      video: { type: 'link', url: ytSearch('ab wheel rollout form Athlean-X'), label: 'Ver vídeo (búsqueda YouTube)' }
+      video: { type: 'link', url: ytSearch('ab Rueda forma Athlean-X'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     dead_bug: {
       id: 'dead_bug',
@@ -605,20 +605,20 @@
       category: 'voima',
       equipment: [],
       benefits: [
-        'Opettaa corea ilman selkäkuormaa',
-        'Parantaa raajojen ja vartalon yhteistyötä',
-        'Hyvä vaihtoehto/täydennys lankulle'
+        'Cada núcleo sin carga',
+        'Mejorar la cooperación entre miembros y organismos',
+        'Buena alternativa/complemento a la plancha'
       ],
       cues: [
-        'Selinmakuu, alaselkä kevyesti lattiassa',
-        'Vastakkainen käsi+jalka ojentuu hallitusti',
-        'Älä anna selän notkahtaa',
-        'Hengitä ulos ojennuksessa'
+        'Bodytaste, baja luz trasera en el suelo',
+        'La mano opuesta + la pierna controla',
+        'No dejes caer tu espalda.',
+        'Exhala al extender'
       ],
       mistakes: [
-        'Alaselkä nousee kaarelle',
-        'Liian nopea liike',
-        'Pidätetty hengitys'
+        'La zona lumbar se arquea',
+        'Demasiado rápido.',
+        'Mantener la respiración'
       ],
       video: { type: 'link', url: ytSearch('dead bug exercise form'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -627,22 +627,22 @@
       loadsShoulder: true,
       name: 'Rueda con pelota',
       category: 'voima',
-      equipment: ['jumppapallo'],
+      equipment: ['pelota de ejercicio'],
       benefits: [
-        'Samanlainen anti-extension kuin ab wheel',
-        'Keskivartalon hallinta',
-        'Vaihtoehto ab wheelille salilla'
+        'Anti-extensión similar a la rueda abdominal',
+        'Control del core',
+        'Alternativa a la rueda abdominal en el gym'
       ],
       cues: [
-        'Kyynärvarret tai kädet pallolla',
-        'Rullaa eteen hallitusti, lantio vakaana',
-        'Palaa kontrollilla',
-        'Pidä niska neutraalina'
+        'Codos o manos en la bola',
+        'Avance hacia adelante de una manera controlada, pelvis estable',
+        'Regresar con Control',
+        'Mantén tu cuello neutral.'
       ],
       mistakes: [
-        'Lantio tippuu',
-        'Liian pitkä rullaus',
-        'Hartiat nousevat korviin'
+        'La pelvis está cayendo.',
+        'Demasiado largo.',
+        'Hombros suben hacia las orejas'
       ],
       video: { type: 'link', url: ytSearch('stability ball rollout form'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -650,21 +650,21 @@
       id: 'lunge',
       name: 'Zancada',
       category: 'voima',
-      equipment: ['käsipainot', 'step-lauta'],
+      equipment: ['mancuernas', 'step'],
       benefits: [
-        'Yhden jalan voima ja tasapaino',
-        'Korjaa puolieroja juoksussa',
-        'Vahvistaa pakaroita ja etureisiä'
+        'Una fuerza de pierna y equilibrio',
+        'Corrige asimetrías al correr',
+        'Fortalecer las nalgas y los muslos delanteros'
       ],
       cues: [
-        'Askel taakse tai stepille, etupolvi ~nilkan päällä',
-        'Rinta pystyssä, etureisi ja takareisi ~90°',
-        'Työnnä etujalalla ylös',
-        'Tee molemmat puolet'
+        'Paso atrás o al step, rodilla delantera ~sobre el tobillo',
+        'Máster erecto, muslo delantero y muslo trasero ~ 90 °',
+        'Empuja hacia adelante',
+        'Hacer ambos lados'
       ],
       mistakes: [
-        'Etupolvi romahtaa sisään',
-        'Liian lyhyt askel',
+        'La rodilla delantera se hunde hacia dentro',
+        'Demasiado corto un paso',
         'Eteentaipuminen'
       ],
       video: { type: 'link', url: ytSearch('dumbbell reverse lunge form'), label: 'Ver vídeo (búsqueda YouTube)' }
@@ -673,22 +673,22 @@
       id: 'single_leg_hip_thrust',
       name: 'Puente glúteos a una pierna',
       category: 'voima',
-      equipment: ['step-lauta'],
+      equipment: ['step'],
       benefits: [
-        'Pakaran eristävä voima juoksijalle',
-        'Parantaa lantion vakautta',
-        'Vähentää tyypillisiä juoksijan heikkouksia'
+        'La fuerza de la nalga para el corredor',
+        'Mejorar la estabilidad pélvica',
+        'Reducir las debilidades típicas del corredor'
       ],
       cues: [
-        'Yläselkä stepillä, yksi jalka maassa',
-        'Työnnä lonkka ylös pakaralla',
-        'Pidä 1 s ylhäällä, laske hallitusti',
-        'Lantio suorassa, ei kallistusta'
+        'Paso de atrás superior, un pie hacia abajo',
+        'Pon tu cadera arriba con tus nalgas',
+        'Mantenga 1 pt arriba, cuente bajo control',
+        'Pelvis recta, sin inclinación'
       ],
       mistakes: [
-        'Työntö alaselällä pakaran sijaan',
-        'Lantion kallistus sivulle',
-        'Liian lyhyt liikerata'
+        'Empujar hacia atrás inferior en lugar de nalgada',
+        'Inclinación lateral de la pelvis',
+        'Una trayectoria demasiado corta'
       ],
       video: { type: 'link', url: ytSearch('single leg hip thrust form'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -696,93 +696,93 @@
       id: 'calf_raise',
       name: 'Elevación de gemelos',
       category: 'voima',
-      equipment: ['step-lauta'],
+      equipment: ['step'],
       benefits: [
-        'Pohkeiden voima ja jänteiden kestävyys',
-        'Tukee juoksun ponnistusvaihetta',
-        'Auttaa akilles-/pohjekestävyydessä'
+        'Fuerza de la pierna y resistencia al tendón',
+        'Supports running effort phase',
+        'Ayuda a la resistencia del Aquiles/gemelo'
       ],
       cues: [
-        'Päkiät stepillä, kannat vapaana',
-        'Nouse täyteen ojennukseen',
-        'Laske hallitusti venytykseen',
-        'Pidä polvet pehmeinä, ei lukittuna'
+        '♪ Patos en el grifo, eres libre de llevar ♪',
+        'Muy bien, vamos.',
+        'Disminuir el control para estirar',
+        'Mantén tus rodillas suaves, no cerradas'
       ],
       mistakes: [
-        'Pomppu ilman täyttä liikettä',
-        'Liian nopea tempo',
-        'Vain osittainen ylös-/alasvaihe'
+        'Salto sin movimiento completo',
+        'Demasiado rápido.',
+        'Sólo fase parcial / baja'
       ],
       video: { type: 'link', url: ytSearch('standing calf raise form step'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
 
-    // ---- Lämmittely / liikkuvuus / venyttely ----
+    // ---- Calentamiento / movilidad / estiramientos ----
     light_jog: {
       id: 'light_jog',
       name: 'Trote suave / marcha',
       category: 'liikkuvuus',
       equipment: [],
       benefits: [
-        'Nostaa kehon lämpötilaa ja sykettä turvallisesti',
-        'Valmistaa nivelet ja lihakset juoksuun tai voimaan',
-        'Vähentää jäykkyyden tuntua treenin alussa'
+        'Aumenta la temperatura corporal y la frecuencia cardíaca de forma segura',
+        'Preparar articulaciones y músculos para correr o fuerza',
+        'Reduce la rigidez al comienzo del entrenamiento'
       ],
       cues: [
-        'Helppo tempo – hengitys rauhallinen',
-        '2–5 min riittää yleensä',
-        'Paikallaan askellus / polvennostot ok sisätiloissa',
-        'Hartiat rentoina, älä jännitä niskoja'
+        'Tempo fácil - respiración calma',
+        '2–5 min suelen bastar',
+        'Inicio / rodilla ascensor ok interior',
+        'Hombros relajados, no tensar el cuello'
       ],
       mistakes: [
-        'Aloittaa liian kovalla vauhdilla',
-        'Hyppii räjähtävästi ennen lämmittelyä',
-        'Ohittaa kokonaan kylmänä'
+        'Empieza muy rápido.',
+        'Saltos explosivos antes de calentar',
+        'Skip completely cold'
       ],
       video: { type: 'link', url: ytSearch('easy jog warm up routine'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     leg_swings: {
       id: 'leg_swings',
-      name: 'Jalanheilautukset',
+      name: 'Balanceos de pierna',
       category: 'liikkuvuus',
       equipment: [],
       benefits: [
-        'Avaa lonkkaa dynaamisesti juoksuun',
-        'Aktivoi lonkankoukistajia ja takaketjua',
-        'Parantaa askelpituuden tuntumaa ilman staattista venytystä'
+        'Abre la cadera de forma dinámica para correr',
+        'Activa flexores de cadera y cadena posterior',
+        'Mejora la sensación de longitud del paso sin estiramiento estático'
       ],
       cues: [
-        'Tukeudu seinään/tolppaan tarvittaessa',
-        'Heilauta jalkaa eteen–taakse hallitusti',
-        'Pidä lantio vakaana – älä heilu sivulle',
-        '10–12 heilautusta / puoli; sitten sivuttaisheilautukset'
+        'Confirmar a pared / poste si es necesario',
+        'Mueve el pie de una y otra vez.',
+        'Mantenga las caderas estables - no oscilar a lado',
+        '10–12 balanceos por lado; luego laterales'
       ],
       mistakes: [
-        'Liian iso heilautus ilman kontrollia',
-        'Kiertää vartaloa mukana',
-        'Lukitsee polven jäykäksi'
+        'Demasiado grande un swing sin control',
+        '♪ Alrededor del cuerpo ♪',
+        'con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con con'
       ],
       video: { type: 'link', url: ytSearch('leg swings dynamic warm up running'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     hip_opener: {
       id: 'hip_opener',
-      name: 'Lonkan avaukset',
+      name: 'Aperturas de cadera',
       category: 'liikkuvuus',
       equipment: [],
       benefits: [
-        'Lisää lonkan liikkuvuutta juoksuun ja kyykkyyn',
-        'Vähentää jäykkyyttä lantion alueella',
-        'Valmistaa pakaroita ja lonkankoukistajia'
+        'Más movimiento de cadera para correr y squat',
+        'Reducir la rigidez en el área pélvica',
+        'Preparar nalgas y rizos de cadera'
       ],
       cues: [
-        'Seisten tai nelinkontin: avaa lonkkaa hallitusti',
-        'Esim. 90/90-istunta tai polven ympyrät',
-        'Hengitä rauhallisesti, älä pakota ääriasentoa',
-        '8–10 toistoa / puoli'
+        'Stand o cuadrado: cadera abierta de manera controlada',
+        'P. ej. sentada 90/90 o círculos de rodilla',
+        'Respira con calma, no fuerces el extremo del rango',
+        '8–10 repeticiones por lado'
       ],
       mistakes: [
-        'Pakottaa kipuun asti',
-        'Pyöristää alaselkää voimakkaasti',
-        'Pidättää hengitystä'
+        'Que vaya al dolor.',
+        'Redondo la espalda inferior vigorosamente',
+        'Mantenga la respiración'
       ],
       video: { type: 'link', url: ytSearch('hip openers warm up mobility'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -793,276 +793,276 @@
       category: 'liikkuvuus',
       equipment: [],
       benefits: [
-        'Yhdistää lonkan, rintarangan ja takaketjun avauksen',
-        'Erinomainen yleislämmittely juoksuun ja voimaan',
-        'Parantaa kiertoliikkuvuutta'
+        'Combina la apertura de cadera, pecho y cadena',
+        'Excelente calentamiento general para carrera y fuerza',
+        'Mejorar la rotación'
       ],
       cues: [
-        'Askel eteen syvään askelkyykkyyn, takapolvi matalalla',
-        'Sama-puolen käsi maahan sisäreiden viereen',
-        'Kierrä vapaa käsi kohti kattoa, katse seuraa',
-        'Vaihda puolta; 3–5 / puoli'
+        'Da un paso adelante a zancada profunda, rodilla trasera baja',
+        'La misma mano en el suelo junto a los muslos interiores',
+        'Redondea tu mano libre hacia el techo, tus ojos seguirán',
+        'Cambia de lado; 3–5 por lado'
       ],
       mistakes: [
-        'Etupolvi tippuu sisään',
-        'Kierto tulee vain hartioista, ei rintarangasta',
-        'Liian nopea tempo ilman hallintaa'
+        'La rodilla delantera cae hacia dentro',
+        'La rotación solo desde hombros, no desde la columna torácica',
+        'Tempo demasiado rápido sin control'
       ],
       video: { type: 'link', url: ytSearch("world's greatest stretch mobility"), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     ankle_mobility: {
       id: 'ankle_mobility',
-      name: 'Nilkan liikkuvuus',
+      name: 'Movilidad de tobillo',
       category: 'liikkuvuus',
       equipment: [],
       benefits: [
-        'Parantaa kyykyn ja juoksun nilkan dorsifleksiota',
-        'Vähentää kompensaatiota polvissa ja lonkissa',
-        'Tukee askelkontaktia'
+        'Calienta la piel y corre el tobillo dorsiflexion',
+        'Reduce la compensación en las rodillas y las caderas',
+        'Soportes de contacto paso'
       ],
       cues: [
-        'Polvi seinää kohti varpaiden yli (seinätesti-tyyli)',
-        'Kantapää pysyy maassa',
-        'Tee myös nilkan ympyröitä molempiin suuntiin',
-        '8–10 / puoli'
+        'Mango a pared sobre los dedos (estilo de prueba de pared)',
+        'El talón se queda en el suelo.',
+        'También hacer círculos de tobillo en ambas direcciones',
+        '8–10 por lado'
       ],
       mistakes: [
-        'Kantapää nousee seinästä',
-        'Polvi tippuu sisään',
-        'Liian aggressiivinen paine'
+        'El talón se levanta de la pared',
+        'Knee entra.',
+        'Presión excesiva'
       ],
       video: { type: 'link', url: ytSearch('ankle mobility dorsiflexion drill'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     thoracic_opener: {
       id: 'thoracic_opener',
       loadsShoulder: true,
-      name: 'Rintarangan avaukset',
+      name: 'Aperturas torácicas',
       category: 'liikkuvuus',
       equipment: [],
       benefits: [
-        'Avaa yläselän kiertoa ja ojentumista',
-        'Parantaa juoksuasentoa ja punnerrusten liikkuvuutta',
-        'Vähentää “kytkettyä” hartiatuntumaa'
+        'Abre rotación y extensión de la espalda alta',
+        'Mejorar la posición de funcionamiento y el movimiento de los impulsos',
+        'Reduce la sensación del hombro "conectado"'
       ],
       cues: [
-        'Nelinkontin tai kyljellään: kierrä käsivarsi auki',
-        'Hengitä ulos avauksessa',
-        'Pidä lantio vakaana – liike tulee rintakeäästä',
-        '6–8 / puoli'
+        'Cuatro vías o lado: girar el brazo abierto',
+        'Exhala al abrir',
+        'Mantenga las caderas firmes - el movimiento viene del pecho',
+        '6–8 por lado'
       ],
       mistakes: [
-        'Kiertää lonkkaa mukana',
-        'Pakottaa niskan taakse',
-        'Liian nopea heilunta'
+        'Va por ahí con su cadera.',
+        'Forzar detrás del cuello',
+        'Demasiado rápido para onda'
       ],
       video: { type: 'link', url: ytSearch('thoracic spine mobility opener open book'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     arm_circles: {
       id: 'arm_circles',
       loadsShoulder: true,
-      name: 'Käsien pyöritykset',
+      name: 'Círculos de brazos',
       category: 'liikkuvuus',
       equipment: [],
       benefits: [
-        'Lämmittää hartiat ja ylävartalon voimatreeniin',
-        'Lisää olkanivelen liikkuvuuden tuntumaa',
-        'Nopea aktivointi ilman välineitä'
+        'Hombros cálidos y entrenamiento de fuerza superior del cuerpo',
+        'Más sensación de movimiento de articulación del hombro',
+        'Activación rápida sin equipo'
       ],
       cues: [
-        'Isot ja pienet ympyrät molempiin suuntiin',
-        'Hartiat alas, ei nouse korviin',
+        'Círculos grandes y pequeños en ambas direcciones',
+        'Baja los hombros, no te metes en los oídos.',
         '10–15 / suunta',
-        'Voi yhdistää kevyeen band pull-apartiin'
+        'Se puede conectar a una banda ligera de botellas'
       ],
       mistakes: [
-        'Hartiat nousevat ja jännittyvät',
-        'Liian nopea heilunta kontrollitta',
-        'Kipu olkapäässä – pienennä liikettä'
+        'Los hombros suben y se tensan',
+        'Demasiado rápido para onda sin control',
+        'Dolor en el hombro - reducir el movimiento'
       ],
       video: { type: 'link', url: ytSearch('arm circles warm up shoulders'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     bw_squat_warmup: {
       id: 'bw_squat_warmup',
-      name: 'Kehonpainokyykky (lämmittely)',
+      name: 'Sentadilla con peso corporal (calentamiento)',
       category: 'liikkuvuus',
       equipment: [],
       benefits: [
-        'Aktivoi kyykkypatternin ennen kuormaa',
-        'Lämmittää jalat ja lonkat',
-        'Tarkistaa liikkuvuuden ennen sali-/kotivoimaa'
+        'Activa el patrón de sentadilla antes de cargar',
+        'Calenta tus piernas y caderas',
+        'Compruebe la movilidad antes del gimnasio / energía casera'
       ],
       cues: [
-        'Rinta ylös, paino koko jalkapohjalla',
-        '8–12 hallittua toistoa',
+        'Más rápido, peso en todas las piernas',
+        '8–12 repeticiones controladas',
         'Syvyys oman liikkuvuuden mukaan',
-        'Ei painoa – vain aktivointi'
+        'Sin peso: solo activación'
       ],
       mistakes: [
-        'Polvet tippuvat sisään',
-        'Kantapäät nousevat',
-        'Kiirehtii raskaaseen tankoon ilman tätä'
+        'Las rodillas entran.',
+        'Los talones están subiendo',
+        'Se está precipitando en un polo pesado sin esto.'
       ],
       video: { type: 'link', url: ytSearch('bodyweight squat warm up form'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     glute_activation: {
       id: 'glute_activation',
-      name: 'Pakara-aktivointi',
+      name: 'Activación de glúteos',
       category: 'liikkuvuus',
       equipment: [],
       benefits: [
-        'Herättelee pakarat ennen juoksua/voimaa',
-        'Tukee lonkan hallintaa',
-        'Vähentää alaselän kompensaatiota'
+        'Despierta los glúteos antes de correr o de fuerza',
+        'Ayuda al control de la cadera',
+        'Reducir la compensación de espalda más baja'
       ],
       cues: [
-        'Lantionnosto selinmakuulla TAI side-lying clam',
-        'Purista pakarat ylhäällä 1–2 s',
-        '10–12 toistoa',
-        'Tunne pakaroissa – ei alaselässä'
+        'Compra de caderas en la parte posterior o almeja',
+        'Aprieta tus nalgas hasta 1-2 pts',
+        '10–12 repeticiones',
+        'Sentirse en las nalgas - no en la parte inferior de la espalda'
       ],
       mistakes: [
-        'Työntää alaselällä',
-        'Liian nopea tempo',
-        'Ei tunne pakaroita ollenkaan'
+        'Empujar hacia abajo',
+        'Demasiado rápido.',
+        'No siente los glúteos en absoluto'
       ],
       video: { type: 'link', url: ytSearch('glute activation bridge warm up'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     cat_cow: {
       id: 'cat_cow',
       loadsShoulder: true,
-      name: 'Kissa–lehmä',
+      name: 'Gato–vaca',
       category: 'liikkuvuus',
       equipment: [],
       benefits: [
-        'Pehmeä selän liikkuvuus ja hermoston rauhoitus',
-        'Hyvä lepo-/sairaspäivän liikkuvuuteen',
-        'Valmistaa rintarankaa ja lantiota'
+        'Movimiento de espalda suave y relajación del sistema nervioso',
+        'Bueno para movilidad en día de descanso/enfermedad',
+        'Prepara el esternón y la pelvis'
       ],
       cues: [
-        'Nelinkontin: vuorottele pyöristys ja notko',
-        'Hengitä rytmissä liikkeen kanssa',
-        '8–12 hidasta toistoa',
-        'Pysy kivuttomalla alueella'
+        'Plaza: Rotar redondeando y hollín',
+        'Respira al ritmo del movimiento',
+        '8–12 repeticiones lentas',
+        'Quédate en un área indolorosa.'
       ],
       mistakes: [
-        'Liian nopea heilunta',
-        'Pakottaa ääriasentoja',
-        'Jännittää niskan'
+        'Demasiado rápido para onda',
+        'Posiciones extremas de la fuerza',
+        'Estrangular el cuello'
       ],
       video: { type: 'link', url: ytSearch('cat cow stretch mobility'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     calf_stretch: {
       id: 'calf_stretch',
-      name: 'Pohjevenytys',
+      name: 'Longitud superficial',
       category: 'liikkuvuus',
       equipment: [],
       benefits: [
-        'Palauttaa pohkeita juoksun jälkeen',
-        'Tukee akilles-/nilkan joustavuutta',
-        'Auttaa vähentämään jäykkyyttä seuraavana päivänä'
+        'Devuelve los becerros después de correr',
+        'Ayuda a la flexibilidad de Aquiles/tobillo',
+        'Ayuda a reducir la rigidez al día siguiente'
       ],
       cues: [
-        'Seinää vasten: takajalka suorana (gastroc) ja polvi koukussa (soleus)',
-        'Pidä 20–30 s / asento / puoli',
-        'Kantapää maassa, lantio eteen',
-        'Hengitä rauhallisesti – ei pompita'
+        'Contra la pared: pie trasero recto (gastroc) y rodilla enganchada (soleus)',
+        'Mantener 20-30 pts / posición / lado',
+        'Tacón abajo, cadera hacia adelante',
+        'Respira con calma – sin rebotes'
       ],
       mistakes: [
-        'Pomppiva “venytys”',
-        'Kantapää nousee',
-        'Venyttää kylmänä ennen juoksua pitkään staattisesti'
+        'Bouncing "stretching"',
+        'El talón se levanta',
+        'Se extiende mucho antes de correr'
       ],
       video: { type: 'link', url: ytSearch('calf stretch wall gastroc soleus'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     hip_flexor_stretch: {
       id: 'hip_flexor_stretch',
-      name: 'Lonkan koukistajan venytys',
+      name: 'Estiramiento del flexor de cadera',
       category: 'liikkuvuus',
       equipment: [],
       benefits: [
-        'Avaa istumisen ja juoksun kiristämiä lonkankoukistajia',
-        'Tukee lantion asentoa ja juoksuasentoa',
-        'Hyvä cooldown pitkän lenkin jälkeen'
+        'Libera los flexores de cadera tensos por sentarte y correr',
+        'Apoya la posición pélvica y la posición de funcionamiento',
+        'Buen enfriamiento tras la tirada larga'
       ],
       cues: [
         'Polviseisominen: takapolvi maassa, etujalka 90°',
-        'Työnnä lantiota kevyesti eteen, torso pystyssä',
-        '20–40 s / puoli',
-        'Voit nostaa samanpuoleisen käden ylös lisävenytykseen'
+        'Empuja la pelvis suavemente hacia adelante, torso hacia arriba',
+        '20–40 s por lado',
+        'Puedes levantar la misma mano para estirar extra'
       ],
       mistakes: [
-        'Notkistaa alaselkää voimakkaasti',
-        'Etupolvi menee liian eteen',
-        'Pidättää hengitystä'
+        'Enciende la espalda baja vigorosamente',
+        'La rodilla delantera va demasiado lejos.',
+        'Mantenga la respiración'
       ],
       video: { type: 'link', url: ytSearch('hip flexor stretch kneeling'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     hamstring_stretch: {
       id: 'hamstring_stretch',
-      name: 'Takareiden venytys',
+      name: 'Stretch',
       category: 'liikkuvuus',
       equipment: [],
       benefits: [
-        'Vähentää takaketjun jäykkyyttä juoksun jälkeen',
-        'Tukee lonkkasaranan tuntumaa',
-        'Auttaa palautumisessa'
+        'Reducir la rigidez de la cadena trasera después de correr',
+        'Soporta la sensación de bisagra de cadera',
+        'Ayuda a la recuperación'
       ],
       cues: [
-        'Seisten tai selinmakuulla hihnalla/pyyhkeellä',
-        'Pidä selkä neutraalina – älä pyöristä voimakkaasti',
-        '20–30 s / puoli',
-        'Kevyt jännitys ok, kipu ei'
+        'De pie o cara con correa / toalla',
+        'Mantenga la espalda neutral - no girar vigorosamente',
+        '20–30 s por lado',
+        'Tensión de luz ok, dolor no'
       ],
       mistakes: [
-        'Pyöristää selän kasaan',
-        'Nykäisee venytykseen',
-        'Venyttää liian aggressiivisesti heti treenin jälkeen'
+        'Redondea tu espalda',
+        'Tetas para estirar',
+        'Estréguese demasiado agresivamente inmediatamente después del entrenamiento'
       ],
       video: { type: 'link', url: ytSearch('hamstring stretch lying strap'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     quad_stretch: {
       id: 'quad_stretch',
-      name: 'Etureiden venytys',
+      name: 'Stretching of the front',
       category: 'liikkuvuus',
       equipment: [],
       benefits: [
-        'Avaa etureittä ja lonkankoukistajaa',
-        'Hyvä juoksun ja kyykkypainotteisen voiman jälkeen',
-        'Tukee polven tuntumaa'
+        'Abre cuádriceps y flexor de cadera',
+        'Bueno tras carrera y fuerza centrada en sentadilla',
+        'Soporta la sensación de rodilla'
       ],
       cues: [
-        'Seisten: vedä kantapää kohti pakaraa',
-        'Polvet vierekkäin, lantio kevyesti taakse',
-        '20–30 s / puoli',
-        'Tukeudu seinään tasapainon vuoksi'
+        'De pie: tire el talón hacia el glúteo',
+        'Manchas lado a lado, caderas suavemente hacia atrás',
+        '20–30 s por lado',
+        'Confirmar a la pared para el equilibrio'
       ],
       mistakes: [
-        'Selkä notkolla liikaa',
-        'Vääntää polvea sivulle',
-        'Vetää liian kovaa'
+        'Mi espalda es demasiado.',
+        'rodilla a un lado',
+        'Tire demasiado duro'
       ],
       video: { type: 'link', url: ytSearch('standing quad stretch form'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     figure4_stretch: {
       id: 'figure4_stretch',
-      name: 'Figure-4 / piriformis-venytys',
+      name: 'Figura 4 / estiramiento de piriformo',
       category: 'liikkuvuus',
       equipment: [],
       benefits: [
-        'Avaa pakaraa ja syviä lonkan ulkokiertäjiä',
-        'Helpottaa “kireää pakaraa” juoksun jälkeen',
-        'Hyvä vapaaehtoinen cooldown'
+        'Abre glúteo y rotadores externos profundos de la cadera',
+        'Alivia el “glúteo tenso” después de correr',
+        'Buen enfriamiento opcional'
       ],
       cues: [
-        'Selinmakuulla: nilkka vastakkaisen polven päälle',
-        'Vedä reittä kevyesti kohti rintaa',
-        '20–40 s / puoli',
-        'Pidä lantio tasaisena'
+        'Sobre la base: tobillo sobre la rodilla opuesta',
+        'Tire el muslo suavemente hacia el pecho',
+        '20–40 s por lado',
+        'Mantén tus caderas planas'
       ],
       mistakes: [
-        'Vääntää polvea sivulle kivuliaasti',
-        'Nostaa päätä ja jännittää niskaa',
-        'Venyttää liian lyhyen aikaa toistuvasti nykäisten'
+        'Twist la rodilla al lado dolorosamente',
+        'Levantándose la cabeza y girando el cuello',
+        'Stretch demasiado corto un tiempo repetidamente twitch'
       ],
       video: { type: 'link', url: ytSearch('figure 4 piriformis stretch'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -1073,20 +1073,20 @@
       category: 'liikkuvuus',
       equipment: [],
       benefits: [
-        'Rauhoittaa hermostoa lepo-/sairaspäivänä',
-        'Pehmeä selän ja lonkan avaus',
-        'Hyvä lopetus kevyelle liikkuvuudelle'
+        'Relajar el sistema nervioso en reposo / día enfermo',
+        'Apertura suave de la espalda y la cadera',
+        'Buen cierre para movilidad suave'
       ],
       cues: [
-        'Istu kantapäille, kädet eteen, otsa matolle',
-        'Hengitä syvään kylkiin',
+        'Siéntate sobre los talones, brazos delante, frente al suelo',
+        'Respira profundo hacia los laterales',
         '30–60 s',
-        'Levitä polvia tarvittaessa mukavuuden mukaan'
+        'Aplique las rodillas dependiendo de la comodidad'
       ],
       mistakes: [
-        'Pakottaa polvia jos ne kipeytyvät',
-        'Pidättää hengitystä',
-        'Jännittää hartiat korviin'
+        'Haz que tus rodillas estén lastimadas',
+        'Mantenga la respiración',
+        'Estoy nervioso por mis hombros.'
       ],
       video: { type: 'link', url: ytSearch("child's pose stretch yoga"), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -1094,72 +1094,72 @@
     // ---- Juoksu ----
     easy_run_form: {
       id: 'easy_run_form',
-      name: 'Helppo juoksuasento',
+      name: 'Postura de carrera fácil',
       category: 'juoksu',
       equipment: [],
       benefits: [
-        'Rakentaa aerobista pohjaa maratonille',
-        'Mahdollistaa suuren viikkokilometrimäärän',
-        'Palauttaa kovempien treenien välillä'
+        'Construye base aeróbica para el maratón',
+        'Permite alta kilometraje semanal',
+        'Devoluciones entre ejercicios más duros'
       ],
       cues: [
-        'Hengitys rauhallinen – voit jutella',
-        'Lyhyt, kevyt askel; älä yliojenna',
-        'Hartiat rentoina, kädet ~90°',
-        'Katse eteen, ryhti kevyesti pystyssä'
+        'Respiración tranquila: puedes hablar',
+        'Paso corto, ligero; no sobrecarga',
+        'Hombros relajados, brazos ~90°',
+        'Ojos hacia adelante, pies suavemente rectos'
       ],
       mistakes: [
-        'Liian kova vauhti “helppoon”',
-        'Jäykät hartiat ja nyrkit',
-        'Pitkä askel kantapääiskulla'
+        'Ritmo demasiado fuerte para “fácil”',
+        'hombros y puños rígidos',
+        'Un largo paso con un tacón.'
       ],
       video: { type: 'link', url: ytSearch('easy run form cues midfoot'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     long_run_cues: {
       id: 'long_run_cues',
-      name: 'Pitkä lenkki – vinkit',
+      name: 'Tirada larga – consejos',
       category: 'juoksu',
       equipment: [],
       benefits: [
-        'Keskeinen maratonadaptaatio (kestävyys, rasva-aineenvaihdunta)',
-        'Harjoittelee nesteytystä ja ravintoa',
-        'Rakentaa henkistä kestävyyttä'
+        'Maratonadaptación clave (durabilidad, metabolismo de grasa)',
+        'Entrena hidratación y nutrición',
+        'Construir sostenibilidad espiritual'
       ],
       cues: [
-        'Aloita rauhallisesti, pidä vauhti helppona',
-        'Kävelykatkot ok etenkin alussa',
-        'Ota juotavaa jos yli ~90 min',
-        'Kuuntele kehoa – älä “sankariudu”'
+        'Empieza con calma, mantén un ritmo fácil',
+        'Caminando De acuerdo especialmente al principio',
+        'Bebe agua si pasas de ~90 min',
+        'Escucha el cuerpo - no "hero"'
       ],
       mistakes: [
-        'Liian kova alku',
-        'Ei nestettä pitkällä matkalla',
-        'Uusi varuste/ruoka kisaviikolla'
+        'Demasiado duro para empezar',
+        'Sin líquidos en tiradas largas',
+        'Equipo/comida nueva en la semana de carrera'
       ],
       video: { type: 'link', url: ytSearch('long run tips marathon training'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     tempo_cues: {
       id: 'tempo_cues',
-      name: 'Tempo / kynnysjuoksu',
+      name: 'Tempo / carrera de umbral',
       category: 'juoksu',
       equipment: [],
       benefits: [
-        'Nostaa laktaattikynnystä',
-        'Parantaa maratonvauhdin taloudellisuutta',
-        'Rakentaa “reipasta mutta hallittua” tuntumaa'
+        'Levantar el umbral de la lactancia',
+        'Mejorar la economía de la velocidad del maratón',
+        'Construye una sensación de ritmo alegre pero controlado'
       ],
       cues: [
-        'Lämmittely 10–15 min helpolla',
-        'Tempo: puhumisen rajoilla, ei sprintti',
-        'Tasainen hengitys, rentous hartioissa',
-        'Jäähdyttely 8–10 min'
+        'Calentamiento 10-15 minutos fácil',
+        'Tempo: al límite de poder hablar, no sprint',
+        'Respiración uniforme, hombros relajados',
+        'Refrigeración 8-10 min'
       ],
       mistakes: [
-        'Tempo muuttuu intervallisprintiksi',
-        'Liian vähäinen lämmittely',
-        'Ei palautuspäiviä tempon ympärillä'
+        'El tempo se convierte en sprint de intervalos',
+        'Sobrecalentamiento',
+        'Sin días de recuperación alredecor del tempo'
       ],
-      video: { type: 'link', url: ytSearch('tempo run threshold running form'), label: 'Ver vídeo (búsqueda YouTube)' }
+      video: { type: 'link', url: ytSearch('carrera tempo / umbral'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     interval_cues: {
       id: 'interval_cues',
@@ -1167,20 +1167,20 @@
       category: 'juoksu',
       equipment: [],
       benefits: [
-        'Parantaa VO2max- ja nopeuskestävyyttä',
-        'Tukee huippuvaiheen kisavalmiutta',
+        'Mejorar VO2max y resistencia a la velocidad',
+        'Apoya la preparación para la carrera en la etapa superior',
         'Tehostaa juoksun ekonomiaa'
       ],
       cues: [
-        'Huolellinen lämmittely + muutama kiihdytys',
-        'Työjaksot tasaisia, ei täyttä sprinttiä',
-        'Palautus hölkäten/kävellen suunnitelman mukaan',
-        'Muoto säilyy väsyneenä – lyhennä jos romahtaa'
+        'Calentamiento cuidadoso + unas aceleraciones',
+        'Los períodos de trabajo son planos, no espolvos completos',
+        'Regreso por jogging / caminar según plan',
+        'La forma permanece cansada - corto si el colapso'
       ],
       mistakes: [
-        'Liian kovat ensimmäiset vedot',
-        'Liian lyhyt palautus',
-        'Huono lämmittely'
+        'Las primeras apuestas demasiado duras',
+        'Recuperación demasiado corta',
+        'Calentamiento pobre'
       ],
       video: { type: 'link', url: ytSearch('interval running form VO2max workout'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -1190,414 +1190,414 @@
       category: 'juoksu',
       equipment: [],
       benefits: [
-        'Parantaa juoksuasentoa ja hermotusta',
-        'Lisää “terävyyttä” ilman kovaa kuormaa',
-        'Hyvä base-/taper-vaiheessa'
+        'Mejora la postura de carrera y la activación neuromuscular',
+        'Añadir "chispa" sin carga dura',
+        'Bueno en fase base/taper'
       ],
       cues: [
-        '20 s kiihdytys kohti reipasta, ei maksimisprinttiä',
-        'Rentous: kasvot, hartiat, kädet',
-        'Palautus kävellen/hölkäten 60–90 s',
-        'Pidä tekniikka siistinä'
+        '20 s de aceleración hacia un ritmo vivo, sin sprint máximo',
+        'Relajación: cara, hombros, manos',
+        'Regreso caminando / jogging 60-90 s',
+        'Mantenga la técnica limpia.'
       ],
       mistakes: [
-        'Täysi sprintti liian aikaisin',
-        'Jäykkyys ja hampaiden kiristys',
-        'Liian monta toistoa väsyneenä'
+        'Huella completa demasiado pronto',
+        'Altura y endurecimiento de los dientes',
+        'Demasiada repetición cuando cansado'
       ],
       video: { type: 'link', url: ytSearch('running strides form drill'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
 
-    // ---- Olkapään (kiertäjäkalvo) kuntoutus: kevyt kuorma, kivuton liikerata ----
+    // ---- Rehab hombro (manguito rotador): carga ligera, rango indoloro ----
     codman_pendulum: {
       id: 'codman_pendulum',
       name: 'Codman-heilurit',
       category: 'liikkuvuus',
       rehab: 'shoulder',
-      equipment: ['pöytä/tuoli tueksi'],
+      equipment: ['mesa/silla de apoyo'],
       benefits: [
-        'Liikuttaa olkaniveltä lähes ilman lihastyötä – rauhoittaa ärtynyttä kiertäjäkalvoa',
-        'Ylläpitää liikerataa ja nivelen ravitsemusta tulehdusvaiheessa',
-        'Hyvä aloitus jokaiseen kuntoutusrutiiniin ja kylmähoidon jälkeen'
+        'Mueva la articulación del hombro casi sin trabajo muscular - calma la membrana torcida irritada',
+        'Mantener el movimiento y la nutrición conjunta durante la inflamación',
+        'Buen inicio para cada rutina de rehab y tras el frío'
       ],
       cues: [
-        'Tue terve käsi pöytään, kumarru eteen ~45–90°, kipeä käsi roikkuu rentona',
-        'Anna käden heilua kehon liikkeen avulla: eteen–taakse, sivulta sivulle, pienet ympyrät',
-        'Olkapää täysin rento – liike tulee vartalosta, ei olkalihaksista',
+        'Apoyar una mano saludable a la mesa, doblar hacia adelante ~ 45-90 °, dolor de mano colgando suelto',
+        'Deja que el brazo oscile con el cuerpo: delante–atrás, de lado a lado, círculos pequeños',
+        'El hombro está completamente relajado - el movimiento viene del cuerpo, no de los músculos del hombro',
         '30–60 s / suunta, 2–3 kierrosta',
-        'Tee vain kivuttomalla alueella – pienennä liikettä, jos tuntuu kipua'
+        'Sólo en un área sin dolor - reducir el movimiento si siente dolor'
       ],
       mistakes: [
-        'Heiluttaa kättä olkalihaksilla (aktiivinen liike)',
-        'Liian iso liike tai painon pitäminen kädessä',
-        'Hartia nousee korviin'
+        'Mueve el brazo con el deltoides (movimiento activo)',
+        'Movimiento excesivo o peso en la mano',
+        'Los hombros están subiendo.'
       ],
       video: { type: 'link', url: ytSearch('codman pendulum exercise shoulder'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     wall_circles: {
       id: 'wall_circles',
-      name: 'Pallo/käsi seinää vasten – pyöritykset',
+      name: 'Pelota/mano contra la pared – círculos',
       category: 'liikkuvuus',
       rehab: 'shoulder',
-      equipment: ['pieni pallo (valinnainen)', 'seinä'],
+      equipment: ['pelota pequeña (opcional)', 'pared'],
       benefits: [
-        'Aktivoi kiertäjäkalvoa ja lapaluun tukilihaksia kevyesti, nivel tuettuna',
-        'Parantaa olkapään hallintaa ja asentotuntoa',
-        'Matala kuorma – sopii kun liikkeet alkavat olla kivuttomia'
+        'Activa el manguito rotador y los estabilizadores del omóplato con suavidad, articulación apoyada',
+        'Mejorar el control del hombro y la actitud',
+        'Carga baja: cuando los movimientos empiezan a ser indolores'
       ],
       cues: [
-        'Seiso seinän edessä, kämmen tai pieni pallo seinää vasten hartian korkeudella tai alempana',
-        'Paina kevyesti (~20–30 %) ja tee pieniä ympyröitä myötä- ja vastapäivään',
-        'Lapaluu hieman taakse ja alas, niska rentona',
-        '2×10 ympyrää / suunta',
-        'Tee vain kivuttomalla alueella – laske käden korkeutta, jos tuntuu kipua'
+        'Ponte frente a la pared, la palma o la bola pequeña contra la pared a la altura del hombro o abajo',
+        'Presione la luz (~ 20-36%) hasta los pequeños círculos en la parte delantera y el mostrador',
+        'Childback un poco atrás y abajo, cuello suelto',
+        '2×10 círculos / dirección',
+        'Sólo en un área indoloro - bajar la altura de la mano si siente dolor'
       ],
       mistakes: [
-        'Liian kova painallus tai liian korkealla',
-        'Ympyrät tehdään vartalolla, ei olkapäällä',
-        'Hartia kohoaa'
+        'Empuje demasiado duro o demasiado alto',
+        'Los círculos están hechos con cuerpo, no hombro',
+        'El hombro está subiendo'
       ],
       video: { type: 'link', url: ytSearch('ball on wall circles shoulder rehab'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     wall_walk: {
       id: 'wall_walk',
-      name: 'Seinäkävely sormilla',
+      name: 'Caminata de dedos por la pared',
       category: 'liikkuvuus',
       rehab: 'shoulder',
-      equipment: ['seinä'],
+      equipment: ['pared'],
       benefits: [
-        'Palauttaa olkapään nostoliikerataa (fleksio) avustetusti',
-        'Seinä kantaa käden painon – vähän kuormaa kiertäjäkalvolle',
+        'Retorno de elevación del hombro (flexion) asistido',
+        'La pared lleva el peso de la mano - un poco de carga en la película retorcida',
         'Konkreettinen mittari edistymiselle (kuinka korkealle kivutta)'
       ],
       cues: [
-        'Seiso seinän edessä käsivarren mitan päässä, sormet seinälle vyötärön korkeudelle',
-        '"Kävele" sormilla ylöspäin hitaasti, vain niin korkealle kuin kivutta pääsee',
-        'Pidä 2–3 s, kävele sormet takaisin alas – älä pudota kättä',
-        '2×10 toistoa; voit tehdä myös sivuttain seinään (abduktio)',
-        'Tee vain kivuttomalla alueella – ylin piste on kivun alapuolella'
+        'Ponte delante de la pared al final de la medida del brazo, dedos en la pared a la altura de la cintura',
+        '"Camina" con los dedos hacia arriba lentamente, sólo tan alto como puedas conseguir sin dolor',
+        'Sostén 2-3 pts, camina los dedos hacia abajo - no te sueltes la mano',
+        '2×10 repeticiones; también de lado contra la pared (abducción)',
+        'Solo en rango indoloro: el punto alto queda por debajo del dolor'
       ],
       mistakes: [
-        'Kurottaa kipualueelle "venyttääkseen"',
-        'Hartia nousee korviin / selkä notkolle',
-        'Käsi pudotetaan alas yläasennosta'
+        'Llegar a la zona del dolor "a estirar"',
+        'El hombro sube a las orejas / la espalda se ahueca',
+        'Suelte la mano de la posición superior'
       ],
       video: { type: 'link', url: ytSearch('finger wall walk shoulder exercise'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     stick_external_rotation: {
       id: 'stick_external_rotation',
-      name: 'Passiivinen ulkokierto kepillä',
+      name: 'Rotación externa pasiva con palo',
       category: 'liikkuvuus',
       rehab: 'shoulder',
-      equipment: ['keppi/harjanvarsi'],
+      equipment: ['palo / mango de escoba'],
       benefits: [
-        'Palauttaa ulkokiertoa ilman, että kipeä olkapää tekee työtä',
-        'Terve käsi tekee liikkeen – kiertäjäkalvo saa levätä',
-        'Vähentää jäykkyyttä tulehdusvaiheessa'
+        'Devuelve la rotación externa sin el trabajo del hombro doloroso',
+        'Mano sana hace movimiento - la membrana retorcida descansa',
+        'Reduce la rigidez durante la inflamación'
       ],
       cues: [
-        'Selinmakuu tai seisten, kipeän käden kyynärpää kyljessä 90° kulmassa (pyyhe kyynärpään alle)',
-        'Pidä keppiä molemmin käsin; terve käsi työntää kipeää kättä ulospäin',
-        'Kipeä käsi on rento – vain mukana',
-        'Pidä 3–5 s ääriasennossa, 2×10–15',
-        'Tee vain kivuttomalla alueella – kevyt venytys ok, kipu ei'
+        'Peso corporal o de pie, codo de la mano dolorido a 90 ° (toalla bajo el codo)',
+        'Mantenga el palo con ambas manos; una mano sana empuja hacia fuera la mano dolorida',
+        'Una mano dolorida se relaja - sólo con él',
+        'Tener 3-5 pts en posición extrema, 2 × 10-15',
+        'Solo en rango indoloro: estiramiento suave ok, dolor no'
       ],
       mistakes: [
-        'Kyynärpää irtoaa kyljestä',
-        'Kipeä käsi jännittää ja tekee työtä',
-        'Pakottaa kipualueelle'
+        'El codo está saliendo del costado.',
+        'El dolor de la mano es emocionante y funciona',
+        'Forzada a la zona de dolor'
       ],
       video: { type: 'link', url: ytSearch('passive external rotation stick shoulder supine'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     stick_flexion: {
       id: 'stick_flexion',
-      name: 'Fleksio kepillä (selinmakuu)',
+      name: 'Flexión con palo (tumbada)',
       category: 'liikkuvuus',
       rehab: 'shoulder',
-      equipment: ['keppi/harjanvarsi'],
+      equipment: ['palo / mango de escoba'],
       benefits: [
-        'Avustettu nostoliike – palauttaa liikerataa ylös turvallisesti',
-        'Selinmakuu tukee lapaluuta ja vähentää kompensointia',
-        'Terve käsi kantaa kuorman'
+        'Elevación asistida – recupera el rango hacia arriba con seguridad',
+        'El sabor del cuerpo apoya la paleta y reduce la compensación',
+        'Mano sana carga'
       ],
       cues: [
-        'Selinmakuu polvet koukussa, keppi molemmissa käsissä hartioiden levyisellä otteella',
-        'Nosta keppiä suorin käsin kohti kattoa ja edelleen pään yli – terve käsi johtaa',
-        'Vain niin pitkälle kuin kivutta pääsee, laske hitaasti',
+        'Rodillas enganchadas en gancho, pega en ambas manos con agarre en todo el hombro',
+        'Levanta el palo con las manos directas hacia el techo y todavía sobre la cabeza - una mano sana conduce',
+        'Sólo en cuanto al dolor, cuente lentamente',
         '2×10–15',
-        'Tee vain kivuttomalla alueella'
+        'Solo en el rango indoloro'
       ],
       mistakes: [
-        'Alaselkä nousee notkolle',
-        'Kipeä käsi tekee liikkeen yksin',
-        'Liian nopea tempo'
+        'La zona lumbar se ahueca',
+        'Una mano dolorida hace el movimiento solo',
+        'Demasiado rápido.'
       ],
       video: { type: 'link', url: ytSearch('supine shoulder flexion with stick wand'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     iso_external_rotation: {
       id: 'iso_external_rotation',
-      name: 'Isometrinen ulkokierto seinää vasten',
+      name: 'Rotación externa isométrica contra la pared',
       category: 'voima',
       rehab: 'shoulder',
-      equipment: ['seinä/ovenkarmi', 'pyyhe'],
+      equipment: ['pared / marco de puerta', 'toalla'],
       benefits: [
-        'Aktivoi ulkokiertäjiä ilman nivelliikettä – usein kivuton jo alkuvaiheessa',
-        'Isometria voi lievittää jännekipua',
-        'Pohja myöhemmälle kuminauhatyölle'
+        'Activa rotadores externos sin movimiento articular – a menudo indoloro desde el inicio',
+        'La isometría puede aliviar el dolor tendinoso',
+        'Fondo para el trabajo posterior de banda elástica'
       ],
       cues: [
-        'Seiso kylki seinää/karmia vasten, kyynärpää kyljessä 90°, rullattu pyyhe kyynärpään ja kyljen väliin',
-        'Paina käden ulkosyrjällä kevyesti seinää vasten (~20–30 % voimasta) – käsi ei liiku',
-        'Pidä 5–10 s, rentouta',
-        '2–3×10 toistoa',
-        'Tee vain kivuttomalla alueella – painalluksen pitää olla kivuton'
+        'De pie contra pared / marco, codo a lado 90 °, toalla enrollada entre codo y lado',
+        'Presione la superficie exterior de su mano suavemente contra la pared (~ 20-30% de la fuerza) - la mano no se mueve',
+        'Sostenga 5-10 pts, relájese',
+        '2–3×10 repeticiones',
+        'Sólo en un área indoloro - el empuje debe ser indoloro'
       ],
       mistakes: [
-        'Liian kova painallus',
-        'Hartia nousee tai vartalo kiertyy',
-        'Hengityksen pidättäminen'
+        'Demasiado fuerte.',
+        'El hombro se levanta o el cuerpo oscila',
+        'Contener la respiración'
       ],
       video: { type: 'link', url: ytSearch('isometric shoulder external rotation wall'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     iso_internal_rotation: {
       id: 'iso_internal_rotation',
-      name: 'Isometrinen sisäkierto seinää vasten',
+      name: 'Rotación interna isométrica contra la pared',
       category: 'voima',
       rehab: 'shoulder',
-      equipment: ['seinä/ovenkarmi', 'pyyhe'],
+      equipment: ['pared / marco de puerta', 'toalla'],
       benefits: [
-        'Aktivoi sisäkiertäjiä (lapaluunalainen lihas) ilman nivelliikettä',
+        'Activa rotadores internos (subescapular) sin movimiento articular',
         'Tasapainottaa ulkokiertoharjoittelua',
-        'Matala kuorma – sopii tulehdusvaiheeseen'
+        'Carga baja: adecuada en fase inflamatoria'
       ],
       cues: [
-        'Seiso ovenkarmin kulmassa, kyynärpää kyljessä 90°, kämmen karmia vasten',
-        'Paina kämmenellä kevyesti sisäänpäin (~20–30 %) – käsi ei liiku',
-        'Pidä 5–10 s, rentouta',
-        '2–3×10 toistoa',
-        'Tee vain kivuttomalla alueella'
+        'Ponte en la esquina del marco de la puerta, codo a lado 90 ° contra el marco de la palma',
+        'Con la mano presiona suavemente hacia adentro (~ 20-30%) - la mano no se mueve',
+        'Sostenga 5-10 pts, relájese',
+        '2–3×10 repeticiones',
+        'Solo en el rango indoloro'
       ],
       mistakes: [
-        'Liian kova painallus',
-        'Kyynärpää karkaa kyljestä',
-        'Vartalo kiertyy mukaan'
+        'Demasiado fuerte.',
+        'Los codos se escapan del lado',
+        'Su cuerpo está rodando.'
       ],
       video: { type: 'link', url: ytSearch('isometric shoulder internal rotation doorway'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     band_internal_rotation: {
       id: 'band_internal_rotation',
-      name: 'Sisäkierto kuminauhalla (kevyt)',
+      name: 'Rotación interna con banda (ligera)',
       category: 'voima',
       rehab: 'shoulder',
-      equipment: ['kuminauha (kevyin)'],
+      equipment: ['banda elástica (muy ligera)'],
       benefits: [
-        'Vahvistaa sisäkiertäjiä kevyellä vastuksella',
+        'Reforzar los propulsores interiores con resistencia a la luz',
         'Tasapainottaa olkanivelen lihaksistoa ulkokierron pariksi',
-        'Hallittu, pieni liike – vähän ärsytystä'
+        'Movimiento pequeño y controlado – poca irritación'
       ],
       cues: [
-        'Nauha ankkuroituna kyynärpään korkeudelle sivulle, kyynärpää kyljessä 90° (pyyhe väliin)',
-        'Vedä kyynärvarsi hitaasti vatsaa kohti, palauta hitaammin (2–3 s)',
-        'Kevyin nauha: 2–3×12–15 ilman kipua',
-        'Hartia alas, rinta auki',
-        'Tee vain kivuttomalla alueella'
+        'Tapa anclada a la altura del codo a lado, codo a lado 90 ° (entre toalla)',
+        'Tira lentamente el antebrazo hacia el abdomen, regresa más lentamente (2-3 pts)',
+        'Cinta ligera: 2-3 × 12-15 sin dolor',
+        'Hombro abajo, pecho abierto',
+        'Solo en el rango indoloro'
       ],
       mistakes: [
-        'Liian jäykkä nauha',
-        'Kyynärpää irtoaa kyljestä',
-        'Nopea, nykivä tempo'
+        'Cinta rígida',
+        'El codo está saliendo del costado.',
+        'Rápido, twitching tempo'
       ],
       video: { type: 'link', url: ytSearch('band internal rotation shoulder rehab'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     side_lying_external_rotation: {
       id: 'side_lying_external_rotation',
-      name: 'Kylkimakuu-ulkokierto (0–1 kg)',
+      name: 'Rotación externa de lado (0–1 kg)',
       category: 'voima',
       rehab: 'shoulder',
-      equipment: ['käsipaino 0,5–1 kg (valinnainen)', 'pyyhe'],
+      equipment: ['mancuerna 0,5–1 kg (opcional)', 'toalla'],
       benefits: [
-        'Yksi tehokkaimmista ulkokiertäjien (infraspinatus) vahvistajista',
-        'Painovoima antaa kevyen, tasaisen vastuksen',
-        'Aloita ilman painoa – nosta vasta kun 3×15 on kivuton'
+        'Uno de los amplificadores más eficaces para rotadores al aire libre (infraspinatus)',
+        'La gravedad da una resistencia ligera y uniforme',
+        'Empieza sin peso: aumenta solo cuando 3×15 sea indoloro'
       ],
       cues: [
-        'Makaa terveen puolen kyljellä, kipeän käden kyynärpää kyljessä 90°, rullattu pyyhe kyynärpään alle',
-        'Kierrä kyynärvarsi hitaasti ylös kohti kattoa, laske 3 s',
-        'Ensin ilman painoa, sitten 0,5–1 kg; 2–3×10–15',
-        'Älä makaa kipeän olkapään päällä',
-        'Tee vain kivuttomalla alueella'
+        'Acuéstate en el lado sano, con el codo de la mano dolorida en el lado 90 °, una toalla rodada debajo del codo',
+        'Retorcer lentamente el antebrazo hacia arriba hacia el techo, contar 3 pts',
+        'Primero sin peso, después 0,5-1 kg; 2 -3 × 10 -15',
+        'No mientas sobre un hombro dolorido',
+        'Solo en el rango indoloro'
       ],
       mistakes: [
-        'Liian painava käsipaino',
-        'Vartalo kiertyy taaksepäin',
-        'Kyynärpää nousee kyljestä'
+        'Muñeca de sobrepeso',
+        'El cuerpo gira hacia atrás',
+        'Los codos se levantan del lado'
       ],
       video: { type: 'link', url: ytSearch('side lying external rotation rotator cuff'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     band_row_low: {
       id: 'band_row_low',
-      name: 'Kevyt kuminauhasoutu matalalta',
+      name: 'Remo ligero con banda desde abajo',
       category: 'voima',
       rehab: 'shoulder',
-      equipment: ['kuminauha (kevyt)'],
+      equipment: ['banda elástica (ligera)'],
       benefits: [
-        'Vahvistaa lapaluun tukilihaksia (keski-/alaosan epäkäs, vinoneliöt)',
-        'Hyvä lapaluun asento keventää kiertäjäkalvon kuormaa',
-        'Matala vetokulma – ei käsiä pään yli'
+        'Reforzar los músculos de apoyo del hombro (malfuncionamiento de la parte media / inferior, organismos de diamante)',
+        'Una buena posición del omóplato alivia la carga del manguito',
+        'ángulo de baja tirada - sin manos sobre la cabeza'
       ],
       cues: [
-        'Ankkuroi kevyt nauha vyötärön korkeudelle tai alemmas, kädet edessä alhaalla',
-        'Vedä lapaluut ensin taakse ja alas, sitten kyynärpäät kylkien viereen',
-        'Hidas palautus 2–3 s; 2–3×12–15',
-        'Kyynärpäät alhaalla vartalon vieressä – ei hartian korkeudelle',
-        'Tee vain kivuttomalla alueella'
+        'Ancla una banda ligera a la altura de la cintura o más baja, manos delante abajo',
+        'Tirar las cuchillas del hombro hacia atrás y hacia abajo, luego codos junto a los lados',
+        'Retorno lento 2–3 s; 2–3×12–15',
+        'Codos abajo al lado del cuerpo - sin altura del hombro',
+        'Solo en el rango indoloro'
       ],
       mistakes: [
-        'Liian kova vastus → hartiat nousevat',
-        'Vetää vain käsillä ilman lapaluita',
-        'Kyynärpäät nousevat sivuille'
+        'Demasiada resistencia → los hombros suben',
+        'Sólo tire con las manos sin hojas de hombro',
+        'Los codos se elevan a los lados'
       ],
       video: { type: 'link', url: ytSearch('low row resistance band scapular retraction'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     cross_body_stretch: {
       id: 'cross_body_stretch',
-      name: 'Olkapään venytys rinnan yli (kevyt)',
+      name: 'Estiramiento de hombro cruzado (suave)',
       category: 'liikkuvuus',
       rehab: 'shoulder',
       equipment: [],
       benefits: [
-        'Venyttää olkapään takaosaa ja nivelkapselia pehmeästi',
-        'Vähentää takaosan kireyttä, joka voi ahtauttaa olkaniveltä',
-        'Helppo tehdä missä tahansa'
+        'Estreche la parte posterior del hombro y la cápsula articular suavemente',
+        'Reduce la tensión en la parte posterior del brazo que puede apretar el brazo superior',
+        'Fácil de hacer en cualquier sitio'
       ],
       cues: [
-        'Tuo kipeä käsi suorana rinnan yli, terve käsi tukee kyynärpään yläpuolelta',
-        'Vedä vain kevyesti – tunne pehmeä venytys olkapään takaosassa',
-        'Hartia alas, älä kierrä vartaloa',
+        'Esa mano dolorida sobre el pecho, una mano sana detrás del codo',
+        'Sólo tire suavemente - sentir suave estiramiento en la parte posterior del hombro',
+        'Hombro abajo, no gires el tronco',
         '20–30 s, 2–3 kertaa',
-        'Tee vain kivuttomalla alueella – nipistävä tunne olkapään etuosassa = kevennä heti'
+        'Sólo en un área indoloro - una sensación de pellizco en la parte delantera del hombro = aligerar inmediatamente'
       ],
       mistakes: [
-        'Vetää voimalla',
-        'Hartia nousee korviin',
-        'Venyttää kipuun asti'
+        'Tire con fuerza',
+        'Los hombros están subiendo.',
+        'Estréguese al dolor'
       ],
       video: { type: 'link', url: ytSearch('gentle cross body shoulder stretch'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
 
-    // ---- Olkapäätä säästävät jalka-/keskivartalovaihtoehdot ----
+    // ---- Alternativas pierna/core que protegen el hombro ----
     leg_press: {
       id: 'leg_press',
-      name: 'Jalkaprässi',
+      name: 'Prensa de piernas',
       category: 'voima',
-      equipment: ['jalkaprässi (sali)'],
+      equipment: ['prensa de piernas (gym)'],
       benefits: [
-        'Raskas jalkatyö ilman tankoa hartioilla – olkapää lepää',
-        'Kehittää etureisiä ja pakaroita juoksun tueksi',
-        'Helppo säätää kuormaa'
+        'Trabajos pesados sin barra en los hombros - el hombro descansa',
+        'Desarrollar muslos delanteros y nalgas para soportar correr',
+        'Fácil ajustar la carga'
       ],
       cues: [
-        'Selkä ja lantio tiukasti selkänojaa vasten',
-        'Jalat hartioiden levyisesti, polvet varpaiden suuntaan',
-        'Laske kunnes polvi ~90°, työnnä koko jalkapohjalla',
-        'Älä nojaa käsillä kahvoihin – kädet rennosti'
+        'Atrás y cadera firmemente contra la espalda',
+        'Pies al ancho de hombros, rodillas hacia los dedos',
+        'Calcular hasta la rodilla ~ 90 °, empujar la base de pie completo',
+        'No te apoyes en las manijas con las manos - manos sueltas'
       ],
       mistakes: [
-        'Lantio irtoaa penkistä pohjalla',
-        'Polvet lukkoon yläasennossa',
-        'Polvet romahtavat sisään'
+        'La cadera caerá del asiento en la parte inferior',
+        'Knees to lock in upper position',
+        'Las rodillas se hunden hacia dentro'
       ],
       video: { type: 'link', url: ytSearch('leg press proper form'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     wall_sit: {
       id: 'wall_sit',
-      name: 'Seinäistunta',
+      name: 'Sentadilla isométrica en pared',
       category: 'voima',
-      equipment: ['seinä'],
+      equipment: ['pared'],
       benefits: [
-        'Isometrinen etureisityö ilman välineitä ja ilman käsiä',
-        'Vahvistaa polven tukilihaksia (juoksijan polvi -ystävällinen kivun rajoissa)',
-        'Ei kuormita olkapäitä'
+        'Trabajo isométrico de cuádriceps sin material y sin manos',
+        'Fortalecer los músculos de apoyo a las rodillas (resistente a las rodillas dentro de los límites del dolor)',
+        'No carga los hombros'
       ],
       cues: [
-        'Selkä seinää vasten, laskeudu kunnes polvet ~90° (tai korkeammalle)',
-        'Paino kantapäillä, polvet nilkkojen päällä',
-        'Kädet rennosti reisillä tai sivuilla – älä paina seinää',
+        'Atrás contra la pared, tierra hasta las rodillas ~ 90 ° (o superior)',
+        'Peso en talones, rodillas en tobillos',
+        'Manos fáciles en los muslos o lados - no apretar la pared',
         '3×30–60 s'
       ],
       mistakes: [
-        'Polvet varpaiden yli eteen',
-        'Kädet työntävät reisistä',
-        'Hengityksen pidättäminen'
+        'Rodillas por delante de los dedos',
+        'Mis manos están empujando mis muslos.',
+        'Contener la respiración'
       ],
       video: { type: 'link', url: ytSearch('wall sit exercise form'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     sl_rdl_bw: {
       id: 'sl_rdl_bw',
-      name: 'Yhden jalan RDL ilman painoja',
+      name: 'RDL a una pierna sin peso',
       category: 'voima',
       equipment: [],
       benefits: [
-        'Takareidet, pakarat ja nilkan tasapaino ilman käsiin otettavaa kuormaa',
-        'Juoksulle tärkeä yhden jalan hallinta',
-        'Olkapää lepää – kädet lantiolla'
+        'muslos traseros, nalgas y balance del tobillo sin carga a mano',
+        'Un control de pierna importante para correr',
+        'El hombro descansa - manos sobre las caderas'
       ],
       cues: [
-        'Seiso yhdellä jalalla, polvi pehmeänä, kädet lantiolla',
-        'Kallistu lonkasta eteen, vapaa jalka suorana taakse – selkä suorana',
-        'Palaa pakaralla ylös; 3×8–10 / jalka',
-        'Tukeudu tarvittaessa kevyesti terveellä kädellä seinään'
+        'Ponte en una pierna, rodilla suave, manos en las caderas',
+        'inclinado de la cadera al frente, pie libre hacia atrás - espalda recta',
+        'Regresar con la nalgada arriba; 3 × 8 -10 / pie',
+        'Si es necesario, apoyarse en la pared con una mano sana'
       ],
       mistakes: [
-        'Selkä pyöristyy',
-        'Lantio kiertyy auki',
+        'Redondeado',
+        'La pelvis se abre/rota',
         'Tukipolvi lukossa'
       ],
       video: { type: 'link', url: ytSearch('single leg romanian deadlift bodyweight'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     step_up_bw: {
       id: 'step_up_bw',
-      name: 'Step-up ilman painoja',
+      name: 'Step-up sin peso',
       category: 'voima',
-      equipment: ['step-lauta / porras'],
+      equipment: ['step / escalón'],
       benefits: [
-        'Yhden jalan voima ja polven hallinta',
-        'Juoksuspesifi työntö ylöspäin',
-        'Ei käsiin otettavaa kuormaa'
+        'Fuerza a una pierna y control de rodilla',
+        'Presión de la cabeza',
+        'Sin carga en las manos'
       ],
       cues: [
-        'Koko jalkapohja korokkeelle, nouse etujalan voimalla',
-        'Polvi varpaiden suuntaan, vartalo pystyssä',
-        'Laske hallitusti; 3×10 / jalka',
-        'Kädet rennosti – ei käsipainoja olkapäätilassa'
+        'Toda la planta en el escalón; sube con la pierna delantera',
+        'Arrodíllate, cuerpo arriba.',
+        'Baja con control; 3×10 por pierna',
+        'Manos relajadas - no muñecos en el hombro'
       ],
       mistakes: [
         'Ponnistaa takajalalla',
-        'Polvi romahtaa sisään',
-        'Liian korkea koroke'
+        'La rodilla está cayendo.',
+        'Escalón demasiado alto'
       ],
       video: { type: 'link', url: ytSearch('bodyweight step up form'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     reverse_crunch: {
       id: 'reverse_crunch',
-      name: 'Käänteinen vatsarutistus',
+      name: 'Crunch inverso',
       category: 'voima',
       equipment: [],
       benefits: [
-        'Alavatsa ja lantion hallinta selinmakuulla',
-        'Kädet lattialla rentoina – ei olkapääkuormaa',
-        'Korvaa ab wheelin ja lankun olkapäätilassa'
+        'Control de abdomen bajo y pelvis tumbada boca arriba',
+        'Manos en el suelo relajadas - sin carga de hombro',
+        'Reemplazar la rueda de ab y la tabala en el espacio de hombro'
       ],
       cues: [
-        'Selinmakuu, kädet kyljillä lattialla rentoina, polvet 90°',
-        'Kierrä lantio irti lattiasta vatsalihaksilla, polvet kohti rintaa',
-        'Laske hitaasti 3 s; 3×10–12',
-        'Älä paina käsillä lattiaan'
+        'Sabor de la correa, manos en el piso lateral relajadas, rodillas 90 °',
+        'Twist la pelvis del suelo con abdominales, rodillas hacia el pecho',
+        'Baja lento 3 s; 3×10–12',
+        'No presione con las manos en el suelo'
       ],
       mistakes: [
-        'Heilauttaa jaloilla vauhtia',
-        'Painaa käsillä',
-        'Liian nopea lasku'
+        'Impulsa con balanceo de piernas',
+        'Presiona con las manos',
+        'Bajada demasiado rápida'
       ],
       video: { type: 'link', url: ytSearch('reverse crunch proper form'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -1607,48 +1607,48 @@
       id: 'calf_raise_eccentric',
       name: 'Eksentrinen pohjenosto',
       category: 'voima',
-      equipment: ['step-lauta'],
+      equipment: ['step'],
       benefits: [
-        'Kuormittaa akillesta ja pohjetta hallitusti',
-        'Yleinen progressiivinen jännekuormitus (treenivinkki)',
-        'Tukee pohkeiden eksentristä voimaa'
+        'Carga Aquiles y gemelo de forma controlada',
+        'Carga de tendón progresiva general (punto de entrenamiento)',
+        'Apoya la fuerza excéntrica en los terneros'
       ],
       cues: [
-        'Nouse kahdella jalalla ylös',
-        'Laske yhdellä jalalla hitaasti 3–4 s',
-        'Päkiät stepillä, kannat vapaana venytykseen',
-        'Kipu ≤3/10 – lopeta jos kipu nousee treenin jälkeen'
+        'Levántate con dos piernas.',
+        'Poco a poco cuenta 3-4 pts a un pie',
+        '♪ Fechas en el grifo, eres libre de estirar ♪',
+        'Dolor ≤ 3 / 10 - Stop if pain rises after exercise'
       ],
       mistakes: [
-        'Liian nopea lasku',
+        'Bajada demasiado rápida',
         'Maksimikipuun asti pakottaminen',
-        'Äkillinen volyymin nosto'
+        'Aumento del volumen'
       ],
       video: { type: 'link', url: ytSearch('eccentric calf raise achilles'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     band_external_rotation: {
       id: 'band_external_rotation',
-      name: 'Ulkokierto kuminauhalla (kevyt)',
+      name: 'Rotación externa con banda (ligera)',
       category: 'voima',
       rehab: 'shoulder',
-      equipment: ['kuminauha'],
+      equipment: ['banda elástica'],
       benefits: [
-        'Vahvistaa kiertäjäkalvon ulkokiertäjiä',
-        'Tukee olkapään hallintaa',
-        'Hyvä kevyt olkapäätyö ilman raskasta punnerrusta'
+        'Reforzar los rotadores externos de la película giratoria',
+        'Apoya el control del hombro',
+        'Buen trabajo ligero de hombro sin press pesado'
       ],
       cues: [
-        'Kyynärpää kyljessä ~90°',
-        'Kierrä kyynärvarsi ulos nauhaa vasten',
-        'Hidas tempo, pieni liike riittää – kevyin nauha, 2–3×12–15',
-        'Hartia alas – älä kohota olkapäätä',
-        'Rullattu pyyhe kyynärpään ja kyljen väliin helpottaa asentoa',
-        'Tee vain kivuttomalla alueella'
+        'Codo en el lado ~ 90 °',
+        'Gire el antebrazo contra la cinta',
+        'vuelo Tempo, basta un movimiento pequeño - venda más ligera, 2-3 × 12 -15',
+        'Hombro abajo – no lo encajes hacia la oreja',
+        'Toalla enrollada entre el codo y el lado para facilitar la posición',
+        'Solo en el rango indoloro'
       ],
       mistakes: [
-        'Kyynärpää irtoaa kyljestä',
-        'Liian jäykkä nauha / liian iso liike',
-        'Olkapään kohotus'
+        'El codo está saliendo del costado.',
+        'cinta rígida / movimiento demasiado grande',
+        'elevación del hombro'
       ],
       video: { type: 'link', url: ytSearch('band external rotation rotator cuff'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
@@ -1659,67 +1659,67 @@
       rehab: 'shoulder',
       equipment: [],
       benefits: [
-        'Aktivoi yläselän ja lapaluun tukilihaksia',
-        'Tukee olkapään asentoa',
-        'Helppo lämmittely-/taukoliike'
+        'Activa espalda alta y estabilizadores del omóplato',
+        'Apoya la posición del hombro',
+        'Fácil para calentar o en pausas'
       ],
       cues: [
-        'Seisten tai istuen: purista lapaluut yhteen',
-        'Lapaluut taakse ja hieman alas, pidä 3–5 s, rentouta',
-        '2–3×12–15 toistoa',
-        'Rinta auki, niska rentona',
-        'Tee vain kivuttomalla alueella'
+        'De pie o sentado: apretar las cuchillas del hombro juntas',
+        'Atrás y un poco abajo, espera 3 -5 pts, relájate',
+        '2–3×12–15 repeticiones',
+        'Pecho abierto, cuello relajado',
+        'Solo en el rango indoloro'
       ],
       mistakes: [
-        'Kohottaa hartioita korviin',
-        'Liioiteltu notko alaselässä',
-        'Pidättää hengitystä'
+        'Sube los hombros hacia las orejas',
+        'Bota Excesiva en la parte inferior de la espalda',
+        'Mantenga la respiración'
       ],
       video: { type: 'link', url: ytSearch('scapular squeeze exercise'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     glute_med_side_lie: {
       id: 'glute_med_side_lie',
-      name: 'Kylkimakuu-lonkan loitonnus (glute med)',
+      name: 'Glute- -hip stretch (glute med)',
       category: 'voima',
       equipment: [],
       benefits: [
-        'Vahvistaa keskipakaralihasta',
-        'Tukee lonkan hallintaa juoksussa',
-        'Hyödyllinen IT-jänne- ja polvikuorman hallintaan (treenivinkki)'
+        'Tacones medianos reforzados',
+        'Apoya el control de cadera en funcionamiento',
+        'Útil para controlar la carga de la banda IT y la rodilla (consejo)'
       ],
       cues: [
-        'Kylkimakuu, alavartalo suorana',
-        'Nosta yläjalka sivulle ilman kiertoa eteen',
-        'Hidas tempo 8–12 toistoa / puoli',
-        'Vartalo vakaana – älä kaadu taakse'
+        'De lado, tren inferior alineado',
+        'Lift top foot to side sin rotación hacia delante',
+        'Tempo vuelo 8-12 juego / lado',
+        'Cuerpo estable - no caer de vuelta'
       ],
       mistakes: [
         'Heiluttaa vartaloa',
-        'Kiertää jalkaa eteen (TFL-kompensaatio)',
-        'Liian nopea tempo'
+        'Pie de rotación hacia adelante (indemnización del FFT)',
+        'Demasiado rápido.'
       ],
       video: { type: 'link', url: ytSearch('side lying hip abduction glute med'), label: 'Ver vídeo (búsqueda YouTube)' }
     },
     towel_stretch_foot: {
       id: 'towel_stretch_foot',
-      name: 'Pyyhevenytys jalkaterälle',
+      name: 'Estiramiento con toalla del pie',
       category: 'liikkuvuus',
-      equipment: ['pyyhe'],
+      equipment: ['toalla'],
       benefits: [
-        'Venyttää pohjetta ja jalkapohjan kalvoa pehmeästi',
+        'Estreche la base y la membrana base suavemente',
         'Yleinen aamu-/iltarutiini plantaarikivun kevennykseen (treenivinkki)',
-        'Helppo kotona ilman välineitä (pyyhe riittää)'
+        'Fácil en casa sin material (basta una toalla)'
       ],
       cues: [
-        'Istu, pyyhe jalkaterän ympäri',
-        'Vedä pehmeästi varpaita kohti – tunne venytys pohkeessa/pohjassa',
+        'Siéntate, toalla alrededor del pie',
+        'Tire suavemente hacia los dedos de los pies - sensación de estiramiento en el becerro / fondo',
         '20–30 s, 2–3 kertaa',
-        'Kevyt venytys ok, terävä kipu ei'
+        'Ligero estiramiento bien, dolor agudo no'
       ],
       mistakes: [
-        'Nykäisee voimalla',
-        'Pakottaa kivuliaaseen ääriasentoon',
-        'Unohtaa vastakkaisen jalan'
+        'Tos con fuerza',
+        'Forzar una posición extrema dolorosa',
+        'Olvida la pierna contraria'
       ],
       video: { type: 'link', url: ytSearch('towel stretch plantar fascia'), label: 'Ver vídeo (búsqueda YouTube)' }
     }
@@ -1737,13 +1737,13 @@
     return Object.keys(EXERCISES);
   }
 
-  /** Kuormittaako liike olkapäätä (kiertäjäkalvo)? Tuntematon id → false. */
+  /** ¿Carga el hombro (manguito)? id desconocido → false. */
   function loadsShoulder(id) {
     const e = EXERCISES[id];
     return !!(e && e.loadsShoulder);
   }
 
-  /** Olkapään kuntoutusliikkeet (rehab: 'shoulder'). */
+  /** Ejercicios de rehab de hombro (rehab: 'shoulder'). */
   function shoulderRehabExercises() {
     return Object.values(EXERCISES).filter((e) => e.rehab === 'shoulder');
   }

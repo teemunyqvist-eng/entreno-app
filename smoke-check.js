@@ -55,6 +55,23 @@ if (runs.length === 12) ok('12 runs'); else bad('runs count ' + runs.length);
 const titlesOk = coach.days.every(d => d.title && /[áéíóúñÁÉÍÓÚÑa-zA-Z]/.test(d.title));
 if (titlesOk) ok('Spanish titles present'); else bad('titles');
 
+// No classic Finnish UI chrome in display files
+const fiUi = [/Tänään/, /Kevennä/, /Kovenna/, /Lämmittely/, /Loppuverryttely/,
+  /Asetukset/, /Edistyminen/, /Liikkeet/, /Treeni valmis/, /Liike poistettu/,
+  /Paina Aloita/, /Seuraava viesti/, />Kaikki</, />Aloita</, /placeholder="esim\./,
+  /KEVENNETTY/, /KOVENNETTU/, /Lihashuolto –/, /tai: \$\{/];
+const uiFiles = { app, plan, exercises: fs.readFileSync(path.join(ROOT,'exercises.js'),'utf8'),
+  progress: fs.readFileSync(path.join(ROOT,'progress.js'),'utf8'), index };
+let fiHits = 0;
+for (const [name, src] of Object.entries(uiFiles)) {
+  for (const re of fiUi) {
+    if (re.test(src)) { bad('FI UI in ' + name + ': ' + re); fiHits++; }
+  }
+}
+if (!fiHits) ok('no classic FI UI chrome');
+if (app.includes("speakEs") && app.includes("es-ES")) ok('voice es-ES'); else bad('voice not es-ES');
+if (app.includes('Todos</button>') && app.includes('Empezar</button>')) ok('ES filter/coach buttons'); else bad('ES buttons');
+
 // HTTP smoke if server up
 function httpGet(url) {
   return new Promise((resolve, reject) => {

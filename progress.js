@@ -113,9 +113,9 @@
   function compressImageFile(file, opts) {
     const o = Object.assign({}, DEFAULT_COMPRESS, opts || {});
     return new Promise((resolve, reject) => {
-      if (!file) return reject(new Error('Ei tiedostoa'));
+      if (!file) return reject(new Error('No hay archivo'));
       if (typeof document === 'undefined' || typeof Image === 'undefined') {
-        return reject(new Error('Kuvan pakkaus vaatii selaimen'));
+        return reject(new Error('La compresión de imagen requiere el navegador'));
       }
       const url = URL.createObjectURL(file);
       const img = new Image();
@@ -157,7 +157,7 @@
       };
       img.onerror = () => {
         URL.revokeObjectURL(url);
-        reject(new Error('Kuvan lataus epäonnistui'));
+        reject(new Error('No se pudo cargar la imagen'));
       };
       img.src = url;
     });
@@ -201,7 +201,7 @@
   }
 
 
-  // ---------- Valmentajan palaute (Edistyminen) ----------
+  // ---------- Entrenadorn palaute (Progreso) ----------
   function isoAddDays(iso, n) {
     const [y, m, d] = String(iso).slice(0, 10).split('-').map(Number);
     const x = new Date(y, m - 1, d);
@@ -294,80 +294,80 @@
     }
     if (m.daysSinceLast != null && m.daysSinceLast >= 4) {
       add('kick', 'idle', [
-        `Viimeisin merkitty treeni ${m.daysSinceLast} päivää sitten. El sofá no corre por ti. Muévete hoy, aunque sea suave.`,
-        `${m.daysSinceLast} päivää ilman treeniä. Si el día es difícil, incluso 20 min cuentan.`
+        `Último entreno marcado hace ${m.daysSinceLast} días. El sofá no corre por ti. Muévete hoy, aunque sea suave.`,
+        `${m.daysSinceLast} días sin entreno. Si el día es difícil, incluso 20 min cuentan.`
       ]);
     }
-    // Viikkokilometrit
+    // Semanakilometrit
     if (m.km7 > 0 || m.kmPrev7 > 0) {
       const p = pct(m.km7, m.kmPrev7);
       if (m.kmPrev7 > 0 && p != null && p >= 40) {
         add('kick', 'km7-ramp', [
-          `${fmt(m.km7)} km viime 7 päivänä, +${p} % edellisestä. Buena gana, pero con paciencia: cuida rodillas y Aquiles.`
+          `${fmt(m.km7)} km en los últimos 7 días, +${p} % respecto a antes. Buena gana, pero con paciencia: cuida rodillas y Aquiles.`
         ]);
       } else if (m.kmPrev7 > 0 && p != null && p >= 10) {
         add('praise', 'km7-up', [
-          `${fmt(m.km7)} km viime 7 päivänä – ${fmt(m.km7 - m.kmPrev7)} km enemmän kuin edellisellä viikolla. Así se construye: un día a la vez.`,
-          `Kilometrit nousussa: ${fmt(m.kmPrev7)} → ${fmt(m.km7)} km / 7 pv. Sin fiesta: seguimos.`
+          `${fmt(m.km7)} km en los últimos 7 días – ${fmt(m.km7 - m.kmPrev7)} km más que la semana anterior. Así se construye: un día a la vez.`,
+          `Kilómetros al alza: ${fmt(m.kmPrev7)} → ${fmt(m.km7)} km / 7 días. Sin fiesta: seguimos.`
         ]);
       } else if (m.kmPrev7 > 0 && p != null && p <= -30) {
         add('kick', 'km7-down', [
-          `Viikkokilometrit romahti: ${fmt(m.kmPrev7)} → ${fmt(m.km7)} km. Si es enfermedad, descansa. Si es comodidad, muévete un poco.`,
-          `${fmt(m.km7)} km viime 7 päivänä vs ${fmt(m.kmPrev7)} km sitä ennen. La meta 21k no entiende de excusas blandas.`
+          `Los km semanales cayeron: ${fmt(m.kmPrev7)} → ${fmt(m.km7)} km. Si es enfermedad, descansa. Si es comodidad, muévete un poco.`,
+          `${fmt(m.km7)} km en los últimos 7 días vs ${fmt(m.kmPrev7)} km antes. La meta 21k no entiende de excusas blandas.`
         ]);
       } else if (m.kmPrev7 === 0 && m.km7 > 0) {
-        add('praise', 'km7-back', [`${fmt(m.km7)} km viime 7 päivänä. Ya hay movimiento: mantén el hábito.`]);
+        add('praise', 'km7-back', [`${fmt(m.km7)} km en los últimos 7 días. Ya hay movimiento: mantén el hábito.`]);
       } else {
-        add('info', 'km7-flat', [`${fmt(m.km7)} km viime 7 päivänä, edellinen viikko ${fmt(m.kmPrev7)} km. Tasaista. Tasainen on hyvä, kunhan se ei ole mukava.`]);
+        add('info', 'km7-flat', [`${fmt(m.km7)} km en los últimos 7 días, semana anterior ${fmt(m.kmPrev7)} km. Estable. Estable está bien, siempre que no sea comodidad.`]);
       }
     }
     // 4 viikon jakso
     if (m.kmPrev28 > 0 && m.km28 > 0) {
       const p = pct(m.km28, m.kmPrev28);
-      if (p >= 10) add('praise', 'km28-up', [`Km de 4 semanas ${fmt(m.kmPrev28)} → ${fmt(m.km28)} km (+${p} %). Pohja kasvaa. Tu 21k se acerca y tú estás más preparada.`]);
-      else if (p <= -25) add('kick', 'km28-down', [`Km de 4 semanas laski ${fmt(m.kmPrev28)} → ${fmt(m.km28)} km (${p} %). 21kkunto ei synny puolikkailla viikoilla. Takaisin rytmiin.`]);
+      if (p >= 10) add('praise', 'km28-up', [`Km de 4 semanas ${fmt(m.kmPrev28)} → ${fmt(m.km28)} km (+${p} %). La base crece. Tu 21k se acerca y tú estás más preparada.`]);
+      else if (p <= -25) add('kick', 'km28-down', [`Km de 4 semanas bajaron ${fmt(m.kmPrev28)} → ${fmt(m.km28)} km (${p} %). La forma de 21k no nace con semanas a medias. Vuelve al ritmo.`]);
     }
     // Pitkä lenkki
     if (m.long28 > 0 && m.longPrev28 > 0) {
-      if (m.long28 > m.longPrev28 + 0.4) add('praise', 'long-up', [`Pisin lenkki nyt ${fmt(m.long28)} km – ${fmt(m.long28 - m.longPrev28)} km pidempi kuin edellisellä jaksolla. 32 km seinä kaadetaan juuri näin.`]);
-      else if (m.long28 < m.longPrev28 * 0.75) add('kick', 'long-down', [`Pisin lenkki 4 viikkoon ${fmt(m.long28)} km, aiemmin ${fmt(m.longPrev28)} km. Pitkä lenkki on 21kin selkäranka – älä anna sen surkastua.`]);
+      if (m.long28 > m.longPrev28 + 0.4) add('praise', 'long-up', [`Tirada más larga ahora ${fmt(m.long28)} km – ${fmt(m.long28 - m.longPrev28)} km más que el periodo anterior. Así se derriba el muro de los 32 km.`]);
+      else if (m.long28 < m.longPrev28 * 0.75) add('kick', 'long-down', [`Tirada más larga en 4 semanas: ${fmt(m.long28)} km, antes ${fmt(m.longPrev28)} km. La larga es la columna del 21k – no la dejes encogerse.`]);
     } else if (m.long28 >= 10) {
-      add('praise', 'long-has', [`Pisin lenkki viimeiseen 4 viikkoon: ${fmt(m.long28)} km. Hyvä. Seuraava vähän pidempi, ei paljon.`]);
+      add('praise', 'long-has', [`Tirada más larga en 4 semanas: ${fmt(m.long28)} km. Bien. La siguiente un poco más larga, no mucho.`]);
     }
     // Putki
     if (m.weekStreak >= 2) {
       add('praise', 'streak', [
-        `${m.weekStreak} viikkoa putkeen vähintään 3 treeniä. Kurinalaisuus voittaa motivaation joka kerta. Älä katkaise ketjua.`,
-        `Putki: ${m.weekStreak} viikkoa ≥3 treeniä. Kukaan ei näe näitä aamuja – siksi ne ratkaisee.`
+        `${m.weekStreak} semanas seguidas con al menos 3 entrenos. La disciplina gana a la motivación cada vez. No rompas la racha.`,
+        `Racha: ${m.weekStreak} semanas ≥3 entrenos. Nadie ve estas mañanas – por eso importan.`
       ]);
     }
     if (m.totalWorkouts && m.thisWeekCount === 0 && m.dowIndex >= 3) {
-      add('kick', 'week-zero', ['Viikko on puolessa välissä ja treenejä nolla. Ei kokousta itsesi kanssa – tee tänään se mitä suunnitelmassa lukee.']);
+      add('kick', 'week-zero', ['La semana va a medias y entrenos a cero. Sin reunión contigo misma – haz hoy lo que pone el plan.']);
     } else if (m.thisWeekCount >= 4) {
-      add('praise', 'week-busy', [`${m.thisWeekCount} treeniä tällä viikolla. Hyvää työtä – ja muista että lepo on osa suunnitelmaa, ei palkinto.`]);
+      add('praise', 'week-busy', [`${m.thisWeekCount} entrenos esta semana. Buen trabajo – y recuerda que el descanso es parte del plan, no un premio.`]);
     }
     // Paino
     if (m.weightKg != null) {
       if (m.weightDelta != null) {
         const perWeek = (m.weightDelta / m.weightSpanDays) * 7;
         if (perWeek <= -0.9) {
-          add('kick', 'w-fast', [`Paino ${fmt(m.weightRefKg)} → ${fmt(m.weightKg)} kg liian nopeasti (~${fmt(-perWeek)} kg/vk). Maratoonari ei treenaa tyhjällä tankilla – syö kunnolla, varsinkin hiilarit treenipäivinä.`]);
+          add('kick', 'w-fast', [`Peso ${fmt(m.weightRefKg)} → ${fmt(m.weightKg)} kg demasiado rápido (~${fmt(-perWeek)} kg/sem). Quien corre no entrena con el depósito vacío – come bien, sobre todo carbos en días de entreno.`]);
         } else if (m.weightDelta <= -0.3) {
           add('praise', 'w-down', [
-            `Paino ${fmt(m.weightRefKg)} → ${fmt(m.weightKg)} kg (${fmt(m.weightDelta)} kg). Kevyempi runko = vähemmän iskua joka askeleella. Rauhallinen tahti, jatka.`,
-            `${fmt(m.weightDelta)} kg sitten ${m.weightRefDate.slice(8, 10)}.${m.weightRefDate.slice(5, 7)}. Hyvä suunta – ei pikadieettejä, kilometrit hoitaa loput.`
+            `Peso ${fmt(m.weightRefKg)} → ${fmt(m.weightKg)} kg (${fmt(m.weightDelta)} kg). Cuerpo más ligero = menos impacto en cada paso. Ritmo calmado, sigue.`,
+            `${fmt(m.weightDelta)} kg desde ${m.weightRefDate.slice(8, 10)}.${m.weightRefDate.slice(5, 7)}. Buena dirección – sin dietas rápidas; los km hacen el resto.`
           ]);
         } else if (m.weightDelta >= 1) {
-          add('kick', 'w-up', [`Paino +${fmt(m.weightDelta)} kg (${fmt(m.weightRefKg)} → ${fmt(m.weightKg)} kg). Ei paniikkia, mutta rehellisyys: syöminen ja liike ei nyt täsmää. Korjaa se.`]);
+          add('kick', 'w-up', [`Peso +${fmt(m.weightDelta)} kg (${fmt(m.weightRefKg)} → ${fmt(m.weightKg)} kg). Sin pánico, pero con honestidad: comida y movimiento no cuadran ahora. Corrígelo.`]);
         } else {
-          add('info', 'w-flat', [`Paino pysyy ~${fmt(m.weightKg)} kg. Vakaa on hyvä – nyt kilometrit puhuu.`]);
+          add('info', 'w-flat', [`El peso se mantiene ~${fmt(m.weightKg)} kg. Estable está bien – ahora hablan los kilómetros.`]);
         }
         if (m.weightFirstKg != null && m.weightFirstDate !== m.weightRefDate && m.weightKg <= m.weightFirstKg - 1) {
-          add('praise', 'w-long', [`Pitkä linja: ${fmt(m.weightFirstKg)} → ${fmt(m.weightKg)} kg ${m.weightFirstDate.slice(8, 10)}.${m.weightFirstDate.slice(5, 7)}.${m.weightFirstDate.slice(0, 4)} lähtien. Hidas ja pysyvä voittaa nopean ja katoavan.`]);
+          add('praise', 'w-long', [`Línea larga: ${fmt(m.weightFirstKg)} → ${fmt(m.weightKg)} kg desde ${m.weightFirstDate.slice(8, 10)}.${m.weightFirstDate.slice(5, 7)}.${m.weightFirstDate.slice(0, 4)}. Lento y estable gana a rápido y fugaz.`]);
         }
       }
       if (m.weighDaysAgo != null && m.weighDaysAgo > 40) {
-        add('info', 'w-stale', [`Viimeisin paino ${m.weighDaysAgo} päivää sitten. Lo que no se mide no se guía: añade un registro mensual.`]);
+        add('info', 'w-stale', [`Último peso hace ${m.weighDaysAgo} días. Lo que no se mide no se guía: añade un registro mensual.`]);
       }
     }
     return c;
@@ -378,7 +378,7 @@
     const m = progressMetrics(input || {});
     const list = coachCandidates(m);
     if (!list.length) {
-      list.push({ tone: 'info', key: 'default', variants: ['Tee päivän treeni ja merkkaa se. Edistyminen ei ole fiilis, se on merkintä kerrallaan.'] });
+      list.push({ tone: 'info', key: 'default', variants: ['Haz el entreno del día y márcalo. El progreso no es un feeling: es una marca cada vez.'] });
     }
     const sig = [m.today, m.totalWorkouts, m.km28, m.weightKg, m.weightDate].join('|');
     const h = hashStr(sig);

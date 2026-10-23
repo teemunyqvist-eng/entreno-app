@@ -139,13 +139,13 @@
     return round1(clamp(v, 12, 90));
   }
 
-  // --- Voimaharjoitukset (strukturoidut exercise-id:t) ---
+  // --- Fuerzaharjoitukset (strukturoidut exercise-id:t) ---
   function formatStrengthDetails(tmpl) {
     const lines = [tmpl.headline || tmpl.name];
     if (tmpl.equipmentNote) lines.push(tmpl.equipmentNote);
     (tmpl.exercises || []).forEach(function (ex) {
       let line = '• ' + (ex.label || ex.id) + (ex.sets ? ' ' + ex.sets : '');
-      if (ex.alt) line += ' (tai ' + ex.alt + ')';
+      if (ex.alt) line += ' (o ' + ex.alt + ')';
       lines.push(line);
     });
     if (tmpl.restNote) lines.push(tmpl.restNote);
@@ -161,16 +161,16 @@
       altId: 'homeA',
       headline: 'Cuerpo completo A – gym (movimientos base, RPE conservador)',
       exercises: [
-        { id: 'back_squat', label: 'Takakyykky', sets: '3×6–8 · RPE 6–7' },
-        { id: 'bench_press', label: 'Penkkipunnerrus (tanko tai käsipainot)', sets: '3×6–8 · RPE 6–7' },
-        { id: 'deadlift', label: 'Maastaveto', sets: '3×5 · RPE 6–7' },
-        { id: 'lat_pulldown', label: 'Ylätalja', sets: '3×8–10 · RPE 6–7', altId: 'seated_cable_row', alt: 'alataljasoutu (kaapeli)' },
-        { id: 'plank', label: 'Lankku', sets: '3×30–45 s' }
+        { id: 'back_squat', label: 'Sentadilla trasera', sets: '3×6–8 · RPE 6–7' },
+        { id: 'bench_press', label: 'Press de banca (barra o mancuernas)', sets: '3×6–8 · RPE 6–7' },
+        { id: 'deadlift', label: 'Peso muerto', sets: '3×5 · RPE 6–7' },
+        { id: 'lat_pulldown', label: 'Jalón al pecho', sets: '3×8–10 · RPE 6–7', altId: 'seated_cable_row', alt: 'remo en polea baja' },
+        { id: 'plank', label: 'Plancha', sets: '3×30–45 s' }
       ],
-      restNote: 'Lepo 90–150 s.',
+      restNote: 'Descanso 90–150 s.',
       notes:
-        'Kuormat konservatiivisesti RPE 6–7 (2–4 toistoa varassa) – ei %1RM-arvailua (ei 1RM-dataa). ' +
-        'Baseline: ~5 tiukkaa leuanvetoa, ~30–35 punnerrusta. Pidä tekniikka siistinä.'
+        'Cargas conservadoras RPE 6–7 (2–4 repeticiones en reserva) – sin adivinar % de 1RM. ' +
+        'Referencia: ~5 dominadas estrictas, ~30–35 flexiones. Mantén la técnica limpia.'
     },
     gymB: {
       id: 'gymB',
@@ -179,16 +179,16 @@
       altId: 'homeB',
       headline: 'Cuerpo completo B – gym (movimientos base, RPE conservador)',
       exercises: [
-        { id: 'front_squat', label: 'Etukyykky', sets: '3×6–8 · RPE 6–7', altId: 'goblet_squat', alt: 'goblet-kyykky' },
-        { id: 'incline_bench', label: 'Vinopenkki (tanko/käsipainot)', sets: '3×8 · RPE 6–7', altId: 'cable_chest_press', alt: 'kaapelipunnerrus' },
-        { id: 'rdl', label: 'Romanian maastaveto', sets: '3×6–8 · RPE 6–7' },
-        { id: 'bent_over_row', label: 'Kulmasoutu', sets: '3×8 · RPE 6–7', altId: 'seated_cable_row', alt: 'istuva kaapelisoutu' },
-        { id: 'ball_rollout', label: 'Pallorullaus', sets: '3×8–10', altId: 'dead_bug', alt: 'dead bug' }
+        { id: 'front_squat', label: 'Sentadilla frontal', sets: '3×6–8 · RPE 6–7', altId: 'goblet_squat', alt: 'sentadilla goblet' },
+        { id: 'incline_bench', label: 'Press inclinado (barra / mancuernas)', sets: '3×8 · RPE 6–7', altId: 'cable_chest_press', alt: 'press de pecho en polea' },
+        { id: 'rdl', label: 'Peso muerto rumano', sets: '3×6–8 · RPE 6–7' },
+        { id: 'bent_over_row', label: 'Remo inclinado', sets: '3×8 · RPE 6–7', altId: 'seated_cable_row', alt: 'remo sentada en polea' },
+        { id: 'ball_rollout', label: 'Rueda / balón abdominal', sets: '3×8–10', altId: 'dead_bug', alt: 'dead bug' }
       ],
-      restNote: 'Lepo 90–150 s.',
+      restNote: 'Descanso 90–150 s.',
       notes:
-        'RPE 6–7, ei raskaita %-kuormia. Yksinkertainen kokonaisuus. ' +
-        'Jos edellinen päivä oli salibandy: lyhennä tai kevennä.'
+        'RPE 6–7, sin cargas % pesadas. Bloque sencillo. ' +
+        'Si el día anterior era floorball: acorta o aligera.'
     },
     homeA: {
       id: 'homeA',
@@ -196,19 +196,19 @@
       location: 'koti',
       altId: 'gymA',
       headline: 'Cuerpo completo A – casa (dominadas + flexiones)',
-      equipmentNote: 'Välineet: kuminauhat, säädettävät käsipainot ≤10 kg, leuanvetotanko, step-lauta, ab wheel.',
+      equipmentNote: 'Equipo: bandas, mancuernas ajustables ≤ 10 kg, barra de chin-up, step, rueda abdominal.',
       exercises: [
-        { id: 'goblet_squat', label: 'Goblet-kyykky (käsipainot)', sets: '3×10', altId: 'band_squat', alt: 'kuminauhakyykky' },
-        { id: 'push_up', label: 'Punnerrus (kehonpaino)', sets: '3×10–15', altId: 'floor_press', alt: 'lattia-/korokepunnerrus käsipainoilla' },
-        { id: 'rdl_db', label: 'Romanian maastaveto käsipainoilla (tai kuminauha)', sets: '3×10' },
-        { id: 'pullup', label: 'Leuanveto (max ~5 tiukkaa)', sets: '3×3–5', altId: 'band_assisted_pullup', alt: 'kuminauha-avusteinen / scap-pull 3×5–8' },
-        { id: 'ab_wheel', label: 'Ab wheel-rullaus (polvet ok)', sets: '3×6–10' }
+        { id: 'goblet_squat', label: 'Sentadilla goblet (mancuernas)', sets: '3×10', altId: 'band_squat', alt: 'sentadilla con banda' },
+        { id: 'push_up', label: 'Flexiones', sets: '3×10–15', altId: 'floor_press', alt: 'press de suelo / banco con mancuernas' },
+        { id: 'rdl_db', label: 'Peso muerto rumano con mancuernas (o banda)', sets: '3×10' },
+        { id: 'pullup', label: 'Dominadas (máx. ~5 estrictas)', sets: '3×3–5', altId: 'band_assisted_pullup', alt: 'asistidas con banda / escápulas 3×5–8' },
+        { id: 'ab_wheel', label: 'Rueda abdominal (de rodillas ok)', sets: '3×6–10' }
       ],
-      restNote: 'Lepo 60–90 s.',
+      restNote: 'Descansa 60–90 s.',
       notes:
-        'Leuanveto: aloita scap-pull + kuminauha-avusteisilla; lisää tiukkoja 3–5 toiston setteihin. ' +
-        'Punnerrus: 3×10–15 kehonpainolla, etene toistoissa ennen lisävastusta. ' +
-        'Baseline ~5 tiukkaa leuanvetoa / ~30–35 punnerrusta.'
+        'Dominadas: empieza con escápulas + banda asistida; añade 3–5 estrictas cuando puedas. ' +
+        'Flexiones: 3×10–15 con peso corporal; sube repeticiones antes de añadir resistencia. ' +
+        'Referencia: ~5 dominadas estrictas / ~30–35 flexiones.'
     },
     homeB: {
       id: 'homeB',
@@ -216,20 +216,20 @@
       location: 'koti',
       altId: 'gymB',
       headline: 'Cuerpo completo B – casa',
-      equipmentNote: 'Välineet: kuminauhat, käsipainot ≤10 kg, leuanvetotanko, step-lauta, ab wheel.',
+      equipmentNote: 'Equipo: bandas, mancuernas ≤ 10 kg, barra de chin-up, step, rueda abdominal.',
       exercises: [
-        { id: 'lunge', label: 'Askelkyykky step-laudalle / taakse (käsipainot)', sets: '3×8/puoli' },
-        { id: 'push_up', label: 'Punnerrus (kehonpaino)', sets: '3×10–15', altId: 'band_press', alt: 'kuminauhapunnerrus / pystypunnerrus' },
-        { id: 'single_leg_hip_thrust', label: 'Yhden jalan lantionnosto stepillä', sets: '3×8/puoli' },
-        { id: 'band_row', label: 'Kuminauhasoutu', sets: '3×10', altId: 'inverted_row', alt: 'inverted row tangolla' },
-        { id: 'scap_pull', label: 'Scap-pull / kuminauha-leuanveto', sets: '3×5–8', altId: 'band_assisted_pullup', alt: 'band-assisted pull-up' },
-        { id: 'calf_raise', label: 'Pohjenosto step-laudalla', sets: '3×12' },
-        { id: 'ab_wheel', label: 'Ab wheel', sets: '3×6–10', altId: 'plank', alt: 'lankku 3×30–45 s' }
+        { id: 'lunge', label: 'Zancada / step-up (mancuernas)', sets: '3×8/lado' },
+        { id: 'push_up', label: 'Flexiones', sets: '3×10–15', altId: 'band_press', alt: 'press con banda / press de hombro' },
+        { id: 'single_leg_hip_thrust', label: 'Puente de glúteos a una pierna', sets: '3×8/lado' },
+        { id: 'band_row', label: 'Remo con banda', sets: '3×10', altId: 'inverted_row', alt: 'remo invertido con barra' },
+        { id: 'scap_pull', label: 'Escápulas / jalón con banda', sets: '3×5–8', altId: 'band_assisted_pullup', alt: 'dominada asistida con banda' },
+        { id: 'calf_raise', label: 'Elevación de gemelos en step', sets: '3×12' },
+        { id: 'ab_wheel', label: 'Rueda abdominal', sets: '3×6–10', altId: 'plank', alt: 'plancha 3×30–45 s' }
       ],
-      restNote: 'Lepo 60–90 s.',
+      restNote: 'Descansa 60–90 s.',
       notes:
-        'Käytä vain listattuja välineitä. Punnerrusvolyymi ~3×10–15. ' +
-        'Leuanvetokehitys: scap-pull → band-assisted → tiukat 3–5 toiston setit.'
+        'Usa solo el equipo listado. Flexiones ~3×10–15. ' +
+        'Progreso en dominadas: escápulas → asistidas con banda → series de 3–5 estrictas.'
     }
   };
 
@@ -247,7 +247,7 @@
   };
 
 
-  // --- Lämmittely & liikkuvuus ---
+  // --- Calentamiento & liikkuvuus ---
   function cloneBlock(b) {
     return JSON.parse(JSON.stringify(b));
   }
@@ -255,29 +255,29 @@
   const WARMUP_TEMPLATES = {
     run: {
       id: 'warmup_run',
-      label: 'Lämmittely',
+      label: 'Calentamiento',
       durationMin: 8,
-      note: '5–10 min: kevyt cardio + dynaaminen liikkuvuus ennen juoksua.',
+      note: '5-10 min: cardio ligero + movimiento dinámico antes de correr.',
       exercises: [
-        { id: 'light_jog', label: 'Kevyt hölkkä / askellus', sets: '2–3 min' },
-        { id: 'leg_swings', label: 'Jalanheilautukset', sets: '10/puoli' },
-        { id: 'hip_opener', label: 'Lonkan avaukset', sets: '8/puoli' },
-        { id: 'ankle_mobility', label: 'Nilkan liikkuvuus', sets: '8/puoli' },
-        { id: 'worlds_greatest_stretch', label: "World's greatest stretch", sets: '3–4/puoli' }
+        { id: 'light_jog', label: 'Trote / caminata suave', sets: '2–3 min' },
+        { id: 'leg_swings', label: 'Balanceos de pierna', sets: '10/lado' },
+        { id: 'hip_opener', label: 'Aperturas de cadera', sets: '8/lado' },
+        { id: 'ankle_mobility', label: 'Movilidad de tobillo', sets: '8/lado' },
+        { id: 'worlds_greatest_stretch', label: "World's greatest stretch", sets: '3–4/lado' }
       ]
     },
     strength: {
       id: 'warmup_strength',
-      label: 'Lämmittely',
+      label: 'Calentamiento',
       durationMin: 8,
-      note: '5–10 min: kevyt cardio + dynaaminen liikkuvuus ennen voimaa.',
+      note: '5-10 min: cardio ligero + movimiento dinámico antes de la fuerza.',
       exercises: [
-        { id: 'light_jog', label: 'Kevyt askellus / polvennostot', sets: '2 min' },
-        { id: 'arm_circles', label: 'Käsien pyöritykset', sets: '10/suunta' },
-        { id: 'thoracic_opener', label: 'Rintarangan avaukset', sets: '6/puoli' },
-        { id: 'bw_squat_warmup', label: 'Kehonpainokyykky', sets: '8–10' },
-        { id: 'glute_activation', label: 'Pakara-aktivointi', sets: '10–12' },
-        { id: 'worlds_greatest_stretch', label: "World's greatest stretch", sets: '3/puoli' }
+        { id: 'light_jog', label: 'Caminata suave / elevación de rodillas', sets: '2 min' },
+        { id: 'arm_circles', label: 'Círculos de brazos', sets: '10/dirección' },
+        { id: 'thoracic_opener', label: 'Aperturas torácicas', sets: '6/lado' },
+        { id: 'bw_squat_warmup', label: 'Sentadilla con peso corporal', sets: '8–10' },
+        { id: 'glute_activation', label: 'Activación de glúteos', sets: '10–12' },
+        { id: 'worlds_greatest_stretch', label: "World's greatest stretch", sets: '3/lado' }
       ]
     }
   };
@@ -285,46 +285,46 @@
   const MOBILITY_TEMPLATES = {
     run: {
       id: 'mobility_run',
-      label: 'Liikkuvuus / venyttely',
+      label: 'Movilidad / estiramiento',
       optional: true,
       teeMyos: true,
       durationMin: 8,
-      note: 'Vapaaehtoinen cooldown juoksun jälkeen – voit ohittaa.',
+      note: 'Enfriamiento opcional después; puedes saltártelo.',
       exercises: [
-        { id: 'calf_stretch', label: 'Pohjevenytys', sets: '20–30 s/puoli' },
-        { id: 'hip_flexor_stretch', label: 'Lonkan koukistajan venytys', sets: '20–40 s/puoli' },
-        { id: 'quad_stretch', label: 'Etureiden venytys', sets: '20–30 s/puoli' },
-        { id: 'hamstring_stretch', label: 'Takareiden venytys', sets: '20–30 s/puoli' },
-        { id: 'figure4_stretch', label: 'Figure-4 / pakara', sets: '20–40 s/puoli' }
+        { id: 'calf_stretch', label: 'Estiramiento de gemelos', sets: '20–30 s/lado' },
+        { id: 'hip_flexor_stretch', label: 'Estiramiento del flexor de cadera', sets: '20–40 s/lado' },
+        { id: 'quad_stretch', label: 'Estiramiento de cuádriceps', sets: '20–30 s/lado' },
+        { id: 'hamstring_stretch', label: 'Estiramiento de isquiotibiales', sets: '20–30 s/lado' },
+        { id: 'figure4_stretch', label: 'Figure-4 / piriforme', sets: '20–40 s/lado' }
       ]
     },
     strength: {
       id: 'mobility_strength',
-      label: 'Liikkuvuus / venyttely',
+      label: 'Movilidad / estiramiento',
       optional: true,
       teeMyos: true,
       durationMin: 6,
-      note: 'Vapaaehtoinen – tee myös jos ehdit, tai ohita.',
+      note: 'Opcional: hazla si tienes tiempo, o sáltatela.',
       exercises: [
-        { id: 'hip_flexor_stretch', label: 'Lonkan koukistajan venytys', sets: '20–30 s/puoli' },
-        { id: 'thoracic_opener', label: 'Rintarangan avaukset', sets: '6/puoli' },
-        { id: 'hamstring_stretch', label: 'Takareiden venytys', sets: '20–30 s/puoli' },
-        { id: 'childs_pose', label: 'Lapsen asento', sets: '30–60 s' }
+        { id: 'hip_flexor_stretch', label: 'Estiramiento del flexor de cadera', sets: '20–30 s/lado' },
+        { id: 'thoracic_opener', label: 'Aperturas torácicas', sets: '6/lado' },
+        { id: 'hamstring_stretch', label: 'Estiramiento de isquiotibiales', sets: '20–30 s/lado' },
+        { id: 'childs_pose', label: 'Postura del niño', sets: '30–60 s' }
       ]
     },
     gentle: {
       id: 'mobility_gentle',
-      label: 'Kevyt liikkuvuus',
+      label: 'Movilidad suave',
       optional: true,
       teeMyos: true,
       durationMin: 10,
-      note: 'Lempeä vaihtoehto lepo-/sairaspäivänä. Ei treeniä – vain liike ja hengitys.',
+      note: 'Opción suave en día de descanso / malestar. Sin entreno – solo movimiento y respiración.',
       exercises: [
-        { id: 'cat_cow', label: 'Kissa–lehmä', sets: '8–12' },
-        { id: 'thoracic_opener', label: 'Rintarangan avaukset', sets: '6/puoli' },
-        { id: 'hip_opener', label: 'Lonkan avaukset', sets: '6/puoli' },
-        { id: 'childs_pose', label: 'Lapsen asento', sets: '45–60 s' },
-        { id: 'calf_stretch', label: 'Pohjevenytys (kevyt)', sets: '20 s/puoli' }
+        { id: 'cat_cow', label: 'Gato–vaca', sets: '8–12' },
+        { id: 'thoracic_opener', label: 'Aperturas torácicas', sets: '6/lado' },
+        { id: 'hip_opener', label: 'Aperturas de cadera', sets: '6/lado' },
+        { id: 'childs_pose', label: 'Postura del niño', sets: '45–60 s' },
+        { id: 'calf_stretch', label: 'Estiramiento de gemelos (suave)', sets: '20 s/lado' }
       ]
     }
   };
@@ -333,7 +333,7 @@
     const base = cloneBlock(WARMUP_TEMPLATES[kind] || WARMUP_TEMPLATES.run);
     if (shortened) {
       base.durationMin = 5;
-      base.note = 'Lyhennetty lämmittely (~5 min) kevennyksen yhteydessä.';
+      base.note = 'Calentamiento acortado (~5 min) al suavizar.';
       base.exercises = base.exercises.slice(0, Math.min(4, base.exercises.length));
     }
     return base;
@@ -371,11 +371,11 @@
       return Object.assign({}, ex, { sets: '2×8–10' });
     });
     const base = Object.assign({}, s, {
-      name: s.name + ' – lyhyt',
+      name: s.name + ' – corto',
       exercises: exercises,
-      restNote: 'Lepo 60 s.',
-      notes: 'Lyhennetty 20–25 min. Tavoite: ylläpitää rutiinia, ei uuvuttaa.',
-      headline: 'Lyhennetty 20–25 min'
+      restNote: 'Descansa 60 s.',
+      notes: 'Acortado 20-25 min. Objetivo: mantener la rutina, no desgastar.',
+      headline: 'Acortado 20–25 min'
     });
     base.details = formatStrengthDetails(base);
     return base;
@@ -386,56 +386,56 @@
       return {
         type: 'run',
         subtype: 'strides',
-        name: 'Helppo + kiihdytykset',
+        name: 'Fácil + aceleración',
         distanceKm: round1(fitness.weekly * 0.2),
         cueIds: ['easy_run_form', 'strides_cues'],
         details:
-          'Helppo vauhti + 4–6 × 20 s kiihdytystä\n' +
-          'Palautus kävellen/hölkäten 60–90 s kiihdytysten välillä.\n' +
-          'Tuntuma kevyt, ei anaerobista.'
+          'Ritmo fácil + 4–6 × 20 s de aceleraciones\n' +
+          'Recuperación caminando / trotando 60-90 s entre aceleraciones.\n' +
+          'Sensación ligera, sin anaeróbico.'
       };
     }
     if (phase.id === 'build') {
       return {
         type: 'run',
         subtype: 'tempo',
-        name: 'Tempo / kynnys',
+        name: 'Tempo / umbral',
         distanceKm: round1(clamp(fitness.weekly * 0.22, 6, 14)),
         cueIds: ['tempo_cues', 'easy_run_form'],
         details:
-          '10–15 min lämmittely → 20–30 min tasainen tempo\n' +
-          '(puhumisen rajoilla, ei sprintti) → 10 min jäähdyttely.\n' +
-          'Vaihtoehto: 3–4 × 6–8 min tempo, 2 min palautus.'
+          '10–15 min calentamiento → 20–30 min tempo estable\n' +
+          '(al límite de hablar, sin sprint) → 10 min enfriamiento.\n' +
+          'Alternativa: 3–4 × 6–8 min tempo, 2 min de recuperación.'
       };
     }
     if (phase.id === 'peak') {
       return {
         type: 'run',
         subtype: 'intervals',
-        name: 'Intervallit',
+        name: 'Intervalos',
         distanceKm: round1(clamp(fitness.weekly * 0.2, 6, 12)),
         cueIds: ['interval_cues'],
         details:
-          'Lämmittely 15 min → 5–6 × 3–4 min reipas\n' +
-          '(10 km -vauhdin tuntuma) / 2 min hölkkä → jäähdyttely.\n' +
-          'Tai 8–10 × 400–600 m, jos rata käytettävissä.'
+          'Calentamiento 15 min → 5–6 × 3–4 min vivos\n' +
+          '(sensación de ritmo de 10k) / 2 min trote → enfriamiento.\n' +
+          'O 8-10 × 400-600 m si está disponible.'
       };
     }
     // taper
     return {
       type: 'run',
       subtype: 'strides',
-      name: 'Avoimet jalat',
+      name: 'Fácil + aceleraciones',
       distanceKm: 6,
       cueIds: ['strides_cues', 'easy_run_form'],
       details:
-        'Helppo 5–6 km + 4 × 15–20 s kevyt kiihdytys.\n' +
-        'Pidä kevyenä – kilpailuviikko / taper.'
+        'Fácil 5–6 km + 4 × 15–20 s aceleración suave.\n' +
+        'Mantenga la luz - semana de competición / grabador.'
     };
   }
 
   /**
-   * Viikkorakenne (ma–su):
+   * Semanarakenne (ma–su):
    * ma: helppo TAI lepo
    * ti: voima
    * ke: laatu / helppo
@@ -466,10 +466,10 @@
         session = {
           type: 'run',
           subtype: 'easy',
-          name: 'Helppo lenkki',
+          name: 'Conexión fácil',
           distanceKm: easyKm,
           cueIds: ['easy_run_form'],
-          details: `Helppo vauhti n. ${easyKm} km.\nHengitys rauhallinen, voit jutella koko matkan.\nJos väsynyt: lyhennä 30 % tai kävelykatkot ok.`
+          details: `Ritmo fácil unos ${easyKm} km.\nRespiración calmada, puedes hablar todo el rato.\nSi estás cansada: acorta 30 % o camina a trozos ok.`
         };
       }
       // ti (2): voima
@@ -524,10 +524,10 @@
         session = {
           type: 'rest',
           subtype: 'rest',
-          name: 'Lepo / palautus',
+          name: 'Descanso / recuperación',
           details:
-            'Täysi lepo tai kevyt kävely 20–30 min.\n' +
-            'Hyvä uni ja ravinto – vuorotyössä tämä on tärkeää.'
+            'Descanso total o caminata suave 20–30 min.\n' +
+            'Buen sueño y nutrición - en el trabajo de turno esto es importante.'
         };
       }
       // la (6): pitkä
@@ -539,9 +539,9 @@
           distanceKm: longKm,
           cueIds: ['long_run_cues', 'easy_run_form'],
           details:
-            `Pitkä lenkki n. ${longKm} km.\n` +
-            'Aloita rauhallisesti, pidä vauhti helppona koko matkan.\n' +
-            'Ota mukaan juotavaa jos yli 90 min. Kävelykatkot ok.'
+            `Tirada larga de unos ${longKm} km.\n` +
+            'Empieza con calma, mantén un ritmo fácil todo el recorrido.\n' +
+            'Trae una copa si son más de 90 minutos. Los Walker están bien.'
         };
       }
       // su (0): helppo / aktiivinen palautus
@@ -550,85 +550,85 @@
         session = {
           type: 'run',
           subtype: 'easy',
-          name: 'Palauttava lenkki',
+          name: 'Enlace reversible',
           distanceKm: shortEasy,
           cueIds: ['easy_run_form'],
-          details: `Kevyt ${shortEasy} km tai vaihtoehtoisesti lepo.\nJos pitkä lenkki jäi raskaaksi: lepo tänään.`
+          details: `Suave ${shortEasy} km o, si prefieres, descanso.\nSi la tirada larga fue dura: descanso hoy.`
         };
       }
 
-      // Salibandy-ilta: kova kuormituspäivä – älä pidä laatutreeniä samana / seuraavana aamuna
+      // Floorball-ilta: kova kuormituspäivä – älä pidä laatutreeniä samana / seuraavana aamuna
       const saliDow = settings.salibandyDow;
       const saliSet = saliDow !== null && saliDow !== undefined && saliDow !== '' && saliDow !== 'none';
       if (saliSet && session) {
         const sd = +saliDow;
         if (dow === sd) {
-          // Salibandy-päivä: merkitse ja korvaa laatu/kova juoksu helpolla tai levolla
+          // Floorball-päivä: merkitse ja korvaa laatu/kova juoksu helpolla tai levolla
           if (session.type === 'run' && (session.subtype === 'tempo' || session.subtype === 'intervals' || session.subtype === 'strides')) {
             session = {
               type: 'run',
               subtype: 'easy',
-              name: 'Helppo (salibandy-ilta)',
+              name: 'Fácil (noche de floorball)',
               distanceKm: round1(Math.min(easyKm, 6)),
               cueIds: ['easy_run_form'],
               details:
-                'Salibandy-ilta = kova TE-päivä.\n' +
-                'Laatutreeni siirretty / jätetty väliin. Jos juokset, pidä hyvin kevyenä (~' + round1(Math.min(easyKm, 6)) + ' km).\n' +
-                'Salibandy riittää viikon kovaksi ärsykkeeksi.'
+                'Noche de floorball = día duro de TE.\n' +
+                'Qualituren se movió / se perdió. Si corres, ten mucha luz (~' + round1(Math.min(easyKm, 6)) + ' km).\n' +
+                'Floorball es suficiente para un disco duro de una semana.'
             };
           } else if (session.type === 'rest') {
             session = Object.assign({}, session, {
-              name: 'Salibandy / lepo',
+              name: 'Floorball / descanso',
               subtype: 'salibandy',
               details:
                 (session.details || '') +
-                '\n\n🏒 Salibandy-ilta: merkitse tehdyksi jos pelasit. Lasketaan kovaksi treeniksi (TE jopa 5.0).'
+                '\n\n🏒 Noche de floorball: márcalo hecho si jugaste. Cuenta como entreno duro (TE hasta 5.0).'
             });
           } else if (session.type === 'strength') {
-            // Salibandy on päivän kova ärsyke – ei raskasta voimaa samaan päivään
+            // Floorball on päivän kova ärsyke – ei raskasta voimaa samaan päivään
             session = {
               type: 'rest',
               subtype: 'salibandy',
-              name: 'Salibandy',
+              name: 'Floorball',
               details:
-                '🏒 Salibandy-ilta = päivän treeni (kova kuormitus).\n' +
-                'Ei voimaa samana päivänä. Lämmittele kunnolla ennen peliä ja venyttele sen jälkeen.',
+                '🏒 Noche de floorball = el entreno del día (carga dura).\n' +
+                'No hay poder el mismo día. Calentar bien antes del juego y estirar después.',
               mobility: mobilityFor('gentle')
             };
           } else if (session.type === 'run' && session.subtype === 'easy') {
             session = Object.assign({}, session, {
-              name: session.name + ' (salibandy-ilta)',
+              name: session.name + ' (noche de floorball)',
               details:
                 (session.details || '') +
-                '\n\n🏒 Salibandy-ilta: lyhennä tai jätä juoksu väliin jos peli oli raskas.'
+                '\n\n🏒 Noche de floorball: acorta o salta la carrera si el partido fue duro.'
             });
           }
           session.salibandyDay = true;
         }
         // Seuraava aamu salibandyn jälkeen: kevennä laatua
-        const nextAfterSali = (sd + 1) % 7;
-        if (dow === nextAfterSali && session.type === 'run' &&
+        const nextAfterGym = (sd + 1) % 7;
+        if (dow === nextAfterGym && session.type === 'run' &&
             (session.subtype === 'tempo' || session.subtype === 'intervals')) {
           session = {
             type: 'run',
             subtype: 'easy',
-            name: 'Helppo (palautus salibandyn jälkeen)',
+            name: 'Fácil (retorno tras el floorball)',
             distanceKm: round1(Math.min(easyKm, 7)),
             cueIds: ['easy_run_form'],
             details:
-              'Eilinen salibandy oli kova kuormitus.\n' +
-              'Pidä tänään helppona (~' + round1(Math.min(easyKm, 7)) + ' km) – laatutreeni toisena päivänä.'
+              'El floorball de ayer fue carga dura.\n' +
+              'Tranquilo hoy (~' + round1(Math.min(easyKm, 7)) + 'km) - entrenamiento de calidad en el segundo día.'
           };
         }
       }
 
-      // Viikkohuomio kaikkiin päiviin (suunnitelmamuistiinpano)
+      // Semanahuomio kaikkiin päiviin (suunnitelmamuistiinpano)
       if (session && session.details && weekIndex === 0 && i === 0) {
         // annotated on first day only via week tip; also stamp long run
       }
       if (session && session.subtype === 'long') {
         session.details = (session.details || '') +
-          '\n\nHuom: salibandy lasketaan kovaksi päiväksi – älä pinnoita laatua + pitkää + salibandyä samaan viikonloppuun.';
+          '\n\nNota: el floorball cuenta como día duro – no apiles calidad + larga + floorball el mismo fin de semana.';
       }
 
       // Taper: vähennä ti-voimaa kevyeksi
@@ -738,32 +738,32 @@
     s.modified = 'keventa';
     if (s.type === 'run' && s.distanceKm) {
       s.distanceKm = round1(s.distanceKm * 0.7);
-      s.name = s.name + ' (kevennetty)';
-      s.details = 'KEVENNETTY (−30 %)\n' + (s.details || '') +
-        `\n→ Matka n. ${s.distanceKm} km, pidä vauhti helppona.`;
+      s.name = s.name + ' (suavizado)';
+      s.details = 'SUAVIZADO (−30 %)\n' + (s.details || '') +
+        `\n→ Distancia unos ${s.distanceKm} km, mantén ritmo fácil.`;
       s.warmup = warmupFor('run', true);
     } else if (s.type === 'strength') {
       s.durationMin = Math.round((s.durationMin || 60) * 0.7);
-      s.name = s.name + ' (kevennetty)';
+      s.name = s.name + ' (suavizado)';
       if (s.exercises && s.exercises.length) {
         s.exercises = s.exercises.map(function (ex) {
-          return Object.assign({}, ex, { sets: '2 sarjaa (kevennetty)' });
+          return Object.assign({}, ex, { sets: '2 sets (ligero)' });
         });
-        s.notes = 'KEVENNETTY (−30 %). Tee 2 sarjaa / liike, hieman kevyemmällä kuormalla. ' + (s.notes || '');
+        s.notes = 'SUAVIZADO (−30 %). Haz 2 series / ejercicio con carga un poco más ligera. ' + (s.notes || '');
         s.details = formatStrengthDetails(s);
       } else {
-        s.details = 'KEVENNETTY (−30 % sarjat/toistot)\n' +
-          'Tee 2 sarjaa / liike, hieman kevyemmällä kuormalla.\n' +
+        s.details = 'SUAVIZADO (−30 % series/reps)\n' +
+          'Haz 2 series / ejercicio, con carga un poco más ligera.\n' +
           (s.details || '');
       }
       s.warmup = warmupFor('strength', true);
     } else if (s.type === 'mobility') {
       s.durationMin = Math.round((s.durationMin || 25) * 0.7);
-      s.name = (s.name || 'Lihashuolto') + ' (kevennetty)';
+      s.name = (s.name || 'Mantenimiento muscular') + ' (suavizado)';
       if (s.exercises && s.exercises.length > 5) {
         s.exercises = s.exercises.slice(0, 5);
       }
-      s.details = 'KEVENNETTY – lyhyempi lihashuolto (~' + s.durationMin + ' min).\n' + (s.details || '');
+      s.details = 'SUAVIZADO – mantenimiento muscular más corto (~' + s.durationMin + ' min).\n' + (s.details || '');
       if (s.warmup) s.warmup = warmupFor('strength', true);
     }
     return s;
@@ -777,24 +777,24 @@
       const s = JSON.parse(JSON.stringify(session));
       s.modified = 'koventa-blocked';
       s.details = (s.details || '') +
-        '\n\nHuom: tätä treeniä ei kovenneta – se on jo vaativa. Pidä suunnitelmassa.';
+        '\n\nNota: este entreno no se intensifica – ya es exigente. Mantén el plan.';
       return s;
     }
     const s = JSON.parse(JSON.stringify(session));
     s.modified = 'koventa';
     if (s.type === 'run' && s.distanceKm) {
       s.distanceKm = round1(s.distanceKm * 1.12);
-      s.name = s.name + ' (kovennettu)';
-      s.details = 'HIEMAN KOVENNETTU (+12 %)\n' + (s.details || '') +
-        `\n→ Matka n. ${s.distanceKm} km. Vauhti silti kontrollissa.`;
+      s.name = s.name + ' (intensificado)';
+      s.details = 'UN POCO INTENSIFICADO (+12 %)\n' + (s.details || '') +
+        `\n→ Distancia unos ${s.distanceKm} km. Ritmo aún controlado.`;
     } else if (s.type === 'strength') {
-      s.name = s.name + ' (kovennettu)';
+      s.name = s.name + ' (intensificado)';
       if (s.exercises && s.exercises.length) {
-        s.notes = 'HIEMAN KOVENNETTU: +1 sarja pääliikkeisiin TAI +5–10 % kuormaa. ' + (s.notes || '');
+        s.notes = 'INTENSIFICADO: +1 serie en los principales O +5–10 % de carga. ' + (s.notes || '');
         s.details = formatStrengthDetails(s);
       } else {
-        s.details = 'HIEMAN KOVENNETTU\n' +
-          'Lisää +1 sarja pääliikkeisiin TAI +5–10 % kuormaa.\n' +
+        s.details = 'UN POCO INTENSIFICADO\n' +
+          'Añade +1 serie a los principales O +5–10 % de carga.\n' +
           (s.details || '');
       }
     }
@@ -808,16 +808,16 @@
     if (s.type === 'run') {
       const km = round1(clamp((s.distanceKm || 8) * 0.4, 3, 6));
       s.distanceKm = km;
-      s.name = 'Lyhyt lenkki (20–30 min)';
+      s.name = 'Enlace corto (20-30 min)';
       s.details =
-        `Vuorotyön lyhyt versio: n. ${km} km / 20–30 min.\n` +
-        'Helppo vauhti. Parempi lyhyt treeni kuin ei mitään.';
+        `Versión corta por turnos: unos ${km} km / 20–30 min.\n` +
+        'Ritmo fácil. Mejor entreno corto que nada.';
       s.subtype = 'easy-short';
       s.warmup = warmupFor('run', true);
       s.mobility = mobilityFor('run');
     } else if (s.type === 'strength') {
       const short = shortStrength(Object.assign({}, s, {
-        name: s.name.replace(' (kevennetty)', '').replace(' (kovennettu)', '').replace(' – lyhyt', '')
+        name: s.name.replace(' (suavizado)', '').replace(' (intensificado)', '').replace(' – corto', '').replace(' – lyhyt', '')
       }));
       const out = Object.assign({}, short, {
         type: 'strength',
@@ -832,12 +832,12 @@
       return out;
     } else if (s.type === 'mobility') {
       s.durationMin = 15;
-      s.name = 'Lihashuolto – lyhyt';
+      s.name = 'Cuidado muscular – corto';
       if (s.exercises && s.exercises.length > 5) s.exercises = s.exercises.slice(0, 5);
-      s.details = 'Lyhyt lihashuolto ~15 min – dynaaminen + muutama venytys.';
+      s.details = 'Mantenimiento muscular corto ~15 min: dinámica + pocos estiramientos.';
       if (s.warmup) s.warmup = warmupFor('strength', true);
     } else if (s.type === 'rest') {
-      s.details = 'Lepo säilyy – palautuminen on osa suunnitelmaa.';
+      s.details = 'Restos de descanso - la recuperación es parte del plan.';
     }
     return s;
   }
@@ -873,7 +873,7 @@
   }
 
   /**
-   * Ei salikorttia: salitreeni → vastaava kotipiiri (A↔A, B↔B). Valmentajan salipäivä
+   * Ei salikorttia: entreno de gym → vastaava kotipiiri (A↔A, B↔B). Entrenadorn salipäivä
    * korvataan kotipiirillä, valmentajan muistiinpano säilyy. Muut sessiot ennallaan.
    */
   function noGymSession(session, weekIndex) {
@@ -893,17 +893,17 @@
       home.modified = 'ei-salia';
       if (session.coach) {
         home.coach = Object.assign({}, session.coach, { options: [] });
-        home.name = 'Kotipiiri (salitreenin tilalla)';
+        home.name = 'Casapiri (en lugar de salitren)';
       }
     }
     home.noGym = true;
     home.details = '🏠 Sin gym → versión casa' +
-      (session.coach ? ' (valmentajan salitreeni: ' + (session.name || '') + ')' : '') + '.\n' + (home.details || '');
+      (session.coach ? '(El ritual de caza:' + (session.name || '') + ')' : '') + '.\n' + (home.details || '');
     return home;
   }
 
   /**
-   * Vaihda päivän treenityyppi yhdellä napilla.
+   * Cambiar päivän treenityyppi yhdellä napilla.
    * kind: 'koti' | 'sali' | 'juoksu' | 'lihashuolto' | 'kavely' | 'pyoraily' | 'uinti' | 'salibandy' | 'muu'
    * ctx: { weekIndex, phaseId|phase, fitness, currentSession, deload }
    */
@@ -941,13 +941,13 @@
     const s = {
       type: 'run',
       subtype: 'easy',
-      name: 'Helppo lenkki',
+      name: 'Conexión fácil',
       distanceKm: km,
       cueIds: ['easy_run_form'],
       details:
-        'Helppo vauhti n. ' + km + ' km.\n' +
-        'Hengitys rauhallinen, voit jutella koko matkan.\n' +
-        'Vaihdettu päivän treeniksi – pidä kevyenä.',
+        'Ritmo fácil n.' + km + ' km.\n' +
+        'Respiración calmada, puedes hablar todo el rato.\n' +
+        'Cambia a la práctica diaria... mantén la luz.',
       modified: 'tyyppi'
     };
     attachPrep(s);
@@ -957,32 +957,32 @@
   function buildLihashuoltoSession() {
     // ~20–30 min: dynaaminen lämmittely + venyttelyt liikkuvuus-kirjastosta
     const warmup = warmupFor('strength', false);
-    warmup.label = 'Dynaaminen lämmittely';
+    warmup.label = 'Calentamiento dinámico';
     warmup.durationMin = 8;
-    warmup.note = '5–10 min kevyt liike ennen venyttelyitä.';
+    warmup.note = '5-10 min movimiento ligero antes de estirarse.';
     const exercises = [
-      { id: 'cat_cow', label: 'Kissa–lehmä', sets: '8–12' },
-      { id: 'thoracic_opener', label: 'Rintarangan avaukset', sets: '6/puoli' },
-      { id: 'hip_opener', label: 'Lonkan avaukset', sets: '6–8/puoli' },
-      { id: 'worlds_greatest_stretch', label: "World's greatest stretch", sets: '3–4/puoli' },
-      { id: 'hip_flexor_stretch', label: 'Lonkan koukistajan venytys', sets: '30–40 s/puoli' },
-      { id: 'hamstring_stretch', label: 'Takareiden venytys', sets: '30 s/puoli' },
-      { id: 'figure4_stretch', label: 'Figure-4 / pakara', sets: '30–40 s/puoli' },
-      { id: 'calf_stretch', label: 'Pohjevenytys', sets: '30 s/puoli' },
-      { id: 'childs_pose', label: 'Lapsen asento', sets: '45–60 s' }
+      { id: 'cat_cow', label: 'Gato–vaca', sets: '8–12' },
+      { id: 'thoracic_opener', label: 'Aperturas torácicas', sets: '6/lado' },
+      { id: 'hip_opener', label: 'Aperturas de cadera', sets: '6–8/lado' },
+      { id: 'worlds_greatest_stretch', label: "World's greatest stretch", sets: '3–4/lado' },
+      { id: 'hip_flexor_stretch', label: 'Estiramiento del flexor de cadera', sets: '30–40 s/lado' },
+      { id: 'hamstring_stretch', label: 'Estiramiento de isquiotibiales', sets: '30 s/lado' },
+      { id: 'figure4_stretch', label: 'Figure-4 / piriforme', sets: '30–40 s/lado' },
+      { id: 'calf_stretch', label: 'Estiramiento de gemelos', sets: '30 s/lado' },
+      { id: 'childs_pose', label: 'Postura del niño', sets: '45–60 s' }
     ];
     const s = {
       type: 'mobility',
       subtype: 'lihashuolto',
-      name: 'Lihashuolto',
+      name: 'Mantenimiento muscular',
       durationMin: 25,
       details:
-        'Palauttava liikkuvuus ~20–30 min.\n' +
-        'Ei raskasta treeniä – dynaaminen lämmittely + venyttelyt.\n' +
-        'Hengitä rauhallisesti, älä pakota ääriasentoihin.',
-      headline: 'Lihashuolto / palautus (~25 min)',
+        'Movilidad de recuperación ~20–30 min.\n' +
+        'Sin entreno duro – calentamiento dinámico + estiramientos.\n' +
+        'Respira despacio, no fuerza posiciones extremas.',
+      headline: 'Mantenimiento muscular / recuperación (~25 min)',
       exercises: exercises,
-      notes: 'Käytä liikkuvuus-kirjaston liikkeitä. Kipua ei saa tuntua.',
+      notes: 'Use movimientos de biblioteca de movimiento. Sin dolor.',
       modified: 'tyyppi',
       warmup: warmup,
       mobility: null
@@ -1024,7 +1024,7 @@
           kept.modified = kept.modified || 'tyyppi';
           kept.subtype = 'easy';
           if (!kept.name || /kevennetty|lyhyt|salibandy/i.test(kept.name)) {
-            kept.name = 'Helppo lenkki';
+            kept.name = 'Conexión fácil';
           }
           attachPrep(kept);
           return kept;
@@ -1046,58 +1046,58 @@
 
   const OTHER_ACTIVITY_KINDS = {
     kavely: {
-      name: 'Kävely',
+      name: 'Caminata',
       emoji: '🚶',
       durationMin: 40,
       lightLoad: true,
       details:
-        'Kävely – kevyt aktiivisuus.\n' +
-        'Ei lasketa kovaksi juoksuksi. Sopii palautukseen, vuoron jälkeen tai kevyeksi päiväksi.\n' +
-        'Pidä vauhti rauhallisena; voit jutella koko ajan.'
+        'Caminata – actividad ligera.\n' +
+        'No cuenta como carrera dura. Sirve para recuperar, tras el turno o como día suave.\n' +
+        'Mantén un ritmo firme; puedes hablar todo el rato.'
     },
     pyoraily: {
-      name: 'Pyöräily',
+      name: 'Bicicleta',
       emoji: '🚴',
       durationMin: 45,
       lightLoad: true,
       details:
-        'Pyöräily – kevyt / ristiinharjoittelu.\n' +
-        'Hyvä vaihtoehto kun juoksu tuntuu raskaalta tai kipu aristaa.\n' +
-        'Pidä teho maltillisena (voit jutella).'
+        'Bici – ligero / cross-training.\n' +
+        'Buena opción cuando correr se siente duro o el dolor molesta.\n' +
+        'Mantén la potencia moderada (puedes hablar).'
     },
     uinti: {
-      name: 'Uinti',
+      name: 'Natación',
       emoji: '🏊',
       durationMin: 40,
       lightLoad: true,
       details:
-        'Uinti – kevyt aktiivisuus / ristiin.\n' +
-        'Vähäinen isku, hyvä palautukseen. Älä vedä allasvetoja kovalla teholla jos väsynyt.'
+        'Nadar - actividad ligera / cruz.' +
+        'Un pequeño golpe, bueno para la recuperación. No tire de las apuestas de la piscina duro si cansado.'
     },
     salibandy: {
-      name: 'Salibandy',
+      name: 'Floorball',
       emoji: '🏒',
       durationMin: 60,
       lightLoad: false,
       hardLoad: true,
       details:
-        '🏒 Salibandy – kova kuormituspäivä (TE jopa 5.0).\n' +
-        'Riittää viikon kovaksi ärsykkeeksi. Älä lisää laatujuoksua samaan päivään / seuraavaan aamuun.\n' +
-        'Merkitse Valmis kun olet pelannut.'
+        '🏒 Floorball – día de carga dura (TE hasta 5.0).\n' +
+        'Basta como estímulo duro de la semana. No añadas carrera de calidad el mismo día / a la mañana siguiente.\n' +
+        'Mark Listo cuando hayas jugado.'
     },
     muu: {
-      name: 'Muu liikunta',
+      name: 'Otra actividad',
       emoji: '✨',
       durationMin: 30,
       lightLoad: true,
       details:
-        'Muu liikunta – merkitty aktiivisuudeksi.\n' +
-        'Lasketaan kevyeksi viikkoaktiivisuudeksi (ei kovana juoksuna).'
+        'Otra actividad – marcada como actividad.\n' +
+        'Cuenta como actividad semanal ligera (no como carrera dura).'
     }
   };
 
   /**
-   * Kävely / pyöräily / uinti / salibandy / muu.
+   * Caminata / bici / natación / floorball / otro.
    * lightLoad: ei lasketa kovaksi juoksuksi; viikkoaktiivisuuteen kevyesti.
    */
   function buildOtherActivitySession(kind, opts) {
@@ -1110,7 +1110,7 @@
       subtype: kind === 'muu' ? 'muu' : kind,
       name: name,
       durationMin: opts.durationMin || base.durationMin,
-      details: base.details + (kind === 'muu' && customName ? '\nNimi: ' + customName : ''),
+      details: base.details + (kind === 'muu' && customName ? '\nNombre: ' + customName : ''),
       lightLoad: !!base.lightLoad,
       hardLoad: !!base.hardLoad,
       modified: 'tyyppi',
@@ -1130,12 +1130,12 @@
     return {
       type: 'rest',
       subtype: 'sick',
-      name: 'Sairas – lepo',
+      name: 'Enferma – descanso',
       details:
-        'Sairaus: treeni peruttu.\n' +
-        'Lepää, juo nesteitä, kuuntele kehoa.\n' +
-        'Älä korvaa treeniä automaattisesti huomenna – palaa kevyesti kun voit hyvin.\n' +
-        'Jos olo sallii: vapaaehtoinen kevyt liikkuvuus alla (ei treeniä).',
+        'Enfermedad: entreno cancelado.\n' +
+        'Descansa, hidrátate, escucha al cuerpo.\n' +
+        'No sustituyas el entreno automáticamente mañana – vuelve suave cuando estés bien.\n' +
+        'Si permite: movimiento de luz opcional debajo (sin entrenamiento).',
       modified: 'sairas',
       originalType: session && session.type,
       mobility: mobilityFor('gentle')
@@ -1147,17 +1147,17 @@
     // Tarjoa helpompi: lyhyt TAI lepo
     const short = applyShortSwap(session);
     short.modified = 'ei-fiilista';
-    short.name = 'Keveämpi vaihtoehto';
+    short.name = 'Opción de iluminación';
     short.details =
-      'Ei fiilistä tänään – se on ok.\n\n' +
+      'Sin ganas hoy – está bien.\n\n' +
       short.details +
-      '\n\nVaihtoehto: merkitse lepopäiväksi jos tarvitset palautusta.';
+      '\n\nOpción: márcalo como descanso si necesitas recuperar.';
     return short;
   }
 
   /**
-   * 4 viikon ehdotus (suomeksi) – polarisoitu, salibandy = kova päivä.
-   * Alkaa "tänään"-viikosta.
+   * 4 viikon ehdotus (suomeksi) – polarizado, floorball = día duro.
+   * Alkaa "hoy"-viikosta.
    */
   function fourWeekSuggestion(fitness, settings) {
     const baseW = (fitness && fitness.weekly) || 19;
@@ -1176,8 +1176,8 @@
     ];
     const saliLabel = (function () {
       const d = settings && settings.salibandyDow;
-      if (d === null || d === undefined || d === '' || d === 'none') return 'valitse ilta (esim. pe)';
-      return DOW_FULL[+d] || 'pe';
+      if (d === null || d === undefined || d === '' || d === 'none') return 'elige noche (p. ej. pe)';
+      return DOW_FULL[+d] || 'vi';
     })();
 
     const weeks = [];
@@ -1188,68 +1188,68 @@
         longKm: longs[i],
         deload: i === 3,
         summary:
-          (i === 3 ? 'Kevennysviikko. ' : '') +
-          `~${vols[i]} km: 2–3 helppoa, pitkä ~${longs[i]} km, 1 laatu (tempo/kynnys) ei salibandy-päivänä, 1–2 voimaa. ` +
-          'Suurin osa helpolla.'
+          (i === 3 ? 'Semana de descarga. ' : '') +
+          `~${vols[i]} km: 2–3 fáciles, larga ~${longs[i]} km, 1 calidad (tempo/umbral) no en día de floorball, 1–2 fuerza. ` +
+          'La mayor parte a ritmo fácil.'
       });
     }
 
     const textFi =
-      '4 viikon ehdotus (polarisoitu, lähtötaso ~' + baseW + ' km/vk)\n\n' +
-      'Viikkokaava:\n' +
-      '• 2–3 helppoa lenkkiä (suurin osa kilometreistä)\n' +
-      '• 1 pitkä: vk1 ~' + longs[0] + ' → vk3–4 kohti ' + longs[2] + '–' + longs[3] + ' km (~10 % sääntö)\n' +
-      '• 1 laatutreeni (tempo/kynnys) – EI salibandy-iltana eikä seuraavana aamuna\n' +
-      '• 1–2 voimatreeniä (leuanveto 3×3–5 / scap+band; punnerrus 3×10–15; sali RPE 6–7)\n' +
-      '• 1 salibandy = kova päivä (TE), jätä tilaa sille\n\n' +
-      'Salibandy-ilta asetuksissa: ' + saliLabel + '\n\n' +
+      'Propuesta de 4 semanas (polarizada, base ~' + baseW + ' km/sem)\n\n' +
+      'Esquema semanal:\n' +
+      '• 2–3 tiradas fáciles (la mayor parte de los km)\n' +
+      '• 1 largo: vk1 ~' + longs[0] + ' → sem3–4 hacia ' + longs[2] + '–' + longs[3] + ' km (regla del ~10 %)\n' +
+      '• 1 sesión de calidad (tempo/umbral) – NO en noche de floorball ni a la mañana siguiente\n' +
+      '• 1–2 sesiones de fuerza (dominadas 3×3–5 / scap+banda; flexiones 3×10–15; gym RPE 6–7)\n' +
+      '• 1 floorball = día duro (TE), deja espacio para ello\n\n' +
+      'Noche de floorball en Ajustes: ' + saliLabel + '\n\n' +
       weeks.map(function (w) {
-        return 'Vk ' + w.week + (w.deload ? ' (kevennys)' : '') +
-          ': ~' + w.volumeKm + ' km, pitkä ~' + w.longKm + ' km';
+        return 'Sem ' + w.week + (w.deload ? ' (descarga)' : '') +
+          ': ~' + w.volumeKm + 'km, largo ~' + w.longKm + ' km';
       }).join('\n');
 
     return { weeks: weeks, textFi: textFi, salibandyLabel: saliLabel };
   }
 
   /** Merkitse päivä salibandyksi / kovaksi kuormaksi – kevennä tarvittaessa */
-  function applySalibandy(session) {
+  function applyFloorball(session) {
     if (!session) return session;
     const s = JSON.parse(JSON.stringify(session));
     s.modified = 'salibandy';
     s.salibandyDay = true;
     if (s.type === 'run' && (s.subtype === 'tempo' || s.subtype === 'intervals' || s.subtype === 'strides')) {
       s.subtype = 'easy';
-      s.name = 'Helppo (salibandy)';
+      s.name = 'Fácil (floorball)';
       s.distanceKm = round1(clamp((s.distanceKm || 8) * 0.5, 3, 6));
       s.details =
-        '🏒 Salibandy / kova kuorma merkitty.\n' +
-        'Laatutreeni jätetty väliin – salibandy riittää kovaksi ärsykkeeksi.\n' +
-        'Jos juokset, max ~' + s.distanceKm + ' km hyvin kevyesti.';
+        '🏒 Floorball / carga dura marcada.\n' +
+        'Sesión de calidad omitida – el floorball basta como estímulo duro.\n' +
+        'Si corres, máx. ~' + s.distanceKm + ' km muy suave.';
       s.warmup = warmupFor('run', true);
       s.mobility = mobilityFor('run');
     } else if (s.type === 'run') {
-      s.name = (s.name || 'Juoksu') + ' (salibandy-päivä)';
+      s.name = (s.name || 'Carrera') + '(Día de los Ángeles)';
       if (s.distanceKm) s.distanceKm = round1(s.distanceKm * 0.7);
       s.details =
-        '🏒 Salibandy / kova kuorma.\n' +
-        'Lyhennä juoksua tai jätä väliin jos peli oli raskas.\n' +
+        '- Flooorball / carga dura.' +
+        'Acorta la carrera o sáltala si el partido fue duro.\n' +
         (s.details || '');
     } else if (s.type === 'strength') {
       const short = shortStrength(s);
       Object.assign(s, short);
       s.type = 'strength';
       s.modified = 'salibandy';
-      s.name = 'Voima lyhyt (salibandy-päivä)';
+      s.name = 'Force Short (Floorball Day)';
       s.details =
-        '🏒 Salibandy merkitty – pidä voima lyhyenä tai siirrä.\n' + (s.details || '');
+        '🏒 Floorball marcado – mantén la fuerza corta o muévela.\n' + (s.details || '');
       s.warmup = warmupFor('strength', true);
       s.mobility = mobilityFor('strength');
     } else if (s.type === 'rest') {
-      s.name = 'Salibandy / lepo';
+      s.name = 'Floorball / descanso';
       s.subtype = 'salibandy';
       s.details =
-        '🏒 Salibandy-ilta. Merkitse tehdyksi kun olet pelannut.\n' +
-        'Lasketaan viikon kovaksi treeniksi (TE jopa 5.0). Älä lisää laatujuoksua huomiseksi aamuksi.';
+        '🏒 Noche de floorball. Márcalo hecho cuando hayas jugado.\n' +
+        'Calcular como entrenamiento duro de la semana (TE hasta 5.0). No agregues la calidad mañana por la mañana.';
       s.mobility = mobilityFor('gentle');
     }
     return s;
@@ -1257,7 +1257,7 @@
 
 
   const TIP_DISCLAIMER =
-    'Tämä on treenivinkki, ei lääketieteellinen diagnoosi tai hoito. Jos kipu pahenee, turvota tai on yö-/lepo kipua, hakeudu ammattilaisen arvioon.';
+    'Esta es una punta de entrenamiento, no un diagnóstico o tratamiento médico. Si el dolor empeora, se inflama o tiene dolor de noche / reposo, busque un juicio profesional.';
 
   const KNEE_HELP_EXERCISE_IDS = [
     'glute_activation', 'single_leg_hip_thrust', 'quad_stretch',
@@ -1268,156 +1268,156 @@
   const CONDITIONS = {
     runners_knee: {
       id: 'runners_knee',
-      label: 'Juoksijan polvi',
-      promptTitle: 'Miten polvi tänään?',
-      promptHint: 'Valinta säätää iskun määrää (juoksu/voima).',
-      tipTitle: 'Juoksijan polvi – vinkit',
+      label: 'Rodilla del corredor',
+      promptTitle: '¿Cómo está la rodilla hoy?',
+      promptHint: 'Elige para ajustar el impacto (carrera / fuerza).',
+      tipTitle: 'Rodilla del corredor – consejos',
       tipClass: 'knee-tip',
       exerciseIds: KNEE_HELP_EXERCISE_IDS.slice(),
       bullets: [
-        'Kuormanhallinta: älä nosta volyymia ja alamäkiä samaan aikaan.',
-        'Vahvista etureisiä ja pakaroita (kontrolli > maksimivoima).',
-        'Vältä äkillisiä alamäkipiikkejä ja hyppyjä kuormituksen noustessa.',
-        'Jää / suhteellinen lepo ärsytyksen jälkeen; palaa kivuttomaan juoksuun asteittain.',
-        'Lyhyt askel, pehmeä alusta ja pyörä/elliptical ovat hyviä kevennyksiä.',
+        'Carga: no subas volumen y bajadas a la vez.',
+        'Refuerza cuádriceps y glúteos (control > fuerza máxima).',
+        'Evita picos de bajada y saltos bruscos al subir la carga.',
+        'Hielo / reposo relativo tras la irritación; vuelve a correr sin dolor de forma gradual.',
+        'Pasos cortos, superficie blanda y bici / elíptica son un buen alivio.',
         TIP_DISCLAIMER
       ]
     },
     it_band: {
       id: 'it_band',
-      label: 'IT-jänne / lateraalinen lonkka–polvi',
-      promptTitle: 'Miten IT-jänne / lonkka–polvi tänään?',
-      promptHint: 'Valinta säätää juoksun iskuja ja alamäkikuormaa.',
-      tipTitle: 'IT-jänne – vinkit',
+      label: 'Banda IT / cadera lateral',
+      promptTitle: '¿Cómo está la banda IT / cadera hoy?',
+      promptHint: 'La elección ajusta el impacto de la carrera y la carga.',
+      tipTitle: 'Banda IT – consejos',
       tipClass: 'condition-tip',
       exerciseIds: [
         'glute_med_side_lie', 'glute_activation', 'single_leg_hip_thrust',
         'figure4_stretch', 'hip_opener', 'quad_stretch', 'calf_stretch'
       ],
       bullets: [
-        'Kuormanhallinta: vältä äkillisiä alamäki- ja volyymipiikkejä.',
-        'Vahvista keskipakaralihasta ja lonkan hallintaa (glute med).',
-        'Pehmeämpi alusta ja lyhyempi askel voivat helpottaa ärsytystä.',
-        'Foam roll / venyttely voi tuntua hyvältä, mutta voima + kuormanhallinta ovat tärkeämpiä.',
-        'Jos aristus pahenee juostessa, vaihda osan pyöräksi / ellipticaliksi.',
+        'Manejo de carga: evitar descenso repentino y picos de volumen.',
+        'Fortalece glúteo medio.',
+        'Una plataforma más suave y un paso más corto puede aliviar la irritación.',
+        'El rollo de espuma / estiramiento puede sentirse bien, pero la gestión de potencia + carga es más importante.',
+        'Si la ternura empeora mientras corre, cambia la parte a la rueda / elíptica.',
         TIP_DISCLAIMER
       ]
     },
     rotator_cuff: {
       id: 'rotator_cuff',
-      label: 'Kiertäjäkalvo / olkapää',
-      promptTitle: 'Miten olkapää tänään?',
-      promptHint: 'Valinta säätää punnerruksia ja ylävartalon kuormaa.',
-      tipTitle: 'Kiertäjäkalvo / olkapää – vinkit',
+      label: 'Manguito rotador / hombro',
+      promptTitle: '¿Cómo está el hombro hoy?',
+      promptHint: 'La elección ajusta press y la carga del tren superior.',
+      tipTitle: 'Manguito rotador / hombro – consejos',
       tipClass: 'condition-tip',
       exerciseIds: [
         'codman_pendulum', 'wall_walk', 'stick_external_rotation', 'iso_external_rotation',
         'band_external_rotation', 'scap_squeeze', 'cross_body_stretch'
       ],
       bullets: [
-        'Kuormanhallinta: vältä raskaita pystypunnerruksia ja kivuliaita yläasentoja.',
-        'Suosi hallittua ulkokiertoa ja lapaluun tukea (kevyt nauha).',
-        'Pidä liike kivuttomalla alueella – kipu ≠ edistyminen.',
-        'Juoksu yleensä ok jos olkapää ei ärsyynny käsien heilunnasta.',
-        'Palaa punnerruksiin asteittain, kun päivittäiset liikkeet ovat kivuttomia.',
+        'Manejo de carga: evitar fuertes empujes verticales y posiciones superiores dolorosas.',
+        'Prioriza rotación externa controlada y apoyo del omóplato (banda ligera).',
+        'Mantener el movimiento en un área sin dolor - dolor - progreso.',
+        'Correr normalmente está bien si el hombro no está irritado por la agitación de la mano.',
+        'Regresar a los impulsos gradualmente cuando los movimientos diarios son indoloros.',
         TIP_DISCLAIMER
       ]
     },
     achilles: {
       id: 'achilles',
-      label: 'Akilles / tendinopatia',
-      promptTitle: 'Miten akilles tänään?',
-      promptHint: 'Valinta säätää juoksun iskuja ja nopeustyötä.',
-      tipTitle: 'Akilles – vinkit',
+      label: 'Aquiles / tendinopatía',
+      promptTitle: '¿Cómo está Aquiles hoy?',
+      promptHint: 'La elección ajusta el ritmo y el volumen de carrera.',
+      tipTitle: 'Aquiles – consejos',
       tipClass: 'condition-tip',
       exerciseIds: [
         'calf_raise_eccentric', 'calf_raise', 'calf_stretch',
         'ankle_mobility', 'towel_stretch_foot', 'hip_opener'
       ],
       bullets: [
-        'Kuormanhallinta: vältä äkillisiä sprintti-, hyppy- ja mäkipiikkejä.',
-        'Eksentrinen / hidastempoinen pohjetyö on usein hyödyllinen treenivinkki – etene maltilla.',
-        'Pidä päivittäinen kävely/juoksu kivun rajoissa (ärsytyksen jälkeinen kipu ei saisi nousta pitkäksi).',
-        'Suosi tasaista alustaa; vaihda tarvittaessa pyörään.',
-        'Älä venytä aggressiivisesti kipeää jännettä “poikki”.',
+        'Manejo de carga: evitar sprint repentino, salto y picos de esquí.',
+        'El trabajo de fondo excesivo / lento es a menudo un consejo de entrenamiento útil - progreso con paciencia.',
+        'Mantenga el caminar diario / correr dentro de los límites del dolor (el dolor después de la irritación no debe ser largo).',
+        'favorecer una plataforma plana; cambiar la rueda si es necesario.',
+        'No estirar agresivamente la dolorosa tensión "cortada".',
         TIP_DISCLAIMER
       ]
     },
     plantar_fasciitis: {
       id: 'plantar_fasciitis',
-      label: 'Plantaarifaskiitti',
-      promptTitle: 'Miten jalkapohja / kantapää tänään?',
-      promptHint: 'Valinta säätää juoksun volyymia ja iskuja.',
-      tipTitle: 'Plantaarifaskiitti – vinkit',
+      label: 'Fascitis plantar',
+      promptTitle: '¿Cómo está el talón / planta hoy?',
+      promptHint: 'La elección ajusta el volumen de carrera y el impacto.',
+      tipTitle: 'Fascitis plantar – consejos',
       tipClass: 'condition-tip',
       exerciseIds: [
         'towel_stretch_foot', 'calf_stretch', 'calf_raise',
         'ankle_mobility', 'hip_opener', 'glute_activation'
       ],
       bullets: [
-        'Kuormanhallinta: älä nosta juoksukilometrejä ja kovaa alustaa samaan aikaan.',
-        'Aamuinen pyyhevenytys + pohjevenytys voivat helpottaa tuntumaa.',
-        'Tukevat kengät / pehmeämpi alusta; vältä paljasjalkapiikkejä ärsytyksen aikana.',
-        'Lyhennä lenkkiä tai vaihda pyörään jos aristus pahenee.',
-        'Voima (pohje, lonkka) + asteittainen paluu > pelkkä lepo ikuisesti.',
+        'Carga: no subas kilómetros de carrera y superficie dura a la vez.',
+        'El estiramiento matutino con toalla + gemelos puede aliviar la sensación.',
+        'Zapatos resistentes / plataforma más suave; evitar picos descalzos durante la irritación.',
+        'Acortar el enlace o cambiar la bicicleta si la ternura empeora.',
+        'Fuerza (calf, cadera) + rendimiento gradual.',
         TIP_DISCLAIMER
       ]
     },
     low_back: {
       id: 'low_back',
-      label: 'Alaselkä',
-      promptTitle: 'Miten alaselkä tänään?',
-      promptHint: 'Valinta säätää nostoja ja juoksun kovaa työtä.',
-      tipTitle: 'Alaselkä – vinkit',
+      label: 'Espalda baja',
+      promptTitle: '¿Cómo está la espalda baja hoy?',
+      promptHint: 'La elección ajusta el peso muerto y el trabajo exigente.',
+      tipTitle: 'Espalda baja – consejos',
       tipClass: 'condition-tip',
       exerciseIds: [
         'dead_bug', 'cat_cow', 'glute_activation', 'plank',
         'hip_flexor_stretch', 'childs_pose', 'hamstring_stretch'
       ],
       bullets: [
-        'Kuormanhallinta: vältä raskaita vetoliikkeitä ja syviä kyykkyjä kivun rajoissa.',
-        'Suosi hallittua keskivartaloa (dead bug) ja pehmeää liikkuvuutta (kissa–lehmä).',
-        'Juoksu: pidä vauhti helppona; vältä pitkiä alamäkiä jos aristus lisääntyy.',
-        'Nouse välillä kävelemään – pitkä staattinen istuminen voi jäykistää.',
-        'Terävä säteily, puutuminen tai yö kipu → ammattilaisen arvio.',
+        'Manejo de carga: evitar movimientos pesados de rueda y escaños profundos dentro de los límites del dolor.',
+        'Prioriza core controlado (dead bug) y movimiento suave (gato–vaca).',
+        'Correr: mantener la velocidad fácil; evitar larga cuesta abajo si la ternura aumenta.',
+        'Levántate y anda por ahí a veces - sentarse estático largo puede endurecerse.',
+        'Radiación afilada, entumecimiento o dolor de noche → juicio profesional.',
         TIP_DISCLAIMER
       ]
     },
     ankle_sprain_acute: {
       id: 'ankle_sprain_acute',
-      label: 'Nilkan nyrjähdys (akuutti)',
-      promptTitle: 'Miten nilkka tänään?',
-      promptHint: 'Akuutti nyrjähdys: suosi suhteellista lepoa, ei aggressiivista kuormitusta.',
-      tipTitle: 'Nilkan nyrjähdys (akuutti) – vinkit',
+      label: 'Esguince de tobillo (agudo)',
+      promptTitle: '¿Cómo está el tobillo hoy?',
+      promptHint: 'Esguince agudo: favorece el descanso relativo, sin carga agresiva.',
+      tipTitle: 'Esguince de tobillo (agudo) – consejos',
       tipClass: 'condition-tip',
       exerciseIds: [
         'ankle_mobility', 'calf_stretch', 'towel_stretch_foot', 'childs_pose'
       ],
       bullets: [
-        'Suhteellinen lepo: vältä juoksua, hyppyjä ja suunnanmuutoksia kunnes kävely on kivutonta.',
-        'Suosi pyörää / yläkroppaa / kevyttä liikkuvuutta – ei aggressiivista “testaamista”.',
-        'Turvotus, mustelma tai varauksen pelko → anna paranemisaikaa; tarvittaessa ammattilainen.',
-        'Kun kävely on ok, palaa asteittain: kävely → hölkkä → helppo juoksu.',
-        'Älä aloita eksentrisiä hyppyjä tai salibandyä liian aikaisin.',
+        'Reposo relativo: evita correr, saltar y pivotes hasta que caminar sea indoloro.',
+        'Prioriza bici / tren superior / movimiento suave – sin "probar" de forma agresiva.',
+        'Hinchazón, hematoma o miedo a apoyar → da tiempo a sanar; profesional si hace falta.',
+        'Cuando caminar está bien, volver gradualmente: caminar → correr → fácil correr.',
+        'No empieces con saltos excéntricos o floorball demasiado pronto.',
         TIP_DISCLAIMER
       ]
     },
     ankle_sprain_history: {
       id: 'ankle_sprain_history',
-      label: 'Nilkan nyrjähdys (historia)',
+      label: 'Esguince de tobillo (historial)',
       promptTitle: null, // no daily prompt for history-only
       promptHint: null,
-      tipTitle: 'Nilkan nyrjähdys (historia) – vinkit',
+      tipTitle: 'Esguince de tobillo (historial) – consejos',
       tipClass: 'condition-tip',
       exerciseIds: [
         'ankle_mobility', 'calf_raise', 'single_leg_hip_thrust',
         'glute_med_side_lie', 'hip_opener', 'calf_stretch'
       ],
       bullets: [
-        'Historia: panosta proprioseptiikkaan ja yhden jalan hallintaan ennen kovaa suunnanmuutosta.',
-        'Lämmittelyyn nilkan liikkuvuus + kevyt pohjetyö.',
-        'Älä hyppää suoraan aggressiiviseen plyometriaan – etene hallitusti.',
-        'Epävarmalla alustalla / väsyneenä riski uusiutua: pidä fokus tekniikassa.',
+        'Historial: prioriza propiocepción y control a una pierna antes de cambios de dirección duros.',
+        'Calienta el tobillo + trabajo ligero de equilibrio.',
+        'No pases directo a pliometría agresiva – progresa de forma controlada.',
+        'En superficie incierta o con fatiga: más riesgo de recidiva – prioriza la técnica.',
         TIP_DISCLAIMER
       ]
     }
@@ -1437,28 +1437,28 @@
         (/kantapää|jalkapohja/.test(blob) && /kipu|faski|fasci/.test(blob))) {
       return 'plantar_fasciitis';
     }
-    if (/akilles|achilles|tendinopat/.test(blob) || area === 'akilles') {
+    if (/akilles|achilles|aquiles|tendinopat/.test(blob) || area === 'akilles' || area === 'aquiles') {
       return 'achilles';
     }
-    if (area === 'nilkka' || /nyrjähdys|nyrja|sprain|nyrjäht/.test(blob)) {
+    if (area === 'nilkka' || area === 'tobillo' || /nyrjähdys|nyrja|sprain|nyrjäht|esguince/.test(blob)) {
       return status === 'history' ? 'ankle_sprain_history' : 'ankle_sprain_acute';
     }
-    if (/kiertäjäkalvo|kiertajakalvo|rotator|cuff/.test(blob) || area === 'olkapää') {
+    if (/manguito rotador|kiertajakalvo|kiertäjä|rotator|cuff/.test(blob) || area === 'hombro' || area === 'olkapää') {
       return 'rotator_cuff';
     }
-    if (/alaselkä|alaselka|low.?back|lumbago|lanneranka/.test(blob) ||
-        (area === 'selkä' && !/yläselkä|niska|kaula/.test(blob))) {
+    if (/lumbar|alaselka|alaselkä|low.?back|lumbago|lanneranka/.test(blob) ||
+        ((area === 'espalda' || area === 'atrás' || area === 'selkä') && !/yläselkä|upper.?back|niska|kaula|cervical|cuello/.test(blob))) {
       return 'low_back';
     }
-    if (/it[- ]?jänne|it[- ]?janne|iliotibia|it.?band|juoksijan.?lonkka|lateraalinen/.test(blob)) {
+    if (/it[- ]?jänne|it[- ]?janne|iliotibia|it.?band|juoksijan.?lonkka|lateraalinen|banda.?it/.test(blob)) {
       return 'it_band';
     }
-    if (/juoksijan.?polvi|runners?.?knee|pfps|patellofemor/.test(blob)) {
+    if (/juoksijan.?polvi|runners?.?knee|pfps|patellofemor|rodilla.?del.?corredor/.test(blob)) {
       return 'runners_knee';
     }
-    if (area === 'polvi') return 'runners_knee';
-    if (area === 'lonkka') return 'it_band';
-    if (area === 'pohje' && /akilles|jänne/.test(blob)) return 'achilles';
+    if (area === 'polvi' || area === 'rodilla') return 'runners_knee';
+    if (area === 'lonkka' || area === 'cadera') return 'it_band';
+    if ((area === 'pohje' || area === 'gemelo') && /akilles|aquiles|jänne|tendón/.test(blob)) return 'achilles';
     if (p.condition && CONDITIONS[normalizeConditionKey(p.condition)]) {
       return normalizeConditionKey(p.condition);
     }
@@ -1469,11 +1469,11 @@
     const s = String(label || '').toLowerCase();
     if (/juoksijan.?polvi|runners/.test(s)) return 'runners_knee';
     if (/it|lateraal|iliotibia|juoksijan.?lonkka/.test(s)) return 'it_band';
-    if (/kiertäjä|rotator|olkapää/.test(s)) return 'rotator_cuff';
+    if (/kiertäjä|rotator|hombro/.test(s)) return 'rotator_cuff';
     if (/akilles|achilles/.test(s)) return 'achilles';
     if (/plantaari|plantar/.test(s)) return 'plantar_fasciitis';
-    if (/alaselkä|selkä|low.?back/.test(s)) return 'low_back';
-    if (/nilkka|nyrjähdys|sprain/.test(s)) {
+    if (/lumbar|atrás|espalda|selkä|low.?back/.test(s)) return 'low_back';
+    if (/nilkka|tobillo|nyrjähdys|sprain|esguince/.test(s)) {
       return /historia|history/.test(s) ? 'ankle_sprain_history' : 'ankle_sprain_acute';
     }
     return null;
@@ -1641,30 +1641,30 @@
       s.painSoftened = true;
       s.modified = (s.modified ? s.modified + '+' : '') + 'kipu';
       if (hasAnkleAcute || (severe && (hasKnee || hasAchilles))) {
-        s.name = (s.name || 'Juoksu') + ' → pyörä/krossi (kipu)';
+        s.name = (s.name || 'Carrera') + '→ rueda / cruz (dolor)';
         s.preferCrossTrain = true;
         s.details =
           (hasAnkleAcute
-            ? 'NILKKA (AKUUTTI NYRJÄHDYS) – suhteellinen lepo\nSuosi pyörää / yläkroppaa. Ei juoksua, hyppyjä tai suunnanmuutoksia.\n'
-            : 'KIPU ARISTAA PALJON\nSuosi tänään pyörää, crosstraineria tai reipasta kävelyä.\n') +
-          'Vältä alamäkijuoksua, hyppyjä ja äkillisiä suunnanmuutoksia.\n' +
+            ? 'TOBILLO (ESGUINCE AGUDO) – reposo relativo\nPrioriza bici / tren superior. Sin carrera, saltos ni cambios de dirección.\n'
+            : 'EL DOLOR MOLESTA MUCHO\nHoy prioriza bici, elíptica o caminata enérgica.\n') +
+          'Evita bajadas, saltos y cambios de dirección bruscos.\n' +
           (s.details || '');
         if (s.distanceKm) s.distanceKm = round1(s.distanceKm * (hasAnkleAcute ? 0.4 : 0.55));
         if (s.subtype === 'tempo' || s.subtype === 'intervals' || s.subtype === 'strides') {
           s.subtype = 'easy';
         }
       } else {
-        const tag = hasAchilles ? 'akilles/pohja' : hasKnee ? 'polvi/IT' : hasBack ? 'selkä' : 'kipu';
-        s.name = (s.name || 'Juoksu') + ' (' + tag + ' huomioitu)';
+        const tag = hasAchilles ? 'Aquiles/planta' : hasKnee ? 'rodilla/IT' : hasBack ? 'espalda' : 'dolor';
+        s.name = (s.name || 'Carrera') + ' (' + tag + ' tenido en cuenta)';
         s.details =
-          'KIPU HUOMIOITU – kevennetty isku\n' +
-          'Pidä vauhti helppona, vältä alamäkiä ja nopeuspiikkejä, lyhennä tarvittaessa.\n' +
-          'Voit vaihtaa osan pyöräksi / ellipticaliksi.\n' +
+          'DOLOR TENIDO EN CUENTA – impacto suavizado\n' +
+          'Mantén ritmo fácil, evita bajadas y picos de velocidad, acorta si hace falta.\n' +
+          'Puedes cambiar parte por bici / elíptica.\n' +
           (s.details || '');
         if (s.distanceKm) s.distanceKm = round1(s.distanceKm * 0.8);
         if (s.subtype === 'tempo' || s.subtype === 'intervals') {
           s.subtype = 'easy';
-          s.name = 'Helppo (' + tag + ' huomioitu)';
+          s.name = 'Fácil (' + tag + ' tenido en cuenta)';
         }
       }
       s.warmup = warmupFor('run', true);
@@ -1678,35 +1678,35 @@
           if (hasKnee || hasAnkleAcute) {
             if (/lunge|squat|jump|box|askel|kyykky/.test(id)) {
               next = Object.assign({}, next, {
-                sets: severe || hasAnkleAcute ? '2×6–8 kevyt / tai jätä väliin' : '2–3×8 hallittu, kivuton ROM',
-                alt: next.alt || 'lonkkasilta / glute bridge',
-                painNote: hasAnkleAcute ? 'Nilkka: vältä hyppyjä ja epävakaata alustaa' : 'Polvi/IT: pidä liike kivuttomana'
+                sets: severe || hasAnkleAcute ? '2×6–8 suave / o saltar' : '2–3×8 controlado, ROM sin dolor',
+                alt: next.alt || 'puente de glúteos / glute bridge',
+                painNote: hasAnkleAcute ? 'Tobillo: evita saltos y superficies inestables' : 'Rodilla / IT: mantén el movimiento sin dolor'
               });
             }
           }
           if (hasAchilles) {
             if (/jump|box|calf|pohje|hop/.test(id)) {
               next = Object.assign({}, next, {
-                sets: '2×8–10 hallittu / tai jätä väliin',
-                painNote: 'Akilles/pohja: ei plyometriaa ärsytyksen aikana'
+                sets: '2×8–10 controlado / o omitir',
+                painNote: 'Aquiles / planta: sin pliometría durante la irritación'
               });
             }
           }
           if (hasShoulder) {
-            if (/press|punnerr|overhead|pysty|bench|olkapää|military|dip/.test(id)) {
+            if (/press|punnerr|overhead|pysty|bench|hombro|military|dip/.test(id)) {
               next = Object.assign({}, next, {
-                sets: severe ? 'kevyt / tai jätä väliin' : '2–3×8–12 kevyt, kivuton ROM',
-                alt: next.alt || 'kuminauhaulko kierto / soutu',
-                painNote: 'Olkapää: vältä kivuliasta yläasentoa'
+                sets: severe ? 'suave / o omitir' : '2–3×8–12 suave, ROM sin dolor',
+                alt: next.alt || 'rotación externa con banda / remo',
+                painNote: 'Hombro: evita la posición overhead dolorosa'
               });
             }
           }
           if (hasBack) {
             if (/deadlift|maastaveto|squat|kyykky|good.?morning|rdl/.test(id)) {
               next = Object.assign({}, next, {
-                sets: severe ? 'kevyt / tai jätä väliin' : '2–3×6–8 kevyt, neutraali selkä',
+                sets: severe ? 'suave / o omitir' : '2–3×6–8 suave, espalda neutra',
                 alt: next.alt || 'hip thrust / glute bridge / dead bug',
-                painNote: 'Alaselkä: pidä neutraali selkä, lopeta jos säteilee'
+                painNote: 'Espalda baja: mantén neutra; para si irradia'
               });
             }
           }
@@ -1714,13 +1714,13 @@
         });
       }
       s.durationMin = Math.round((s.durationMin || 60) * (severe ? 0.7 : 0.85));
-      s.name = (s.name || 'Voima') + ' (kipu huomioitu)';
+      s.name = (s.name || 'Fuerza') + ' (dolor tenido en cuenta)';
       const notes = [];
-      if (hasKnee) notes.push('POLVI/IT: vältä hyppyjä ja syviä kyykkyjä kivun rajoissa. Suosi pakara-/lonkkavoimaa.');
-      if (hasAnkleAcute) notes.push('NILKKA (akuutti): ei hyppyjä, epävakaata alustaa tai suunnanmuutoksia.');
-      if (hasAchilles) notes.push('AKILLES/POHJA: ei plyometriaa; pohjetyö hallitusti.');
-      if (hasShoulder) notes.push('OLKAPÄÄ: vältä raskaita pystypunnerruksia; suosi ulkokiertoa ja lapaluun tukea.');
-      if (hasBack) notes.push('ALASELKÄ: kevennä vetoja/kyykkyjä; suosi dead bug / pakaratyötä.');
+      if (hasKnee) notes.push('RODILLA / IT: evita saltos y sentadillas profundas dentro del dolor. Prioriza cierre de cadena / fuerza de cadera.');
+      if (hasAnkleAcute) notes.push('TOBILLO (agudo): sin saltos, superficies inestables ni cambios de dirección.');
+      if (hasAchilles) notes.push('AQUILES / PLANTA: sin pliometría; trabajo bajo control.');
+      if (hasShoulder) notes.push('HOMBRO: evita empujes verticales fuertes; prioriza rotación externa y soporte del hombro.');
+      if (hasBack) notes.push('ESPALDA: aligera peso muerto / sentadillas; prioriza dead bug / glúteos.');
       s.notes = notes.join(' ') + ' ' + (s.notes || '');
       s.details = formatStrengthDetails(s);
       s.warmup = warmupFor('strength', true);
@@ -1729,8 +1729,8 @@
   }
 
 
-  /** Salibandyn jälkeinen palautuspäivä – vahvistettu */
-  function applySalibandyRecovery(session) {
+  /** Floorballn jälkeinen palautuspäivä – vahvistettu */
+  function applyFloorballRecovery(session) {
     if (!session) return session;
     const s = JSON.parse(JSON.stringify(session));
     s.modified = 'salibandy-recovery';
@@ -1739,14 +1739,14 @@
       const hard = s.subtype === 'tempo' || s.subtype === 'intervals' ||
         s.subtype === 'strides' || s.subtype === 'long';
       s.subtype = 'easy';
-      s.name = hard ? 'Palautus (salibandyn jälkeen)' : 'Helppo / palautus (salibandy+)';
+      s.name = hard ? 'Pago (después de la pensión)' : 'Easy / Return (alibandy +)';
       const base = s.distanceKm || 8;
       s.distanceKm = round1(clamp(base * (hard ? 0.55 : 0.75), 3, 7));
       s.details =
-        '🏒 Eilinen salibandy oli kova kuormitus (TE jopa 5.0).\n' +
-        'Tänään vain helppo palautus ~' + s.distanceKm + ' km tai kävely.\n' +
-        'Ei tempoa, intervalleja eikä pitkää. Laatu aikaisintaan ylihuomenna.\n' +
-        'Jos jalat raskaat: vaihda lihashuoltoon tai kävelyyn.';
+        '• El floorball de ayer fue una carga dura (TE hasta 5.0).\n' +
+        'Hoy sólo regreso fácil ~' + s.distanceKm + ' km o caminata.\n' +
+        'Sin tempo, intervalos ni tirada larga. Calidad como pronto pasado mañana.\n' +
+        'Si sus pies son pesados: cambiar al mantenimiento muscular o caminar.';
       s.cueIds = ['easy_run_form'];
       s.warmup = warmupFor('run', true);
       s.mobility = mobilityFor('run');
@@ -1754,26 +1754,26 @@
       const short = shortStrength(s);
       Object.assign(s, short);
       s.type = 'strength';
-      s.name = 'Voima kevyt (salibandy-palautus)';
+      s.name = 'Fuerza de luz (retorno de libanesas)';
       s.durationMin = 25;
       s.details =
-        '🏒 Salibandyn jälkeinen palautuspäivä.\n' +
-        'Pidä voima lyhyenä ja kevyenä (RPE ≤6) tai vaihda lihashuoltoon.\n' +
+        '🏒 Día de recuperación tras el floorball.\n' +
+        'Mantén la fuerza corta y ligera (RPE ≤6) o cámbiala por movilidad.\n' +
         (s.details || '');
       s.warmup = warmupFor('strength', true);
       s.mobility = mobilityFor('strength');
     } else if (s.type === 'rest' || s.type === 'mobility') {
-      s.name = 'Palautus salibandyn jälkeen';
+      s.name = 'Recuperación tras el floorball';
       s.details =
-        '🏒 Hyvä – lepo/palautus salibandyn jälkeen.\n' +
-        'Kevyt kävely + liikkuvuus ok. Ei lisäkuormaa.';
+        '🏒 Bien – descanso/recuperación tras el floorball.\n' +
+        'Ligero caminar + movimiento ok. No hay carga extra.';
       s.mobility = mobilityFor('gentle');
     }
     return s;
   }
 
 
-  // ---------- Valmentajan suunnitelma (coach-plan.json) ----------
+  // ---------- Entrenadorn suunnitelma (coach-plan.json) ----------
   const COACH_TYPES = ['juoksu', 'koti', 'sali', 'lihashuolto', 'kavely', 'lepo'];
   const COACH_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -1782,70 +1782,70 @@
   }
 
   /** Validoi ja siistii coach-plan-objektin. Palauttaa null jos ei kelpaa. */
-  // --- Olkapään (kiertäjäkalvo) kuntoutustila ---
+  // --- Hombro (manguito rotador) kuntoutustila ---
 
   /** Päivittäinen ~10 min liikerata-/kuntoutusrutiini (kivuton alue). */
   const SHOULDER_REHAB_DAILY = [
-    { id: 'codman_pendulum', label: 'Codman-heilurit', sets: '2×30–60 s / suunta' },
-    { id: 'wall_walk', label: 'Seinäkävely sormilla', sets: '2×10' },
-    { id: 'stick_flexion', label: 'Fleksio kepillä', sets: '2×10–15' },
-    { id: 'stick_external_rotation', label: 'Passiivinen ulkokierto kepillä', sets: '2×10–15' },
-    { id: 'scap_squeeze', label: 'Lapaluiden puristus', sets: '2×15' },
-    { id: 'iso_external_rotation', label: 'Isometrinen ulkokierto', sets: '2×10 × 5 s (~30 %)' },
-    { id: 'iso_internal_rotation', label: 'Isometrinen sisäkierto', sets: '2×10 × 5 s (~30 %)' },
-    { id: 'cross_body_stretch', label: 'Venytys rinnan yli', sets: '2×30 s' }
+    { id: 'codman_pendulum', label: 'Péndulos Codman', sets: '2×30–60 s / dirección' },
+    { id: 'wall_walk', label: 'Caminata de dedos por la pared', sets: '2×10' },
+    { id: 'stick_flexion', label: 'Flexión con palo', sets: '2×10–15' },
+    { id: 'stick_external_rotation', label: 'Rotación externa pasiva con palo', sets: '2×10–15' },
+    { id: 'scap_squeeze', label: 'Apretón de omóplatos', sets: '2×15' },
+    { id: 'iso_external_rotation', label: 'Rotación externa asimétrica', sets: '2×10 × 5 s (~30 %)' },
+    { id: 'iso_internal_rotation', label: 'Rotación interna isométrica', sets: '2×10 × 5 s (~30 %)' },
+    { id: 'cross_body_stretch', label: 'Estréguese sobre el pecho', sets: '2×30 s' }
   ];
 
-  /** Voimapäivien loppuun lisättävä kevyt vahvistava olkapääblokki. */
+  /** Fuerzapäivien loppuun lisättävä kevyt vahvistava hombroblokki. */
   const SHOULDER_REHAB_STRENGTH = [
-    { id: 'codman_pendulum', label: 'Codman-heilurit', sets: '60 s' },
-    { id: 'band_external_rotation', label: 'Ulkokierto kuminauhalla (kevyt)', sets: '2–3×12–15' },
-    { id: 'band_internal_rotation', label: 'Sisäkierto kuminauhalla (kevyt)', sets: '2–3×12–15' },
-    { id: 'side_lying_external_rotation', label: 'Kylkimakuu-ulkokierto (0–1 kg)', sets: '2–3×10–15' },
-    { id: 'band_row_low', label: 'Kevyt kuminauhasoutu matalalta', sets: '2–3×12–15' },
-    { id: 'wall_circles', label: 'Pallo seinää vasten – pyöritykset', sets: '2×10 / suunta' }
+    { id: 'codman_pendulum', label: 'Péndulos Codman', sets: '60 s' },
+    { id: 'band_external_rotation', label: 'Rotación externa con banda (ligera)', sets: '2–3×12–15' },
+    { id: 'band_internal_rotation', label: 'Rotación interna con banda (ligera)', sets: '2–3×12–15' },
+    { id: 'side_lying_external_rotation', label: 'Rotación externa de lado (0–1 kg)', sets: '2–3×10–15' },
+    { id: 'band_row_low', label: 'Remo ligero con banda (bajo)', sets: '2–3×12–15' },
+    { id: 'wall_circles', label: 'Bola contra pared - spinning', sets: '2×10 / dirección' }
   ];
 
   const SHOULDER_SAFE_POOLS = {
     sali: [
-      { id: 'leg_press', label: 'Jalkaprässi', sets: '3×8–10 · RPE 6–7' },
-      { id: 'sl_rdl_bw', label: 'Yhden jalan RDL ilman painoja', sets: '3×8/jalka' },
-      { id: 'step_up_bw', label: 'Step-up ilman painoja', sets: '3×10/jalka' },
-      { id: 'reverse_crunch', label: 'Käänteinen vatsarutistus', sets: '3×10–12' },
-      { id: 'dead_bug', label: 'Dead bug – vain jalat, kädet rinnalla', sets: '3×8/puoli' },
-      { id: 'calf_raise', label: 'Pohjenosto', sets: '3×12' }
+      { id: 'leg_press', label: 'Prensa de piernas', sets: '3×8–10 · RPE 6–7' },
+      { id: 'sl_rdl_bw', label: 'RDL a una pierna sin peso', sets: '3×8/pierna' },
+      { id: 'step_up_bw', label: 'Step-up sin peso', sets: '3×10/pierna' },
+      { id: 'reverse_crunch', label: 'Crunch inverso', sets: '3×10–12' },
+      { id: 'dead_bug', label: 'Insecto muerto - sólo pies, manos a lado', sets: '3×8/lado' },
+      { id: 'calf_raise', label: 'Elevación de gemelos', sets: '3×12' }
     ],
     koti: [
-      { id: 'wall_sit', label: 'Seinäistunta', sets: '3×30–60 s' },
-      { id: 'lunge', label: 'Askelkyykky ilman painoja', sets: '3×10/jalka' },
-      { id: 'sl_rdl_bw', label: 'Yhden jalan RDL ilman painoja', sets: '3×8/jalka' },
-      { id: 'single_leg_hip_thrust', label: 'Yhden jalan lantionnosto (kädet rennosti)', sets: '3×10/jalka' },
-      { id: 'reverse_crunch', label: 'Käänteinen vatsarutistus', sets: '3×10–12' },
-      { id: 'dead_bug', label: 'Dead bug – vain jalat, kädet rinnalla', sets: '3×8/puoli' },
-      { id: 'step_up_bw', label: 'Step-up ilman painoja', sets: '3×10/jalka' },
-      { id: 'calf_raise', label: 'Pohjenosto step-laudalla', sets: '3×15' }
+      { id: 'wall_sit', label: 'Sentadilla isométrica en pared', sets: '3×30–60 s' },
+      { id: 'lunge', label: 'Zancada sin peso', sets: '3×10/pierna' },
+      { id: 'sl_rdl_bw', label: 'RDL a una pierna sin peso', sets: '3×8/pierna' },
+      { id: 'single_leg_hip_thrust', label: 'Compra de cadera de una pierna (manos casuales)', sets: '3×10/pierna' },
+      { id: 'reverse_crunch', label: 'Crunch inverso', sets: '3×10–12' },
+      { id: 'dead_bug', label: 'Insecto muerto - sólo pies, manos a lado', sets: '3×8/lado' },
+      { id: 'step_up_bw', label: 'Step-up sin peso', sets: '3×10/pierna' },
+      { id: 'calf_raise', label: 'Elevación de gemelos en step', sets: '3×15' }
     ],
     mobility: [
-      { id: 'hip_flexor_stretch', label: 'Lonkan koukistajan venytys', sets: '2×30 s/puoli' },
-      { id: 'hamstring_stretch', label: 'Takareiden venytys', sets: '2×30 s/puoli' },
-      { id: 'figure4_stretch', label: 'Figure-4 / piriformis', sets: '2×30 s/puoli' },
-      { id: 'quad_stretch', label: 'Etureiden venytys', sets: '2×30 s/puoli' },
-      { id: 'calf_stretch', label: 'Pohjevenytys', sets: '2×30 s/puoli' },
-      { id: 'cross_body_stretch', label: 'Venytys rinnan yli (kevyt)', sets: '2×30 s' }
+      { id: 'hip_flexor_stretch', label: 'Estiramiento del flexor de cadera', sets: '2×30 s/lado' },
+      { id: 'hamstring_stretch', label: 'Estiramiento de isquiotibiales', sets: '2×30 s/lado' },
+      { id: 'figure4_stretch', label: 'Figure-4 / piriformis', sets: '2×30 s/lado' },
+      { id: 'quad_stretch', label: 'Estiramiento de cuádriceps', sets: '2×30 s/lado' },
+      { id: 'calf_stretch', label: 'Estiramiento de gemelos', sets: '2×30 s/lado' },
+      { id: 'cross_body_stretch', label: 'Estiramiento cruzado al pecho (suave)', sets: '2×30 s' }
     ],
     warmup: [
-      { id: 'codman_pendulum', label: 'Codman-heilurit', sets: '30 s / suunta' },
-      { id: 'scap_squeeze', label: 'Lapaluiden puristus', sets: '10' },
-      { id: 'leg_swings', label: 'Jalanheilautukset', sets: '10/puoli' },
-      { id: 'bw_squat_warmup', label: 'Kehonpainokyykky', sets: '10' }
+      { id: 'codman_pendulum', label: 'Péndulos Codman', sets: '30 s / dirección' },
+      { id: 'scap_squeeze', label: 'Apretón de omóplatos', sets: '10' },
+      { id: 'leg_swings', label: 'Balanceos de pierna', sets: '10/lado' },
+      { id: 'bw_squat_warmup', label: 'Sentadilla con peso corporal', sets: '10' }
     ]
   };
 
   const SHOULDER_NOTE =
-    'Olkapäätila (oikea kiertäjäkalvo): olkapäätä kuormittavat liikkeet poistettu ja korvattu jalka-/keskivartaloliikkeillä.';
+    'Modo hombro (manguito rotador): ejercicios que cargan el hombro sustituidos por trabajo de piernas / core.';
   const SHOULDER_COACH_NOTE =
-    'Olkapäätila: jätä tekstistä pois leuanvedot, punnerrukset, kaikki punnerrus-/pystyliikkeet, soudut painolla, face pullit, ab wheel ' +
-    'ja lankut/kylkilankut käsillä. Tee tilalle seinäistunta, askelkyykky ja step-up ilman painoja, yhden jalan lantionnosto ja dead bug (vain jalat).';
+    'Espacio de hombro: excluye chin-ups, push-ups, todos push-ups / movimientos verticales, remo con peso, bolas de cara, rueda de ab' +
+    'y placas / costillas con las manos. Hacer un asiento de pared, escapo de paso y un paso hacia arriba sin pesos, compra de una cadera de pie y error muerto (sólo pies).';
 
   function shoulderLoader(lib) {
     lib = lib || (global && global.TreeniExercises) || null;
@@ -1865,10 +1865,10 @@
       if (!ex || loads(ex.id)) { removed++; return; }
       const e = Object.assign({}, ex);
       if (e.altId && loads(e.altId)) { delete e.altId; delete e.alt; }
-      // Käsiin otettava kuorma (käsipainot / kahvakuula) kuormittaa olkapäätä → ilman painoja
-      if (/käsipaino|kahvakuula|kettlebell/i.test(e.label || '')) {
-        e.label = String(e.label).replace(/\s*\([^)]*(käsipaino|kahvakuula|kettlebell)[^)]*\)/gi, '')
-          .replace(/\s*(käsipainoilla|kahvakuulalla)/gi, '').trim() + ' (ilman painoja)';
+      // Käsiin otettava kuorma (mancuernas / kahvakuula) carga el hombro → ilman painoja
+      if (/mancuerna|kahvakuula|kettlebell/i.test(e.label || '')) {
+        e.label = String(e.label).replace(/\s*\([^)]*(mancuerna|kahvakuula|kettlebell)[^)]*\)/gi, '')
+          .replace(/\s*(mancuernailla|kahvakuulalla)/gi, '').trim() + ' (sin peso)';
       }
       kept.push(e);
     });
@@ -1884,7 +1884,7 @@
   }
 
   /**
-   * Olkapään kuntoutustila: poistaa olkapäätä kuormittavat liikkeet (exercises.js loadsShoulder),
+   * Rehab de hombrotila: poistaa el hombro kuormittavat liikkeet (exercises.js loadsShoulder),
    * korvaa jalka-/keskivartaloliikkeillä ja lisää kevyen kuntoutusblokin voima-/liikkuvuuspäiviin.
    * Idempotentti – voidaan ajaa uudelleen samalle sessiolle.
    */
@@ -1893,11 +1893,11 @@
     const loads = shoulderLoader(lib);
     let s = JSON.parse(JSON.stringify(session));
 
-    // Uinti kuormittaa olkapäätä → kävely
+    // Uinti carga el hombro → kävely
     if (s.type === 'other' && (s.subtype === 'uinti' || s.activityKind === 'uinti')) {
       const walk = buildOtherActivitySession('kavely');
-      walk.name = 'Kävely (uinnin tilalle – olkapää)';
-      walk.details = 'Uinti kuormittaa olkapäätä – tänään kävely tai pyöräily kevyesti.\n' + walk.details;
+      walk.name = 'Caminando (en lugar de nadar - hombro)';
+      walk.details = 'Nadar carga el hombro – hoy caminata o bici suave.\n' + walk.details;
       s = walk;
     }
 
@@ -1930,9 +1930,9 @@
     if (isStrength || isMobility) {
       s.rehabBlock = {
         id: 'shoulder_rehab',
-        label: 'Olkapään kuntoutus (oikea kiertäjäkalvo)',
+        label: 'Rehabilitación del hombro (rotador derecho)',
         durationMin: 10,
-        note: 'Kevyt kuorma, 2–3×10–15. Tee vain kivuttomalla alueella – jos kipu nousee, tee pelkät heilurit ja liikeradat.',
+        note: 'Carga ligera, 2-3 × 10- 15. Hazlo en un área indolorosa. Si el dolor aumenta, haga el péndulo y la trayectoria.',
         exercises: (isStrength ? SHOULDER_REHAB_STRENGTH : SHOULDER_REHAB_DAILY).map(function (x) { return Object.assign({}, x); })
       };
       if (s.coach && !(s.exercises && s.exercises.length)) {
@@ -1942,13 +1942,13 @@
 
     if (changed) {
       if (isStrength && s.exercises && s.exercises.length) {
-        s.notes = SHOULDER_NOTE; // alkuperäiset punnerrus-/leuanvetovinkit eivät päde olkapäätilassa
+        s.notes = SHOULDER_NOTE; // alkuperäiset punnerrus-/leuanvetovinkit eivät päde modo hombro
         if (s.equipmentNote) s.equipmentNote = s.location === 'koti'
-          ? 'Välineet: step-lauta, seinä, kevyt kuminauha (kuntoutus).'
-          : 'Välineet: jalkaprässi, step-lauta, kevyt kuminauha (kuntoutus).';
+          ? 'Equipo: tabla de paso, pared, banda elástica ligera (rehabilitación).'
+          : 'Equipo: frenos de pierna, tabla de paso, banda elástica ligera (rehabilitación).';
         s.details = formatStrengthDetails(s);
       } else if (isMobility && s.exercises) {
-        s.details = (s.headline || s.name || 'Liikkuvuus') + '\n' +
+        s.details = (s.headline || s.name || 'Movilidad') + '\n' +
           s.exercises.map(function (e) { return '• ' + (e.label || e.id) + (e.sets ? ' – ' + e.sets : ''); }).join('\n');
       }
     }
@@ -1989,7 +1989,7 @@
         subtype: coachStr(d.subtype, 30),
         options: (Array.isArray(d.options) ? d.options : []).slice(0, 6).map(function (o) {
           return {
-            label: coachStr(o && o.label, 60) || 'Vaihtoehto',
+            label: coachStr(o && o.label, 60) || 'Alternativa',
             details: coachStr(o && o.details),
             distanceKm: o && typeof o.distanceKm === 'number' && o.distanceKm > 0 && o.distanceKm < 60 ? o.distanceKm : null
           };
@@ -2024,8 +2024,8 @@
   }
 
   const DONE_TYPES = ['run', 'walk', 'strength', 'floorball', 'cycle', 'swim', 'mobility', 'other'];
-  const DONE_LABELS = { run: 'Juoksu', walk: 'Kävely', strength: 'Voimatreeni', floorball: 'Salibandy',
-    cycle: 'Pyöräily', swim: 'Uinti', mobility: 'Liikkuvuus', other: 'Liikunta' };
+  const DONE_LABELS = { run: 'Carrera', walk: 'Caminata', strength: 'Fuerza', floorball: 'Floorball',
+    cycle: 'Bici', swim: 'Natación', mobility: 'Movilidad', other: 'Actividad' };
 
   /** Tehdyt treenit (Garmin/käsin): { 'YYYY-MM-DD': [{type, km, min, pace, source, id}] } – vain treenidata. */
   function parseCoachDone(raw) {
@@ -2202,7 +2202,7 @@
     attachPrep,
     STRENGTH_RAW,
     fourWeekSuggestion,
-    applySalibandy,
+    applyFloorball,
     applyPainSoftening,
     hasActiveKneePain,
     hasActiveCondition,
@@ -2221,7 +2221,7 @@
     TIP_DISCLAIMER,
     buildOtherActivitySession,
     OTHER_ACTIVITY_KINDS,
-    applySalibandyRecovery,
+    applyFloorballRecovery,
     applyShoulderRehab,
     parseCoachFlags,
     SHOULDER_REHAB_DAILY,

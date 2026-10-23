@@ -100,7 +100,7 @@
 
   /**
    * Kartoi Garmin-tyyppi: run | walk | cycle | swim | cardio | strength | floorball | other
-   * Kävelyä / pyörää / uintia / cardioa EI käsitellä kovana juoksuna.
+   * Caminata / pyörää / uintia / cardioa EI käsitellä kovana juoksuna.
    */
   function classifyActivity(type) {
     const t = (type || '').toLowerCase();
@@ -121,13 +121,13 @@
   function normalizeActivities(rows) {
     return rows.map(row => {
       const type = pick(row, ['Activity Type', 'Type', 'Aktiviteettityyppi', 'activityType']);
-      const date = parseDate(pick(row, ['Date', 'Päivämäärä', 'Start Time', 'Start', 'Aloitusaika']));
+      const date = parseDate(pick(row, ['Date', 'Fecha', 'Start Time', 'Start', 'Aloitusaika']));
       const title = pick(row, ['Title', 'Name', 'Nimi', 'Activity Name']);
       const distanceKm = parseDistanceKm(pick(row, ['Distance', 'Distance (km)', 'Matka', 'Matka (km)']));
       const timeMin = parseTimeMinutes(pick(row, ['Time', 'Duration', 'Aika', 'Kesto']));
       const avgHr = parseFloat(String(pick(row, ['Avg HR', 'Average Heart Rate', 'Keskisyke', 'Avg Heart Rate'])).replace(',', '.')) || null;
       const maxHr = parseFloat(String(pick(row, ['Max HR', 'Max Heart Rate', 'Maksimisyke'])).replace(',', '.')) || null;
-      const avgPace = pick(row, ['Avg Pace', 'Average Pace', 'Keskivauhti', 'Pace']);
+      const avgPace = pick(row, ['Avg Pace', 'Average Pace', 'Ritmo medio', 'Pace']);
       const elev = parseFloat(String(pick(row, ['Elev Gain', 'Elevation Gain', 'Nousu', 'Total Ascent'])).replace(',', '.')) || null;
       const kind = classifyActivity(type);
       return {
@@ -151,7 +151,7 @@
         weeksCovered: 0,
         dateFrom: null,
         dateTo: null,
-        message: 'Juoksuaktiviteetteja ei löytynyt CSV:stä.'
+        message: 'No se encontraron actividades de carrera en el CSV.'
       };
     }
 
@@ -188,7 +188,7 @@
       dateFrom: oldest,
       dateTo: latest,
       totalKm: Math.round(totalKm * 10) / 10,
-      message: `Viimeiset ~${Math.round(weeksCovered)} vk: ${recent.length} juoksua, keskim. ${avgWeekly} km/vk, pisin ${Math.round(longest * 10) / 10} km.`
+      message: `Últimas ~${Math.round(weeksCovered)} sem: ${recent.length} carreras, media ${avgWeekly} km/sem, más larga ${Math.round(longest * 10) / 10} km.`
     };
   }
 
@@ -217,7 +217,7 @@
   }
 
   // Ei kiinteää henkilökohtaista Garmin-dataa julkisessa koodissa.
-  // Oma yhteenveto tuodaan CSV:stä tai varmuuskopio-JSONista (Asetukset → Varmuuskopio).
+  // Oma yhteenveto tuodaan CSV:stä tai varmuuskopio-JSONista (Ajustes → Varmuuskopio).
 
   /**
    * Extrahoi terveysmittoja CSV:stä vain jos sarakkeet löytyvät.
