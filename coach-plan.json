@@ -1,7 +1,24 @@
 {
-  "version": 1,
-  "updatedAt": "2026-10-23T19:18:33+03:00",
-  "feedback": {},
+  "version": 2,
+  "updatedAt": "2026-10-29T16:13:44+02:00",
+  "feedback": {
+    "2026-10-26": {
+      "title": "Fuerza en casa · 27 min",
+      "text": "¡Gran comienzo de semana! 27 minutos y 21 series: completaste el circuito entero. Ahora lo importante es la técnica: movimientos controlados y sin prisa. Si alguna serie te resulta fácil, añade 2 repeticiones la próxima vez."
+    },
+    "2026-10-27": {
+      "title": "Caminata 2,7 km · 30 min",
+      "text": "Elegir caminar también cuenta: 30 minutos de movimiento a ritmo tranquilo (11:09/km) es justo la base que buscamos, y mantuviste un esfuerzo suave casi todo el rato. Cuando te sientas lista, mete tramos de 1 min trotando muy suave dentro de la caminata."
+    },
+    "2026-10-28": {
+      "title": "Fuerza en casa · 18 min",
+      "text": "Bien por hacerla aunque fuera corta. Esta vez fue bastante intensa y te saltaste el calentamiento. La próxima: 5 min de calentamiento (caminar en el sitio, movilidad de cadera y hombros) y haz el circuito a un ritmo en el que puedas hablar entre ejercicios, con 30–60 s de descanso. La fuerza no tiene que ser una carrera."
+    },
+    "2026-10-29": {
+      "title": "Intervalos 6×1 min · 3,5 km · 36 min",
+      "text": "¡Completaste las 6 series! Ritmos de las series entre 6:06 y 7:09/km; la segunda (4:47/km) fue cuesta abajo, y es normal: en subidas y bajadas el ritmo cambia mucho. Haz las series por sensación – fuerte pero controlado, que aún puedas decir frases cortas –, no por el ritmo del reloj.\nLo que sí hay que mejorar: las recuperaciones fueron demasiado intensas. Camina más despacio y, si hace falta, alarga la recuperación a 3 min hasta que la respiración se calme del todo. Mejor 5 series bien hechas que 6 sin recuperar.\n\nResumen de la semana 1: 4 de 4 entrenos hechos (2 de fuerza, 1 caminata, 1 de series) – ¡constancia perfecta!\nPróximos pasos: sábado, la larga de 50 min caminar-trotar muy suave (camina todo lo que necesites, ritmo de conversación). Lunes, fuerza 3 rondas empezando con 5 min de calentamiento."
+    }
+  },
   "done": {
     "2026-10-26": [
       {
