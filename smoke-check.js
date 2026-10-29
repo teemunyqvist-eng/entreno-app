@@ -36,8 +36,13 @@ if (/entreno-esposa-shell-v\d+/.test(sw)) ok('unique SW cache'); else bad('SW ca
 if (plan.includes("name: 'Base'") && plan.includes("name: 'Construcción'")) ok('phases ES'); else bad('phases');
 if (!plan.includes('Paavo')) ok('no Paavo in plan'); else bad('Paavo in plan');
 
-if (coach.version !== 1) bad('coach version'); else ok('coach version 1');
-if (!coach.feedback || Object.keys(coach.feedback).length) { /* empty ok */ }
+if (!Number.isInteger(coach.version) || coach.version < 1) bad('coach version'); else ok('coach version ' + coach.version);
+{
+  const fb = coach.feedback || {};
+  const HEALTH = /\bfc\b|frecuencia\s+card|\bpuls|\bhrv?\b|\bbpm\b|\bppm\b|\blpm\b|reposo|body\s*battery|bater[ií]a|sue[ñn]o|dorm[ií]|vo2|estr[eé]s|\bpeso\b|\bkg\b|\bz\s?[1-5]\b|\bzona\s*[1-5]\b|teemu|nyqvist/i;
+  const badFb = Object.keys(fb).filter((k) => !/^\d{4}-\d{2}-\d{2}$/.test(k) || Object.keys(fb[k]).some((f) => f !== 'title' && f !== 'text') || HEALTH.test((fb[k].title || '') + ' ' + (fb[k].text || '')));
+  if (badFb.length) bad('feedback privacy/fields: ' + badFb.join(',')); else ok('feedback ' + Object.keys(fb).length + ' (solo title/text, sin datos de salud)');
+}
 {
   // done: vain treenidata (type/km/min/pace/source/hash-id) – ei FC/uni/HRV/painoa julkisessa repossa
   const ALLOWED = ['type', 'km', 'min', 'pace', 'source', 'id'];
