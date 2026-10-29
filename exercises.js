@@ -1759,8 +1759,85 @@
     return ex.video.url || null;
   }
 
+  /* ---------- Búsqueda: nombre, categoría, material, grupos musculares, consejos ---------- */
+  const CATEGORY_LABEL = { voima: 'Fuerza', juoksu: 'Carrera', liikkuvuus: 'Movilidad' };
+
+  /** Minúsculas + sin tildes (á→a, ñ→n): la búsqueda no distingue acentos ni mayúsculas. */
+  function normalizeSearch(str) {
+    let t = String(str == null ? '' : str).toLowerCase();
+    if (t.normalize) t = t.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    return t.replace(/[^a-z0-9]+/g, ' ').trim();
+  }
+
+  // Grupos musculares / palabras cotidianas → raíces que aparecen en los textos de los ejercicios
+  const SEARCH_SYNONYMS = {
+    piernas: ['pierna', 'muslo', 'cuadricep', 'isquio', 'sentadilla', 'zancada', 'gemelo', 'glute'],
+    pierna: ['pierna', 'muslo', 'cuadricep', 'isquio', 'gemelo', 'glute'],
+    muslos: ['muslo', 'cuadricep', 'isquio'], muslo: ['muslo', 'cuadricep', 'isquio'],
+    cuadriceps: ['cuadricep', 'muslos delanter', 'muslo delanter', 'quad'],
+    isquios: ['isquio', 'femoral', 'hamstring'], isquiotibiales: ['isquio', 'femoral', 'hamstring'], femoral: ['isquio', 'femoral'],
+    gluteos: ['glute', 'cadera', 'puente', 'hip thrust'], gluteo: ['glute', 'cadera'], culo: ['glute'], pompis: ['glute'],
+    gemelos: ['gemelo', 'pantorrilla', 'soleo', 'aquiles', 'calf'], gemelo: ['gemelo', 'pantorrilla', 'soleo'], pantorrillas: ['gemelo', 'pantorrilla', 'soleo'],
+    abdomen: ['abdom', 'core', 'plancha', 'cuerpo medio', 'tronco'], abdominales: ['abdom', 'core', 'plancha'], abs: ['abdom', 'core', 'plancha'],
+    core: ['core', 'abdom', 'plancha', 'cuerpo medio', 'tronco'], tronco: ['tronco', 'core', 'abdom'],
+    espalda: ['espalda', 'escapul', 'remo', 'dominad', 'dorsal', 'lumbar'], lumbar: ['lumbar', 'espalda baja'], dorsales: ['dorsal', 'remo', 'dominad'],
+    pecho: ['pecho', 'pector', 'flexion', 'press banca'], brazos: ['brazo', 'bicep', 'tricep', 'flexion'], biceps: ['bicep', 'curl'], triceps: ['tricep', 'fondo'],
+    hombro: ['hombro', 'manguito', 'deltoid', 'escapul'], hombros: ['hombro', 'manguito', 'deltoid'],
+    cadera: ['cadera', 'glute', 'psoas'], caderas: ['cadera', 'glute'], tobillo: ['tobillo'], tobillos: ['tobillo'], rodilla: ['rodilla'], rodillas: ['rodilla'],
+    estiramiento: ['estir', 'movilidad'], estiramientos: ['estir', 'movilidad'], movilidad: ['movilidad', 'estir'],
+    rehabilitacion: ['rehab', 'rehabilit'], rehab: ['rehab', 'rehabilit'],
+    correr: ['carrera', 'correr', 'zancada'], carrera: ['carrera', 'correr'], equilibrio: ['equilibrio', 'una pierna', 'estabilidad'],
+    casa: ['casa', 'sin material', 'peso corporal'], goma: ['goma', 'banda', 'elastic'], banda: ['banda', 'goma', 'elastic'],
+    mancuerna: ['mancuerna'], mancuernas: ['mancuerna'], barra: ['barra'], kettlebell: ['kettlebell', 'pesa rusa']
+  };
+
+  function searchIndex(ex) {
+    if (!ex) return '';
+    if (ex._search) return ex._search;
+    const parts = [ex.name, ex.id && ex.id.replace(/_/g, ' '), ex.category, CATEGORY_LABEL[ex.category],
+      (ex.equipment || []).join(' '), (ex.equipment || []).length ? '' : 'sin material peso corporal',
+      ex.rehab === 'shoulder' ? 'hombro rehabilitacion rehab' : '',
+      (ex.benefits || []).join(' '), (ex.cues || []).join(' '), (ex.mistakes || []).join(' '),
+      ex.video && ex.video.label];
+    const idx = ' ' + normalizeSearch(parts.filter(Boolean).join(' ')) + ' ';
+    try { Object.defineProperty(ex, '_search', { value: idx, enumerable: false, configurable: true }); } catch (e) { /* congelado */ }
+    return idx;
+  }
+
+  /**
+   * Filtra ejercicios por texto. Cada palabra debe coincidir (nombre, categoría, material, beneficios/consejos/errores
+   * o sinónimo de grupo muscular). Coincidencias en el nombre primero; si no, orden original. Búsqueda vacía → lista tal cual.
+   */
+  function searchExercises(query, list) {
+    const items = Array.isArray(list) ? list : listExercises();
+    const q = normalizeSearch(query);
+    if (!q) return items.slice();
+    const tokens = q.split(' ').filter(Boolean);
+    const scored = [];
+    items.forEach(function (ex, i) {
+      const idx = searchIndex(ex);
+      const name = ' ' + normalizeSearch(ex.name) + ' ';
+      let score = 0;
+      for (let t = 0; t < tokens.length; t++) {
+        const tok = tokens[t];
+        if (name.indexOf(' ' + tok) >= 0) { score += 3; continue; }
+        if (name.indexOf(tok) >= 0) { score += 2; continue; }
+        if (idx.indexOf(tok) >= 0) { score += 1; continue; }
+        const syn = SEARCH_SYNONYMS[tok];
+        if (syn && syn.some(function (sv) { return idx.indexOf(sv) >= 0; })) { score += 1; continue; }
+        return;
+      }
+      scored.push({ ex: ex, score: score, i: i });
+    });
+    scored.sort(function (a, b) { return b.score - a.score || a.i - b.i; });
+    return scored.map(function (x) { return x.ex; });
+  }
+
   global.TreeniExercises = {
     EXERCISES,
+    CATEGORY_LABEL,
+    normalizeSearch,
+    searchExercises,
     getExercise,
     listExercises,
     allIds,

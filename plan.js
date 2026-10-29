@@ -2056,11 +2056,13 @@
     const s = session;
     if (status === 'salibandy' || (s && (s.salibandyDay || s.subtype === 'salibandy' || s.modified === 'salibandy'))) return 'floorball';
     if (!s) return null;
+    // Opción del entrenador "Solo caminar" en día de carrera → caminata, no carrera
+    if ((s.type === 'run' || s.type === 'race') && s.coach && WALK_RE.test(s.coach.selected || '')) return 'walk';
     if (s.type === 'run' || s.type === 'race') return 'run';
     if (s.type === 'strength') return 'strength';
     if (s.type === 'mobility') return 'mobility';
     if (s.type === 'other') {
-      if (s.subtype === 'kavely' || /kävely/i.test(s.name || '')) return 'walk';
+      if (s.subtype === 'kavely' || WALK_RE.test(s.name || '')) return 'walk';
       if (s.subtype === 'pyoraily') return 'cycle';
       if (s.subtype === 'uinti') return 'swim';
       return 'other';
@@ -2068,15 +2070,23 @@
     return null;
   }
 
+  /**
+   * Caminata (no cuenta como km de carrera). Ojo: "caminar-trotar" ES carrera (run-walk),
+   * solo "Solo caminar", "caminata", "paseo", "kävely"/"walk" son caminata.
+   */
+  const WALK_RE = /k[äa]vely|\bwalk|solo\s+caminar|caminata|paseo|caminar(?!\s*[-–\/y]\s*trot)(?!\s+y\s+trot)/i;
+
   /** Lokimerkintä → tyyppi (vanhoissa merkinnöissä ei ole kind-kenttää). */
   function logKind(l) {
     if (!l) return null;
+    // Día de carrera marcado hecho con la opción "Solo caminar" (entradas antiguas: kind 'run') → caminata
+    if (!l.garminId && WALK_RE.test(l.coach || '')) return 'walk';
     if (l.kind) return l.kind;
     if (/salibandy|säbä/i.test(l.name || '')) return 'floorball';
     if (l.type === 'run' || l.type === 'race') return 'run';
     if (l.type === 'strength') return 'strength';
     if (l.type === 'mobility') return 'mobility';
-    if (/kävely/i.test(l.name || '')) return 'walk';
+    if (WALK_RE.test(l.name || '')) return 'walk';
     return l.type === 'rest' ? null : 'other';
   }
 
@@ -2144,6 +2154,11 @@
     s.name = (s.name || '').replace(/ – .*$/, '') + ' – ' + opt.label;
     s.details = opt.details || s.details;
     if (opt.distanceKm) s.distanceKm = opt.distanceKm;
+    // Opción "Solo caminar" en día de carrera: sin km de carrera (caminar ≠ correr)
+    if ((s.type === 'run' || s.type === 'race') && WALK_RE.test(opt.label || '')) {
+      s.type = 'other'; s.subtype = 'kavely'; s.lightLoad = true;
+      s.distanceKm = opt.distanceKm || null;
+    }
     s.modified = /kevenn/i.test(opt.label) ? 'keventa' : /kovenn/i.test(opt.label) ? 'koventa' : 'coach-option';
     s.coach.selected = opt.label;
     return s;

@@ -56,7 +56,7 @@
       shoulderRehab: null, // hombron modo rehab (paikallinen valinta); valmentajan lippu voittaa
       shoulderLog: {} // iso -> { cold1, cold2, routine }
     },
-    // Seguimiento mensual: paino + cintura + 1–2 progress-kuvaa / merkintä
+    // Seguimiento mensual: paino + cintura + 1–3 progress-kuvaa / merkintä
     monthlyCheckins: []
     // Vanhat avaimet (vuorokalenteri, bannerit, univelka-asetukset)
     // säilyvät tallennetussa tilassa, mutta sovellus ei enää käytä niitä.
@@ -1026,25 +1026,81 @@
   }
 
   let exLibFilter = 'kaikki';
+  let exLibQuery = '';
+
+  /** Campo de búsqueda (Ejercicios + selector): input + botón borrar, mismo estilo. */
+  function exSearchFieldHtml(id, value, placeholder) {
+    return `<div class="ex-search" role="search">
+        <span class="ex-search-ico" aria-hidden="true">🔍</span>
+        <input type="search" id="${id}" class="ex-search-input" value="${esc(value || '')}" placeholder="${esc(placeholder || 'Buscar ejercicio…')}"
+          autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" aria-label="Buscar ejercicios" />
+        <button type="button" class="ex-search-clear" data-clear-for="${id}" aria-label="Borrar búsqueda"${value ? '' : ' hidden'}>✕</button>
+      </div>`;
+  }
+
+  /** Conecta el campo: onChange(q) en cada tecla; ✕ borra y devuelve el foco. */
+  function bindExSearchField(root, id, onChange) {
+    const input = root.querySelector('#' + id);
+    const clear = root.querySelector('[data-clear-for="' + id + '"]');
+    if (!input) return null;
+    const sync = () => { if (clear) clear.hidden = !input.value; onChange(input.value); };
+    input.addEventListener('input', sync);
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && input.value) { e.preventDefault(); input.value = ''; sync(); }
+      if (e.key === 'Enter') { e.preventDefault(); input.blur(); }
+    });
+    if (clear) clear.addEventListener('click', () => { input.value = ''; sync(); input.focus(); });
+    return input;
+  }
+
+  function filterExercises(list, q) {
+    return EX.searchExercises ? EX.searchExercises(q, list) : list;
+  }
+
+  function exLibCardsHtml(list, shoulderOn) {
+    const catLabel = { juoksu: 'Carrera', voima: 'Fuerza', liikkuvuus: 'Movilidad' };
+    return list.map((e) => {
+      const hasEmbed = e.video && e.video.type === 'embed';
+      return `<div class="ex-lib-card" data-ex="${esc(e.id)}">
+          <h3>${esc(e.name)}</h3>
+          <div class="meta">${catLabel[e.category] || e.category}
+            · ${(e.equipment || []).length ? esc(e.equipment.join(', ')) : 'sin material'}
+            · ${hasEmbed ? 'vídeo integrado' : 'enlace externo'}</div>
+          ${e.rehab === 'shoulder' ? '<div class="meta rehab-meta">🩹 Rehab de hombro · solo en rango sin dolor</div>' : ''}
+          ${shoulderOn && e.loadsShoulder ? '<div class="meta warn-meta">⚠ Carga el hombro – no en modo hombro</div>' : ''}
+        </div>`;
+    }).join('');
+  }
 
   function renderExerciseLibrary() {
     updateHeader();
     const el = document.getElementById('exercises-content');
     const all = EX.listExercises();
-    const filtered = exLibFilter === 'kaikki' ? all
+    const byCat = exLibFilter === 'kaikki' ? all
       : exLibFilter === 'olkapaa' ? all.filter((e) => e.rehab === 'shoulder')
       : all.filter((e) => e.category === exLibFilter);
     const shoulderOn = shoulderRehabActive();
     const voima = all.filter((e) => e.category === 'voima').length;
     const juoksu = all.filter((e) => e.category === 'juoksu').length;
     const liikk = all.filter((e) => e.category === 'liikkuvuus').length;
-    const catLabel = { juoksu: 'Carrera', voima: 'Fuerza', liikkuvuus: 'Movilidad' };
+
+    const listHtml = (q) => {
+      const hits = filterExercises(byCat, q);
+      const count = (q || '').trim()
+        ? `<div class="ex-search-count hint">${hits.length} / ${byCat.length} ejercicios</div>` : '';
+      if (!hits.length) {
+        return count + `<div class="empty ex-search-empty">Sin resultados para «${esc(q.trim())}».
+          <div class="hint">Prueba otra palabra, p. ej. un grupo muscular (glúteos, abdomen, gemelos) o material (goma, mancuerna)${exLibFilter !== 'kaikki' ? ' – o elige Todos' : ''}.</div></div>`;
+      }
+      return count + exLibCardsHtml(hits, shoulderOn);
+    };
 
     el.innerHTML = `
       <div class="card">
         <h2>Biblioteca de ejercicios</h2>
         <p class="session-desc" style="margin:0">Técnica, beneficios y vídeos (${all.length} ejercicios: ${voima} fuerza, ${juoksu} carrera, ${liikk} movilidad).</p>
-        <div class="ex-library-filters" style="margin-top:12px">
+        <div style="margin-top:12px">${exSearchFieldHtml('ex-lib-q', exLibQuery, 'Buscar ejercicio, grupo muscular o material…')}</div>
+        <div class="ex-library-filters" style="margin-top:10px">
           <button class="btn sm${exLibFilter==='kaikki'?' active':''}" data-filter="kaikki">Todos</button>
           <button class="btn sm${exLibFilter==='voima'?' active':''}" data-filter="voima">Fuerza</button>
           <button class="btn sm${exLibFilter==='juoksu'?' active':''}" data-filter="juoksu">Carrera</button>
@@ -1053,22 +1109,18 @@
         </div>
         <div class="alert info" style="margin-top:8px;margin-bottom:0">Los vídeos son demos externas de YouTube. Sin conexión sigues viendo consejos y técnica.</div>
       </div>
-      ${filtered.map((e) => {
-        const hasEmbed = e.video && e.video.type === 'embed';
-        return `<div class="ex-lib-card" data-ex="${esc(e.id)}">
-          <h3>${esc(e.name)}</h3>
-          <div class="meta">${catLabel[e.category] || e.category}
-            · ${(e.equipment || []).length ? esc(e.equipment.join(', ')) : 'sin material'}
-            · ${hasEmbed ? 'vídeo integrado' : 'enlace externo'}</div>
-          ${e.rehab === 'shoulder' ? '<div class="meta rehab-meta">🩹 Rehab de hombro · solo en rango sin dolor</div>' : ''}
-          ${shoulderOn && e.loadsShoulder ? '<div class="meta warn-meta">⚠ Carga el hombro – no en modo hombro</div>' : ''}
-        </div>`;
-      }).join('')}
+      <div id="ex-lib-list">${listHtml(exLibQuery)}</div>
     `;
+    const listEl = el.querySelector('#ex-lib-list');
     el.querySelectorAll('[data-filter]').forEach((btn) => {
       btn.onclick = () => { exLibFilter = btn.getAttribute('data-filter'); renderExerciseLibrary(); };
     });
-    bindExerciseTaps(el);
+    bindExSearchField(el, 'ex-lib-q', (q) => {
+      exLibQuery = q;
+      listEl.innerHTML = listHtml(q);
+      bindExerciseTaps(listEl);
+    });
+    bindExerciseTaps(listEl);
   }
 
 
@@ -2066,10 +2118,12 @@
     function listHtml(cat, q) {
       let items = cat === 'all' ? EX.listExercises() : EX.listExercises(cat);
       if (shoulderRehabActive()) items = items.filter((ex) => !ex.loadsShoulder);
-      const qq = (q || '').trim().toLowerCase();
-      if (qq) items = items.filter((ex) => (ex.name || '').toLowerCase().includes(qq) || (ex.id || '').includes(qq));
       items = items.slice().sort((a, b) => (a.name || '').localeCompare(b.name || '', 'es'));
-      if (!items.length) return '<div class="empty">No hay ejercicios</div>';
+      // Búsqueda: nombre, grupo muscular, material, consejos; sin distinguir tildes ni mayúsculas
+      if ((q || '').trim()) items = filterExercises(items, q);
+      if (!items.length) {
+        return `<div class="empty ex-search-empty">Sin resultados${(q || '').trim() ? ` para «${esc(q.trim())}»` : ''}.${cat !== 'all' ? '<div class="hint">Prueba la pestaña Todos.</div>' : ''}</div>`;
+      }
       return '<ul class="ex-picker-list">' + items.map((ex) =>
         `<li><button type="button" class="ex-picker-item" data-pick-id="${esc(ex.id)}">
           <span class="ex-name">${esc(ex.name)}</span>
@@ -2082,8 +2136,7 @@
       <div class="ex-library-filters" id="ex-pick-cats">
         ${cats.map((c, i) => `<button type="button" class="btn sm${i === 0 ? ' active' : ''}" data-cat="${c.id}">${c.label}</button>`).join('')}
       </div>
-      <label class="field"><span>Buscar</span>
-        <input type="search" id="ex-pick-q" placeholder="Buscar ejercicio…" /></label>
+      ${exSearchFieldHtml('ex-pick-q', '', 'Buscar ejercicio, grupo muscular o material…')}
       ${opts.mode === 'add' ? `<label class="field"><span>Series (opcional)</span>
         <input type="text" id="ex-pick-sets" placeholder="p. ej. 3×8–10" /></label>` : ''}
       <div id="ex-pick-list" style="max-height:42vh;overflow:auto;margin-top:8px">${listHtml(activeCat, '')}</div>
@@ -2132,7 +2185,7 @@
           refresh();
         };
       });
-      if (qEl) qEl.oninput = refresh;
+      bindExSearchField(modal, 'ex-pick-q', refresh);
       bindPicks();
     });
   }
@@ -2374,7 +2427,7 @@
     return `
       <div class="card" id="mp-card">
         <h2>Seguimiento mensual</h2>
-        <p class="hint" style="margin-bottom:10px">Peso + 1–2 fotos de progreso al mes. Las fotos solo se quedan en este dispositivo.</p>
+        <p class="hint" style="margin-bottom:10px">Peso + 1–3 fotos de progreso al mes. Las fotos solo se quedan en este dispositivo.</p>
         ${warn}
         <button type="button" class="btn primary block" id="mp-add-btn">+ Añadir registro</button>
         <div class="section-title">Galería por mes</div>
@@ -2413,15 +2466,15 @@
           energy: ''
         };
     // Keep photos in closure for edit
-    let photos = (draft.photos || []).slice(0, 2);
+    let photos = (draft.photos || []).slice(0, 3);
 
     function photosHtml() {
-      if (!photos.length) return '<div class="hint">Aún no hay fotos (máx. 2).</div>';
+      if (!photos.length) return '<div class="hint">Aún no hay fotos (máx. 3).</div>';
       return `<div class="mp-photo-previews">${photos.map((p, i) => `
         <div class="mp-photo-prev">
-          <img src="${p.dataUrl}" alt="${esc(p.kind === 'side' ? 'Lado' : 'Frente')}" />
+          <img src="${p.dataUrl}" alt="${esc(p.kind === 'side' ? 'Lado' : (p.kind === 'back' ? 'Espalda' : 'Frente'))}" />
           <div class="mp-photo-prev-actions">
-            <span class="badge">${p.kind === 'side' ? 'Lado' : 'Frente'}</span>
+            <span class="badge">${p.kind === 'side' ? 'Lado' : (p.kind === 'back' ? 'Espalda' : 'Frente')}</span>
             <button type="button" class="btn sm ghost" data-mp-rm-photo="${i}">Eliminar</button>
           </div>
         </div>`).join('')}</div>`;
@@ -2449,9 +2502,9 @@
           value="${esc(draft.notesFront || '')}" placeholder="Opcional" />
       </div>
       <div class="form-group">
-        <label>Progress-kuvat (1–2)</label>
+        <label>Fotos de progreso (1–3)</label>
         <div id="mp-photos-wrap">${photosHtml()}</div>
-        <div class="mp-photo-add" id="mp-photo-add-row" ${photos.length >= 2 ? 'style="display:none"' : ''}>
+        <div class="mp-photo-add" id="mp-photo-add-row" ${photos.length >= 3 ? 'style="display:none"' : ''}>
           <label class="file-drop mp-file-drop">
             📷 Kamera / tiedosto
             <input type="file" id="mp-photo-input" accept="image/*" capture="environment" />
@@ -2459,6 +2512,7 @@
           <select id="mp-photo-kind" aria-label="Kuvan tyyppi">
             <option value="front">Frente</option>
             <option value="side">Lado</option>
+            <option value="back">Espalda</option>
           </select>
         </div>
         <div class="hint">Se comprime a JPEG máx. ~900 px, calidad ~0.7. Se guarda en localStorage.</div>
@@ -2472,7 +2526,7 @@
       function refreshPhotos() {
         root.querySelector('#mp-photos-wrap').innerHTML = photosHtml();
         const addRow = root.querySelector('#mp-photo-add-row');
-        if (addRow) addRow.style.display = photos.length >= 2 ? 'none' : '';
+        if (addRow) addRow.style.display = photos.length >= 3 ? 'none' : '';
         root.querySelectorAll('[data-mp-rm-photo]').forEach(btn => {
           btn.onclick = () => {
             photos.splice(+btn.getAttribute('data-mp-rm-photo'), 1);
@@ -2488,8 +2542,8 @@
           const file = input.files && input.files[0];
           input.value = '';
           if (!file) return;
-          if (photos.length >= 2) {
-            toast('Máx. 2 fotos / registro');
+          if (photos.length >= 3) {
+            toast('Máx. 3 fotos / registro');
             return;
           }
           try {
@@ -2497,9 +2551,12 @@
             const kind = root.querySelector('#mp-photo-kind').value || 'front';
             const res = await TP.compressImageFile(file, { maxEdge: 900, quality: 0.7 });
             photos.push({ id: uid(), dataUrl: res.dataUrl, kind });
-            // Prefer distinct kinds
-            if (photos.length === 1) {
-              root.querySelector('#mp-photo-kind').value = kind === 'front' ? 'side' : 'front';
+            // Prefer distinct kinds (front / side / back)
+            {
+              const order = ['front', 'side', 'back'];
+              const used = new Set(photos.map((p) => p.kind));
+              const next = order.find((k) => !used.has(k)) || 'front';
+              root.querySelector('#mp-photo-kind').value = next;
             }
             refreshPhotos();
             toast('Foto añadida (~' + Math.round(res.bytes / 1024) + ' kB)');
@@ -2825,6 +2882,29 @@
     </div>`;
   }
 
+  /**
+   * Km de carrera del registro [fromIso..toIso]: solo kind 'run' (caminatas no cuentan).
+   * Por día: si hay carreras de Garmin, se suman esas (sin repetir garminId); si no, una sola
+   * entrada manual (varios toques en ✓ Hecho el mismo día no se suman dos veces).
+   */
+  function runKmFromLog(fromIso, toIso) {
+    const byDay = {};
+    (state.log || []).forEach((l) => {
+      if (!l || !l.date || l.date < fromIso || l.date > toIso) return;
+      if (P.logKind(l) !== 'run') return;
+      const km = Number(l.distanceKm) || 0;
+      if (!(km > 0)) return;
+      const d = byDay[l.date] || (byDay[l.date] = { garmin: {}, manual: 0 });
+      if (l.garminId) d.garmin[l.garminId] = km;
+      else d.manual = Math.max(d.manual, km);
+    });
+    return Object.keys(byDay).reduce((sum, iso) => {
+      const d = byDay[iso];
+      const g = Object.keys(d.garmin);
+      return sum + (g.length ? g.reduce((a, k) => a + d.garmin[k], 0) : d.manual);
+    }, 0);
+  }
+
   function renderProgress() {
     updateHeader();
     const now = new Date();
@@ -2841,22 +2921,21 @@
       completedCount++;
       const s = day.session || day.planned;
       // Kevyt muu liikunta (kävely ym.) ei lisää juoksukilometreihin
-      if (s && s.type !== 'other' && s.distanceKm) weekKm += s.distanceKm;
+      if (s && s.distanceKm && (P.sessionKind ? P.sessionKind(s, day.status) === 'run' : s.type === 'run')) weekKm += s.distanceKm;
       if (s && s.type === 'strength') strengthDone++;
     }
     // Garminin lisäaktiviteetit (ei suunnitelmassa): lasketaan mukaan
     const weekStartIso = P.toISO(weekStart), weekEndIso = P.toISO(P.addDays(weekStart, 6));
     (state.log || []).filter(l => l.extra && l.date >= weekStartIso && l.date <= weekEndIso).forEach(l => {
       completedCount++;
-      if (l.type === 'run' && l.distanceKm) weekKm += l.distanceKm;
+      if (P.logKind(l) === 'run' && l.distanceKm) weekKm += l.distanceKm;
       if (l.type === 'strength') strengthDone++;
     });
     weekKm = Math.round(weekKm * 10) / 10;
 
     const cutoff = P.toISO(P.addDays(now, -28));
-    // Kilómetros de carrera: kävely/salibandy (type other) ei lisää
-    const logKm = Math.round(state.log.filter(l => l.date >= cutoff && l.type !== 'other')
-      .reduce((s, l) => s + (l.distanceKm || 0), 0) * 10) / 10;
+    // Kilómetros de carrera: solo carreras (no caminatas, fuerza, etc.) y sin duplicados
+    const logKm = Math.round(runKmFromLog(cutoff, P.toISO(now)) * 10) / 10;
 
     let weightBox = '';
     if (TP) {
@@ -3032,16 +3111,17 @@
         <p class="hint" style="margin:0 0 8px">Los datos están solo en este dispositivo. Exporta JSON e importa p. ej. en un teléfono nuevo.</p>
         <button class="btn primary block" id="backup-export" type="button">⬇ Exportar JSON</button>
         <label class="file-drop" style="margin-top:10px">
-          <input type="file" id="backup-file" accept=".json,application/json" />
+          <input type="file" id="backup-file" accept="*/*" />
           ⬆ Importar archivo JSON
         </label>
-        <details class="settings-fold">
-          <summary>Copiar / pegar como texto</summary>
+        <details class="settings-fold" open>
+          <summary>Copiar / pegar como texto (lo más fácil en el móvil)</summary>
+          <p class="hint" style="margin:8px 0 0">Pega todo el JSON abajo y pulsa Importar. Si el archivo es grande, usa mejor &quot;Importar archivo JSON&quot;.</p>
           <button class="btn block" id="backup-copy" type="button" style="margin-top:8px">📋 Copiar JSON al portapapeles</button>
           <div class="form-group" style="margin-top:10px">
-            <textarea id="backup-paste" rows="4" placeholder='{"app":"entreno-esposa", ...}'></textarea>
+            <textarea id="backup-paste" rows="6" placeholder='{"app":"entreno-esposa", ...}'></textarea>
           </div>
-          <button class="btn block" id="backup-import-paste" type="button">Importar JSON pegado</button>
+          <button class="btn primary block" id="backup-import-paste" type="button">Importar JSON pegado</button>
         </details>
         <div id="backup-result" style="margin-top:10px"></div>
       </div>
@@ -3182,7 +3262,11 @@
         const o2 = document.getElementById('backup-result');
         if (o2) o2.innerHTML = `<div class="alert ok">Importado: ${esc(keys.join(', '))}</div>`;
       } catch (err) {
-        show('warn', 'Error al importar: ' + (err.message || err));
+        const msg = String(err && err.message || err || '');
+        const quota = /quota|exceeded|almacenamiento|localStorage/i.test(msg);
+        show('warn', quota
+          ? 'Error al importar: almacenamiento lleno. Borra fotos mensuales antiguas en Progreso e inténtalo de nuevo.'
+          : ('Error al importar: ' + msg));
       }
     };
     const exp = document.getElementById('backup-export');

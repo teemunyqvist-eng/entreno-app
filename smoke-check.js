@@ -32,7 +32,7 @@ if (app.includes("salibandyDow: 'none'")) ok('salibandy off'); else bad('saliban
 if (!app.includes('Paavo Nurmi') && !app.includes('treeni-app-v7')) ok('no Teemu branding in app.js'); else bad('Teemu branding leaked');
 if (index.includes('lang="es"') && index.includes('Hoy') && index.includes('Entreno')) ok('Spanish index'); else bad('index Spanish');
 if (man.lang === 'es' && /10k/.test(man.name)) ok('manifest Spanish'); else bad('manifest');
-if (sw.includes("entreno-esposa-shell-v1")) ok('unique SW cache'); else bad('SW cache');
+if (/entreno-esposa-shell-v\d+/.test(sw)) ok('unique SW cache'); else bad('SW cache');
 if (plan.includes("name: 'Base'") && plan.includes("name: 'Construcción'")) ok('phases ES'); else bad('phases');
 if (!plan.includes('Paavo')) ok('no Paavo in plan'); else bad('Paavo in plan');
 
