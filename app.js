@@ -2887,11 +2887,14 @@
    * Por día: si hay carreras de Garmin, se suman esas (sin repetir garminId); si no, una sola
    * entrada manual (varios toques en ✓ Hecho el mismo día no se suman dos veces).
    */
-  function runKmFromLog(fromIso, toIso) {
+  function runKmFromLog(fromIso, toIso) { return kmFromLog(fromIso, toIso, 'run'); }
+  /** Igual para caminatas: Garmin, días «Solo caminar» y caminatas manuales; cada día una vez. */
+  function walkKmFromLog(fromIso, toIso) { return kmFromLog(fromIso, toIso, 'walk'); }
+  function kmFromLog(fromIso, toIso, wantKind) {
     const byDay = {};
     (state.log || []).forEach((l) => {
       if (!l || !l.date || l.date < fromIso || l.date > toIso) return;
-      if (P.logKind(l) !== 'run') return;
+      if (P.logKind(l) !== wantKind) return;
       const km = Number(l.distanceKm) || 0;
       if (!(km > 0)) return;
       const d = byDay[l.date] || (byDay[l.date] = { garmin: {}, manual: 0 });
@@ -2936,6 +2939,9 @@
     const cutoff = P.toISO(P.addDays(now, -28));
     // Kilómetros de carrera: solo carreras (no caminatas, fuerza, etc.) y sin duplicados
     const logKm = Math.round(runKmFromLog(cutoff, P.toISO(now)) * 10) / 10;
+    // Caminando: fila propia (no suma a km de carrera; caminar-trotar sigue siendo carrera)
+    const weekWalkKm = Math.round(walkKmFromLog(weekStartIso, weekEndIso) * 10) / 10;
+    const walkKm4 = Math.round(walkKmFromLog(cutoff, P.toISO(now)) * 10) / 10;
 
     let weightBox = '';
     if (TP) {
@@ -2951,10 +2957,10 @@
     document.getElementById('progress-content').innerHTML = `
       ${renderProgressCoach()}
       <div class="stats-grid">
-        <div class="stat-box"><div class="num">${weekKm}</div><div class="lbl">km esta semana</div></div>
+        <div class="stat-box"><div class="num" id="stat-run-week">${weekKm}</div><div class="lbl">km corriendo esta semana</div><div class="walk-km" id="stat-walk-week">🚶 Caminando: ${weekWalkKm} km</div></div>
         <div class="stat-box"><div class="num">${completedCount}</div><div class="lbl">entrenos hechos / sem</div></div>
         <div class="stat-box"><div class="num">${strengthDone}</div><div class="lbl">fuerza / sem</div></div>
-        <div class="stat-box"><div class="num">${logKm}</div><div class="lbl">km / 4 sem</div></div>
+        <div class="stat-box"><div class="num" id="stat-run-4w">${logKm}</div><div class="lbl">km corriendo / 4 sem</div><div class="walk-km" id="stat-walk-4w">🚶 Caminando: ${walkKm4} km</div></div>
         ${weightBox}
       </div>
       ${renderFeedbackHistory()}

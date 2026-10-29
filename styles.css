@@ -329,6 +329,14 @@ a { color: var(--accent-light); }
   color: var(--text-muted);
   margin-top: 4px;
 }
+.stat-box .walk-km {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--border);
+}
 
 .log-item {
   border-bottom: 1px solid var(--border);
