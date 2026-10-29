@@ -36,6 +36,12 @@ if (/entreno-esposa-shell-v\d+/.test(sw)) ok('unique SW cache'); else bad('SW ca
 if (plan.includes("name: 'Base'") && plan.includes("name: 'Construcción'")) ok('phases ES'); else bad('phases');
 if (!plan.includes('Paavo')) ok('no Paavo in plan'); else bad('Paavo in plan');
 
+{
+  const swV = (sw.match(/entreno-esposa-shell-(v\d+)/) || [])[1];
+  const appV = (app.match(/APP_VERSION = '(v\d+)'/) || [])[1];
+  if (swV && swV === appV) ok('APP_VERSION = SW ' + swV); else bad('APP_VERSION ' + appV + ' != SW ' + swV);
+  if (app.includes("treenibot+entreno@mail.grokbot.com") && app.includes('Mensaje al entrenador')) ok('mensaje al entrenador (mailto)'); else bad('mensaje al entrenador');
+}
 if (!Number.isInteger(coach.version) || coach.version < 1) bad('coach version'); else ok('coach version ' + coach.version);
 {
   const fb = coach.feedback || {};

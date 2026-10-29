@@ -1391,10 +1391,12 @@
       </div>
       ${renderDoneExtras(iso)}
       ${renderFeedbackCard(feedbackFor(iso) || feedbackFor(yIso))}
+      ${coachMsgButton(iso, 'msg-coach-today')}
       ${condPromptsHtml}
       ${tipCardsHtml}
     `;
     bindFeedbackToggles(el);
+    bindCoachMsgButtons(el);
 
     el.querySelectorAll('[data-act]').forEach(btn => {
       btn.addEventListener('click', () => handleAction(iso, btn.getAttribute('data-act')));
@@ -2255,6 +2257,53 @@
     navBack(n);
   }
 
+  // ---------- Mensaje al entrenador (mailto, sin backend) ----------
+  const APP_VERSION = 'v5'; // = sw.js CACHE 'entreno-esposa-shell-v5' (smoke-check lo comprueba)
+  const COACH_EMAIL = 'treenibot+entreno@mail.grokbot.com';
+  const COACH_MSG_TYPES = ['Corregir un entreno', 'Cambiar el plan', 'Idea para la app', 'Otro'];
+
+  function coachMailto(type, iso, text) {
+    const dateTxt = iso ? formatFiDate(iso) : '';
+    const subject = '[Entreno] ' + type + (dateTxt ? ' ' + dateTxt : '');
+    const body = (text || '').trim() + '\n\n---\nTipo: ' + type + '\nFecha: ' + (dateTxt || '—') +
+      '\nVersión de la app: ' + APP_VERSION;
+    return 'mailto:' + COACH_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  }
+
+  function coachMsgButton(iso, extraCls) {
+    return `<button type="button" class="btn block msg-coach-btn${extraCls ? ' ' + extraCls : ''}" data-msg-coach="${esc(iso || '')}">💬 Mensaje al entrenador</button>`;
+  }
+
+  function bindCoachMsgButtons(root) {
+    if (!root || !root.querySelectorAll) return;
+    root.querySelectorAll('[data-msg-coach]').forEach((b) => {
+      b.addEventListener('click', (e) => { e.stopPropagation(); openCoachMessage(b.getAttribute('data-msg-coach') || ''); });
+    });
+  }
+
+  function openCoachMessage(iso) {
+    const defType = iso ? COACH_MSG_TYPES[0] : COACH_MSG_TYPES[3];
+    openModal('💬 Mensaje al entrenador', `
+      <div class="form-group"><label for="cm-type">Tipo</label>
+        <select id="cm-type">${COACH_MSG_TYPES.map(t => `<option${t === defType ? ' selected' : ''}>${esc(t)}</option>`).join('')}</select></div>
+      <div class="form-group"><label for="cm-date">Fecha (opcional)</label>
+        <input type="date" id="cm-date" value="${esc(iso || '')}" /></div>
+      <div class="form-group"><label for="cm-text">Mensaje</label>
+        <textarea id="cm-text" rows="5" placeholder="p. ej. Hoy hice 25 min en vez de 30, el reloj no guardó la carrera…"></textarea></div>
+      <a id="cm-send" class="btn primary block" href="${esc(coachMailto(defType, iso, ''))}">✉️ Abrir correo y enviar</a>
+      <div class="hint" style="margin-top:8px">Se abrirá tu app de correo; pulsa Enviar. El entrenador lo revisará y actualizará la app.</div>
+    `, (root) => {
+      const type = root.querySelector('#cm-type'), date = root.querySelector('#cm-date'), text = root.querySelector('#cm-text'), send = root.querySelector('#cm-send');
+      const upd = () => { send.href = coachMailto(type.value, date.value, text.value); };
+      [type, date, text].forEach((el) => { el.addEventListener('input', upd); el.addEventListener('change', upd); });
+      send.addEventListener('click', (e) => {
+        upd();
+        if (!text.value.trim()) { e.preventDefault(); toast('Escribe tu mensaje primero'); text.focus(); return; }
+        setTimeout(() => { closeModal(); toast('Abriendo el correo… pulsa Enviar'); }, 300);
+      });
+    });
+  }
+
   // ---------- Week ----------
   function weekDayIcon(eff, s) {
     if (eff.completed) return '✓';
@@ -2307,13 +2356,14 @@
           doneExtrasFor(d.date).forEach(l => g.push('+ ' + l.name + (doneSummary(l) ? ' ' + doneSummary(l) : '')));
           return g.length ? `<div class="detail garmin-mini">Garmin ✓ ${esc(g.filter(Boolean).join(' · '))}</div>` : '';
         })()}</div>
-        <div class="status-ico">${weekDayIcon(eff, s)}</div>
+        <div class="status-ico">${weekDayIcon(eff, s)}<button type="button" class="msg-coach-mini" data-msg-coach="${d.date}" aria-label="Mensaje al entrenador sobre este día" title="Mensaje al entrenador">💬</button></div>
       </div>`;
     }).join('');
     km = Math.round(km * 10) / 10;
     document.getElementById('week-label').textContent = 'Vk ' + range;
     list.innerHTML = `<div class="week-summary hint">${esc(week.phaseName || '')}${week.deload ? ' · semana más ligera' : ''} · carrera ~${km} km · hechos ${done}/7${coachDays ? ' · 🧭 = del entrenador' : ''}</div>` + rows;
 
+    bindCoachMsgButtons(list);
     list.querySelectorAll('.week-day').forEach(el => {
       el.addEventListener('click', () => {
         const date = el.getAttribute('data-date');
@@ -2339,7 +2389,8 @@
          <button class="status-btn" id="d-koventa">↑ Intensificar</button>
          <button class="status-btn" id="d-siirra">Mover…</button>
          <button class="status-btn danger" id="d-sairas">🤒 Enferma</button>
-       </div>`,
+       </div>
+       ${coachMsgButton(iso, 'msg-coach-day')}`,
       (root) => {
         const go = (act) => { closeModal(); handleAction(iso, act); showView('week'); };
         root.querySelector('#d-done').onclick = () => go('done');
@@ -2349,6 +2400,7 @@
         root.querySelector('#d-sairas').onclick = () => go('sairas');
         bindExerciseTaps(root);
         bindFeedbackToggles(root);
+        bindCoachMsgButtons(root);
       }
     );
   }
@@ -2964,6 +3016,8 @@
         ${weightBox}
       </div>
       ${renderFeedbackHistory()}
+      <div class="card"><h2>¿Algo que corregir o cambiar?</h2>${coachMsgButton('', 'msg-coach-progress')}
+        <div class="hint" style="margin-top:8px">Se abrirá tu app de correo; pulsa Enviar. El entrenador lo revisará y actualizará la app.</div></div>
       ${renderMonthlySection()}
       <div class="card">
         <h2>Últimos entrenos</h2>
@@ -2976,6 +3030,7 @@
       </div>
     `;
     bindMonthlySection();
+    bindCoachMsgButtons(document.getElementById('progress-content'));
     const nx = document.getElementById('coach-msg-next');
     if (nx) nx.onclick = () => { coachMsgOffset++; renderProgress(); };
   }

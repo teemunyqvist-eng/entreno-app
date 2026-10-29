@@ -1265,3 +1265,9 @@ details.today-fold-card[open] > .today-fold-sum::before { content: '▾ '; }
 .ex-search-clear[hidden] { display: none; }
 .ex-search-count { margin: 0 2px 8px; }
 .ex-search-empty .hint { margin-top: 6px; }
+
+/* Mensaje al entrenador */
+.msg-coach-btn { margin-top: 10px; }
+.msg-coach-mini { display: block; margin: 4px auto 0; background: none; border: 1px solid var(--border); border-radius: 999px; padding: 2px 7px; font-size: 0.8rem; line-height: 1.2; cursor: pointer; color: var(--text); }
+#cm-text { width: 100%; box-sizing: border-box; }
+a.btn { text-decoration: none; display: block; text-align: center; }

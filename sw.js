@@ -1,5 +1,5 @@
 /* Entreno (esposa) service worker – caches app shell for offline use */
-const CACHE = 'entreno-esposa-shell-v4';
+const CACHE = 'entreno-esposa-shell-v5';
 const ASSETS = [
   './',
   './index.html',
