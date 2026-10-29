@@ -1539,7 +1539,7 @@
     }
 
     if ((act === 'keventa' || act === 'koventa') && day.planned && day.planned.coach && session && session.coach && !session.coach.selected) {
-      const idx = P.coachOptionIndex(day.planned, act === 'keventa' ? /kevenn/i : /kovenn/i);
+      const idx = P.coachOptionIndex(day.planned, act === 'keventa' ? (P.EASIER_OPT_RE || /kevenn|suave/i) : (P.HARDER_OPT_RE || /kovenn|exigente/i));
       if (idx >= 0) {
         const chosen = P.applyCoachOption(day.planned, idx);
         setOverride(iso, { status: act, session: chosen });

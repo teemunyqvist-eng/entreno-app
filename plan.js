@@ -2145,6 +2145,10 @@
     return s;
   }
 
+  /** Opción más fácil / más exigente del entrenador (español + finés). */
+  const EASIER_OPT_RE = /kevenn|\bsuave\b|m[áa]s\s+(?:f[áa]cil|suave|ligera?o?)|\bligera?o?\b|reducid/i;
+  const HARDER_OPT_RE = /kovenn|exigente|m[áa]s\s+(?:duro|dura|intens)|intensificad/i;
+
   /** Valitsee valmentajan vaihtoehdon (esim. Kevennetty) sessioksi. */
   function applyCoachOption(session, idx) {
     if (!session || !session.coach) return null;
@@ -2159,7 +2163,7 @@
       s.type = 'other'; s.subtype = 'kavely'; s.lightLoad = true;
       s.distanceKm = opt.distanceKm || null;
     }
-    s.modified = /kevenn/i.test(opt.label) ? 'keventa' : /kovenn/i.test(opt.label) ? 'koventa' : 'coach-option';
+    s.modified = EASIER_OPT_RE.test(opt.label) ? 'keventa' : HARDER_OPT_RE.test(opt.label) ? 'koventa' : 'coach-option';
     s.coach.selected = opt.label;
     return s;
   }
@@ -2184,6 +2188,8 @@
     coachDayToSession,
     applyCoachOption,
     coachOptionIndex,
+    EASIER_OPT_RE,
+    HARDER_OPT_RE,
     COACH_TYPES,
     PHASES,
     DOW_FI,
