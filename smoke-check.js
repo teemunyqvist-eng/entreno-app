@@ -38,7 +38,16 @@ if (!plan.includes('Paavo')) ok('no Paavo in plan'); else bad('Paavo in plan');
 
 if (coach.version !== 1) bad('coach version'); else ok('coach version 1');
 if (!coach.feedback || Object.keys(coach.feedback).length) { /* empty ok */ }
-if (Object.keys(coach.done || {}).length) bad('invented done history'); else ok('empty done');
+{
+  // done: vain treenidata (type/km/min/pace/source/hash-id) – ei FC/uni/HRV/painoa julkisessa repossa
+  const ALLOWED = ['type', 'km', 'min', 'pace', 'source', 'id'];
+  let bads = 0, n = 0;
+  Object.keys(coach.done || {}).forEach((d) => {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) bads++;
+    (coach.done[d] || []).forEach((e) => { n++; Object.keys(e).forEach((k) => { if (!ALLOWED.includes(k)) bads++; }); });
+  });
+  if (bads) bad('done has non-workout fields'); else ok('done workout-only (' + n + ' entries)');
+}
 const dates = (coach.days || []).map(d => d.date);
 const need = [
   '2026-10-26','2026-10-27','2026-10-28','2026-10-29','2026-10-31',

@@ -2,7 +2,43 @@
   "version": 1,
   "updatedAt": "2026-10-23T19:18:33+03:00",
   "feedback": {},
-  "done": {},
+  "done": {
+    "2026-10-26": [
+      {
+        "type": "strength",
+        "source": "garmin",
+        "id": "g2e01108376",
+        "min": 26.6
+      }
+    ],
+    "2026-10-27": [
+      {
+        "type": "walk",
+        "source": "garmin",
+        "id": "ga5127eb2d8",
+        "km": 2.66,
+        "min": 29.7
+      }
+    ],
+    "2026-10-28": [
+      {
+        "type": "strength",
+        "source": "garmin",
+        "id": "g0884db0f60",
+        "min": 18.0
+      }
+    ],
+    "2026-10-29": [
+      {
+        "type": "run",
+        "source": "garmin",
+        "id": "g0a23c5bcce",
+        "km": 3.46,
+        "pace": "10:27",
+        "min": 36.2
+      }
+    ]
+  },
   "days": [
     {
       "date": "2026-10-26",
