@@ -1,451 +1,455 @@
 {
- "version": 2,
- "updatedAt": "2026-10-29T16:13:44+02:00",
- "feedback": {
-  "2026-10-26": {
-   "title": "Fuerza en casa · 27 min",
-   "text": "¡Gran comienzo de semana! 27 minutos y 21 series: completaste el circuito entero. Ahora lo importante es la técnica: movimientos controlados y sin prisa. Si alguna serie te resulta fácil, añade 2 repeticiones la próxima vez."
+  "version": 3,
+  "updatedAt": "2026-10-31T16:11:41+02:00",
+  "feedback": {
+    "2026-10-26": {
+      "title": "Fuerza en casa · 27 min",
+      "text": "¡Gran comienzo de semana! 27 minutos y 21 series: completaste el circuito entero. Ahora lo importante es la técnica: movimientos controlados y sin prisa. Si alguna serie te resulta fácil, añade 2 repeticiones la próxima vez."
+    },
+    "2026-10-27": {
+      "title": "Caminata 2,7 km · 30 min",
+      "text": "Elegir caminar también cuenta: 30 minutos de movimiento a ritmo tranquilo (11:09/km) es justo la base que buscamos, y mantuviste un esfuerzo suave casi todo el rato. Cuando te sientas lista, mete tramos de 1 min trotando muy suave dentro de la caminata."
+    },
+    "2026-10-28": {
+      "title": "Fuerza en casa · 18 min",
+      "text": "Bien por hacerla aunque fuera corta. Esta vez fue bastante intensa y te saltaste el calentamiento. La próxima: 5 min de calentamiento (caminar en el sitio, movilidad de cadera y hombros) y haz el circuito a un ritmo en el que puedas hablar entre ejercicios, con 30–60 s de descanso. La fuerza no tiene que ser una carrera."
+    },
+    "2026-10-29": {
+      "title": "Intervalos 6×1 min · 3,5 km · 36 min",
+      "text": "¡Completaste las 6 series! Ritmos de las series entre 6:06 y 7:09/km; la segunda (4:47/km) fue cuesta abajo, y es normal: en subidas y bajadas el ritmo cambia mucho. Haz las series por sensación – fuerte pero controlado, que aún puedas decir frases cortas –, no por el ritmo del reloj.\nLo que sí hay que mejorar: las recuperaciones fueron demasiado intensas. Camina más despacio y, si hace falta, alarga la recuperación a 3 min hasta que la respiración se calme del todo. Mejor 5 series bien hechas que 6 sin recuperar.\n\nResumen de la semana 1: 4 de 4 entrenos hechos (2 de fuerza, 1 caminata, 1 de series) – ¡constancia perfecta!\nPróximos pasos: sábado, la larga de 50 min caminar-trotar muy suave (camina todo lo que necesites, ritmo de conversación). Lunes, fuerza 3 rondas empezando con 5 min de calentamiento."
+    },
+    "2026-10-31": {
+      "title": "Tirada larga: 1 hora entera",
+      "text": "¡Una hora completa de caminar-trotar, 5,4 km a 11:11/km! Superaste los 50 min del plan y lo hiciste con calma de principio a fin: los intervalos de trote salieron muy parejos, sin acelerar de más. Eso es justo lo que construye la base para el 10k. Un detalle: hacia el final, en una subida, el ritmo se te fue un poco alto en un tramo de caminar. En las cuestas, camina más despacio y deja que el cuerpo se calme antes del siguiente trote. No olvides el estiramiento de 10 min. Próximo: fuerza en casa el lunes 2.11. ¡Muy buen trabajo!"
+    }
   },
-  "2026-10-27": {
-   "title": "Caminata 2,7 km · 30 min",
-   "text": "Elegir caminar también cuenta: 30 minutos de movimiento a ritmo tranquilo (11:09/km) es justo la base que buscamos, y mantuviste un esfuerzo suave casi todo el rato. Cuando te sientas lista, mete tramos de 1 min trotando muy suave dentro de la caminata."
+  "done": {
+    "2026-10-26": [
+      {
+        "type": "strength",
+        "source": "garmin",
+        "id": "g2e01108376",
+        "min": 26.6
+      }
+    ],
+    "2026-10-27": [
+      {
+        "type": "walk",
+        "source": "garmin",
+        "id": "ga5127eb2d8",
+        "km": 2.66,
+        "min": 29.7
+      }
+    ],
+    "2026-10-28": [
+      {
+        "type": "strength",
+        "source": "garmin",
+        "id": "g0884db0f60",
+        "min": 18.0
+      }
+    ],
+    "2026-10-29": [
+      {
+        "type": "run",
+        "source": "garmin",
+        "id": "g0a23c5bcce",
+        "km": 3.46,
+        "pace": "10:27",
+        "min": 36.2
+      }
+    ],
+    "2026-10-31": [
+      {
+        "type": "run",
+        "source": "garmin",
+        "id": "g3a66af869b",
+        "km": 5.43,
+        "pace": "11:11",
+        "min": 60.7
+      }
+    ]
   },
-  "2026-10-28": {
-   "title": "Fuerza en casa · 18 min",
-   "text": "Bien por hacerla aunque fuera corta. Esta vez fue bastante intensa y te saltaste el calentamiento. La próxima: 5 min de calentamiento (caminar en el sitio, movilidad de cadera y hombros) y haz el circuito a un ritmo en el que puedas hablar entre ejercicios, con 30–60 s de descanso. La fuerza no tiene que ser una carrera."
-  },
-  "2026-10-29": {
-   "title": "Intervalos 6×1 min · 3,5 km · 36 min",
-   "text": "¡Completaste las 6 series! Ritmos de las series entre 6:06 y 7:09/km; la segunda (4:47/km) fue cuesta abajo, y es normal: en subidas y bajadas el ritmo cambia mucho. Haz las series por sensación – fuerte pero controlado, que aún puedas decir frases cortas –, no por el ritmo del reloj.\nLo que sí hay que mejorar: las recuperaciones fueron demasiado intensas. Camina más despacio y, si hace falta, alarga la recuperación a 3 min hasta que la respiración se calme del todo. Mejor 5 series bien hechas que 6 sin recuperar.\n\nResumen de la semana 1: 4 de 4 entrenos hechos (2 de fuerza, 1 caminata, 1 de series) – ¡constancia perfecta!\nPróximos pasos: sábado, la larga de 50 min caminar-trotar muy suave (camina todo lo que necesites, ritmo de conversación). Lunes, fuerza 3 rondas empezando con 5 min de calentamiento."
-  }
- },
- "done": {
-  "2026-10-26": [
-   {
-    "type": "strength",
-    "source": "garmin",
-    "id": "g2e01108376",
-    "min": 26.6
-   }
-  ],
-  "2026-10-27": [
-   {
-    "type": "walk",
-    "source": "garmin",
-    "id": "ga5127eb2d8",
-    "km": 2.66,
-    "min": 29.7
-   }
-  ],
-  "2026-10-28": [
-   {
-    "type": "strength",
-    "source": "garmin",
-    "id": "g0884db0f60",
-    "min": 18.0
-   }
-  ],
-  "2026-10-29": [
-   {
-    "type": "run",
-    "source": "garmin",
-    "id": "g0a23c5bcce",
-    "km": 3.46,
-    "pace": "10:27",
-    "min": 36.2
-   }
-  ],
-  "2026-10-31": [
-   {
-    "type": "run",
-    "source": "garmin",
-    "id": "g3a66af869b",
-    "km": 5.43,
-    "pace": "11:11",
-    "min": 60.7
-   }
+  "days": [
+    {
+      "date": "2026-10-26",
+      "type": "koti",
+      "title": "Fuerza casa 2 rondas",
+      "durationMin": 41,
+      "warmup": "Calentamiento 5 min: caminar en el sitio, círculos de brazos, sentadillas sin peso, activar glúteos.",
+      "details": "2 rondas. Circuito casa (8–12 reps):\n• Sentadilla o RDL\n• Zancadas\n• Flexiones (rodillas ok)\n• Remo con banda/mancuernas\n• Plancha 30–45 s\n• Puente de glúteos\nDescanso 60–90 s entre rondas.",
+      "cooldown": "Estiramiento 5–7 min: isquiotibiales, cuádriceps, flexores de cadera, pecho, espalda.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "1 ronda(s) del mismo circuito. Calentamiento y estiramiento igual."
+        }
+      ],
+      "note": "Si eres nueva: prioriza técnica sobre peso. Rodillas ok en flexiones."
+    },
+    {
+      "date": "2026-10-27",
+      "type": "juoksu",
+      "subtype": "easy",
+      "title": "Fácil caminar-trotar 30 min",
+      "durationMin": 30,
+      "warmup": "5 min caminar suave + movilidad dinámica ligera.",
+      "details": "Fácil caminar-trotar 30 min. Caminar-trotar fácil. Zona 2: 110–128. Si la FC pasa de 130, camina hasta bajar. Prioridad: sensación/conversación (puedes hablar). El reloj es apoyo, no un juez.",
+      "cooldown": "3–5 min caminar + estirar gemelos e isquiotibiales.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "Caminar-trotar 20 min. Mismo techo FC 110–128."
+        },
+        {
+          "label": "Solo caminar",
+          "details": "Caminata 30 min a ritmo cómodo."
+        }
+      ],
+      "note": "Fácil de verdad. Ego en casa."
+    },
+    {
+      "date": "2026-10-28",
+      "type": "koti",
+      "title": "Fuerza casa 2 rondas",
+      "durationMin": 41,
+      "warmup": "Calentamiento 5 min: caminar en el sitio, círculos de brazos, sentadillas sin peso, activar glúteos.",
+      "details": "2 rondas. Circuito casa (8–12 reps):\n• Sentadilla o RDL\n• Zancadas\n• Flexiones (rodillas ok)\n• Remo con banda/mancuernas\n• Plancha 30–45 s\n• Puente de glúteos\nDescanso 60–90 s entre rondas.",
+      "cooldown": "Estiramiento 5–7 min: isquiotibiales, cuádriceps, flexores de cadera, pecho, espalda.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "1 ronda(s) del mismo circuito. Calentamiento y estiramiento igual."
+        }
+      ],
+      "note": "Si eres nueva: prioriza técnica sobre peso. Rodillas ok en flexiones."
+    },
+    {
+      "date": "2026-10-29",
+      "type": "juoksu",
+      "subtype": "intervals",
+      "title": "Intervalos 6×1 min (FC)",
+      "durationMin": 36,
+      "warmup": "8–10 min caminar + trote suave.",
+      "details": "6 × 1 min fuerte controlado (~145–160) / 2 min caminar hasta FC <130. Intervalos: 1 min fuerte controlado (~145–160) / 2 min caminar hasta bajar de 130. Calentamiento 8–10 min, enfriamiento 5–8 min. Sensación primero.",
+      "cooldown": "5–8 min caminar + estirar.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "4 × 1 min / 2 min caminar. Mismo criterio de sensación."
+        },
+        {
+          "label": "Más exigente",
+          "details": "7 × 1 min / 2 min caminar. Solo si te sientes bien."
+        }
+      ],
+      "note": "Un día duro a la semana. El resto fácil."
+    },
+    {
+      "date": "2026-10-31",
+      "type": "juoksu",
+      "subtype": "long",
+      "title": "Larga caminar-trotar 50 min",
+      "durationMin": 50,
+      "warmup": "5 min caminar + movilidad ~5 min.",
+      "details": "Larga caminar-trotar 50 min. Tirada larga caminar-trotar. Zona 2: 110–128; si FC >130 camina. Ritmo conversación todo el rato. Bebe agua si supera ~50 min.",
+      "cooldown": "5 min caminar + estiramiento ~10 min: gemelos, isquiotibiales, cuádriceps, flexores, glúteos.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "Larga 35 min caminar-trotar. Techo FC 110–128."
+        }
+      ],
+      "note": "Los km fáciles construyen la base para 10k → 16k → 21k."
+    },
+    {
+      "date": "2026-11-02",
+      "type": "koti",
+      "title": "Fuerza casa 3 rondas",
+      "durationMin": 49,
+      "warmup": "Calentamiento 5 min: caminar en el sitio, círculos de brazos, sentadillas sin peso, activar glúteos.",
+      "details": "3 rondas. Circuito casa (8–12 reps):\n• Sentadilla o RDL\n• Zancadas\n• Flexiones (rodillas ok)\n• Remo con banda/mancuernas\n• Plancha 30–45 s\n• Puente de glúteos\nDescanso 60–90 s entre rondas.",
+      "cooldown": "Estiramiento 5–7 min: isquiotibiales, cuádriceps, flexores de cadera, pecho, espalda.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "2 ronda(s) del mismo circuito. Calentamiento y estiramiento igual."
+        },
+        {
+          "label": "Más exigente",
+          "details": "3 rondas + 2–3 reps extra en sentadilla y remo. Sin forzar."
+        }
+      ],
+      "note": "Tres rondas completas. Técnica limpia, RPE cómodo."
+    },
+    {
+      "date": "2026-11-03",
+      "type": "juoksu",
+      "subtype": "easy",
+      "title": "Fácil caminar-trotar 35 min",
+      "durationMin": 35,
+      "warmup": "5 min caminar suave + movilidad dinámica ligera.",
+      "details": "Fácil caminar-trotar 35 min. Caminar-trotar fácil. Zona 2: 110–128. Si la FC pasa de 130, camina hasta bajar. Prioridad: sensación/conversación (puedes hablar). El reloj es apoyo, no un juez.",
+      "cooldown": "3–5 min caminar + estirar gemelos e isquiotibiales.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "Caminar-trotar 25 min. Mismo techo FC 110–128."
+        },
+        {
+          "label": "Solo caminar",
+          "details": "Caminata 35 min a ritmo cómodo."
+        }
+      ],
+      "note": "Fácil de verdad. Ego en casa."
+    },
+    {
+      "date": "2026-11-04",
+      "type": "koti",
+      "title": "Fuerza casa 3 rondas",
+      "durationMin": 49,
+      "warmup": "Calentamiento 5 min: caminar en el sitio, círculos de brazos, sentadillas sin peso, activar glúteos.",
+      "details": "3 rondas. Circuito casa (8–12 reps):\n• Sentadilla o RDL\n• Zancadas\n• Flexiones (rodillas ok)\n• Remo con banda/mancuernas\n• Plancha 30–45 s\n• Puente de glúteos\nDescanso 60–90 s entre rondas.",
+      "cooldown": "Estiramiento 5–7 min: isquiotibiales, cuádriceps, flexores de cadera, pecho, espalda.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "2 ronda(s) del mismo circuito. Calentamiento y estiramiento igual."
+        },
+        {
+          "label": "Más exigente",
+          "details": "3 rondas + 2–3 reps extra en sentadilla y remo. Sin forzar."
+        }
+      ],
+      "note": "Tres rondas completas. Técnica limpia, RPE cómodo."
+    },
+    {
+      "date": "2026-11-05",
+      "type": "juoksu",
+      "subtype": "intervals",
+      "title": "Intervalos 7×1 min (FC)",
+      "durationMin": 39,
+      "warmup": "8–10 min caminar + trote suave.",
+      "details": "7 × 1 min fuerte controlado (~145–160) / 2 min caminar hasta FC <130. Intervalos: 1 min fuerte controlado (~145–160) / 2 min caminar hasta bajar de 130. Calentamiento 8–10 min, enfriamiento 5–8 min. Sensación primero.",
+      "cooldown": "5–8 min caminar + estirar.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "5 × 1 min / 2 min caminar. Mismo criterio de sensación."
+        },
+        {
+          "label": "Más exigente",
+          "details": "8 × 1 min / 2 min caminar. Solo si te sientes bien."
+        }
+      ],
+      "note": "Un día duro a la semana. El resto fácil."
+    },
+    {
+      "date": "2026-11-07",
+      "type": "juoksu",
+      "subtype": "long",
+      "title": "Larga caminar-trotar 58 min",
+      "durationMin": 58,
+      "warmup": "5 min caminar + movilidad ~5 min.",
+      "details": "Larga caminar-trotar 58 min. Tirada larga caminar-trotar. Zona 2: 110–128; si FC >130 camina. Ritmo conversación todo el rato. Bebe agua si supera ~50 min.",
+      "cooldown": "5 min caminar + estiramiento ~10 min: gemelos, isquiotibiales, cuádriceps, flexores, glúteos.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "Larga 43 min caminar-trotar. Techo FC 110–128."
+        }
+      ],
+      "note": "Los km fáciles construyen la base para 10k → 16k → 21k."
+    },
+    {
+      "date": "2026-11-09",
+      "type": "koti",
+      "title": "Fuerza casa 3 rondas",
+      "durationMin": 49,
+      "warmup": "Calentamiento 5 min: caminar en el sitio, círculos de brazos, sentadillas sin peso, activar glúteos.",
+      "details": "3 rondas. Circuito casa (8–12 reps):\n• Sentadilla o RDL\n• Zancadas\n• Flexiones (rodillas ok)\n• Remo con banda/mancuernas\n• Plancha 30–45 s\n• Puente de glúteos\nDescanso 60–90 s entre rondas.",
+      "cooldown": "Estiramiento 5–7 min: isquiotibiales, cuádriceps, flexores de cadera, pecho, espalda.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "2 ronda(s) del mismo circuito. Calentamiento y estiramiento igual."
+        },
+        {
+          "label": "Más exigente",
+          "details": "3 rondas + 2–3 reps extra en sentadilla y remo. Sin forzar."
+        }
+      ],
+      "note": "Tres rondas completas. Técnica limpia, RPE cómodo."
+    },
+    {
+      "date": "2026-11-10",
+      "type": "juoksu",
+      "subtype": "easy",
+      "title": "Fácil caminar-trotar 40 min",
+      "durationMin": 40,
+      "warmup": "5 min caminar suave + movilidad dinámica ligera.",
+      "details": "Fácil caminar-trotar 40 min. Caminar-trotar fácil. Zona 2: 110–128. Si la FC pasa de 130, camina hasta bajar. Prioridad: sensación/conversación (puedes hablar). El reloj es apoyo, no un juez.",
+      "cooldown": "3–5 min caminar + estirar gemelos e isquiotibiales.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "Caminar-trotar 30 min. Mismo techo FC 110–128."
+        },
+        {
+          "label": "Solo caminar",
+          "details": "Caminata 40 min a ritmo cómodo."
+        }
+      ],
+      "note": "Fácil de verdad. Ego en casa."
+    },
+    {
+      "date": "2026-11-11",
+      "type": "koti",
+      "title": "Fuerza casa 3 rondas",
+      "durationMin": 49,
+      "warmup": "Calentamiento 5 min: caminar en el sitio, círculos de brazos, sentadillas sin peso, activar glúteos.",
+      "details": "3 rondas. Circuito casa (8–12 reps):\n• Sentadilla o RDL\n• Zancadas\n• Flexiones (rodillas ok)\n• Remo con banda/mancuernas\n• Plancha 30–45 s\n• Puente de glúteos\nDescanso 60–90 s entre rondas.",
+      "cooldown": "Estiramiento 5–7 min: isquiotibiales, cuádriceps, flexores de cadera, pecho, espalda.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "2 ronda(s) del mismo circuito. Calentamiento y estiramiento igual."
+        },
+        {
+          "label": "Más exigente",
+          "details": "3 rondas + 2–3 reps extra en sentadilla y remo. Sin forzar."
+        }
+      ],
+      "note": "Tres rondas completas. Técnica limpia, RPE cómodo."
+    },
+    {
+      "date": "2026-11-12",
+      "type": "juoksu",
+      "subtype": "intervals",
+      "title": "Intervalos 8×1 min (FC)",
+      "durationMin": 42,
+      "warmup": "8–10 min caminar + trote suave.",
+      "details": "8 × 1 min fuerte controlado (~145–160) / 2 min caminar hasta FC <130. Intervalos: 1 min fuerte controlado (~145–160) / 2 min caminar hasta bajar de 130. Calentamiento 8–10 min, enfriamiento 5–8 min. Sensación primero.",
+      "cooldown": "5–8 min caminar + estirar.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "6 × 1 min / 2 min caminar. Mismo criterio de sensación."
+        },
+        {
+          "label": "Más exigente",
+          "details": "9 × 1 min / 2 min caminar. Solo si te sientes bien."
+        }
+      ],
+      "note": "Un día duro a la semana. El resto fácil."
+    },
+    {
+      "date": "2026-11-14",
+      "type": "juoksu",
+      "subtype": "long",
+      "title": "Larga caminar-trotar 63 min",
+      "durationMin": 63,
+      "warmup": "5 min caminar + movilidad ~5 min.",
+      "details": "Larga caminar-trotar 63 min. Tirada larga caminar-trotar. Zona 2: 110–128; si FC >130 camina. Ritmo conversación todo el rato. Bebe agua si supera ~50 min.",
+      "cooldown": "5 min caminar + estiramiento ~10 min: gemelos, isquiotibiales, cuádriceps, flexores, glúteos.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "Larga 48 min caminar-trotar. Techo FC 110–128."
+        }
+      ],
+      "note": "Los km fáciles construyen la base para 10k → 16k → 21k."
+    },
+    {
+      "date": "2026-11-16",
+      "type": "koti",
+      "title": "Fuerza casa 2 rondas (descarga)",
+      "durationMin": 41,
+      "warmup": "Calentamiento 5 min: caminar en el sitio, círculos de brazos, sentadillas sin peso, activar glúteos.",
+      "details": "Descarga. 2 rondas. Circuito casa (8–12 reps):\n• Sentadilla o RDL\n• Zancadas\n• Flexiones (rodillas ok)\n• Remo con banda/mancuernas\n• Plancha 30–45 s\n• Puente de glúteos\nDescanso 60–90 s entre rondas.",
+      "cooldown": "Estiramiento 5–7 min: isquiotibiales, cuádriceps, flexores de cadera, pecho, espalda.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "1 ronda(s) del mismo circuito. Calentamiento y estiramiento igual."
+        }
+      ],
+      "note": "Semana de descarga: menos volumen, misma calidad técnica."
+    },
+    {
+      "date": "2026-11-17",
+      "type": "juoksu",
+      "subtype": "easy",
+      "title": "Fácil caminar-trotar 30 min (descarga)",
+      "durationMin": 30,
+      "warmup": "5 min caminar suave + movilidad dinámica ligera.",
+      "details": "Fácil caminar-trotar 30 min (descarga). Caminar-trotar fácil. Zona 2: 110–128. Si la FC pasa de 130, camina hasta bajar. Prioridad: sensación/conversación (puedes hablar). El reloj es apoyo, no un juez.",
+      "cooldown": "3–5 min caminar + estirar gemelos e isquiotibiales.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "Caminar-trotar 20 min. Mismo techo FC 110–128."
+        },
+        {
+          "label": "Solo caminar",
+          "details": "Caminata 30 min a ritmo cómodo."
+        }
+      ],
+      "note": "Descarga: menos volumen, misma calidad fácil."
+    },
+    {
+      "date": "2026-11-18",
+      "type": "koti",
+      "title": "Fuerza casa 2 rondas (descarga)",
+      "durationMin": 41,
+      "warmup": "Calentamiento 5 min: caminar en el sitio, círculos de brazos, sentadillas sin peso, activar glúteos.",
+      "details": "Descarga. 2 rondas. Circuito casa (8–12 reps):\n• Sentadilla o RDL\n• Zancadas\n• Flexiones (rodillas ok)\n• Remo con banda/mancuernas\n• Plancha 30–45 s\n• Puente de glúteos\nDescanso 60–90 s entre rondas.",
+      "cooldown": "Estiramiento 5–7 min: isquiotibiales, cuádriceps, flexores de cadera, pecho, espalda.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "1 ronda(s) del mismo circuito. Calentamiento y estiramiento igual."
+        }
+      ],
+      "note": "Semana de descarga: menos volumen, misma calidad técnica."
+    },
+    {
+      "date": "2026-11-19",
+      "type": "juoksu",
+      "subtype": "intervals",
+      "title": "Intervalos 5×1 min suave (FC)",
+      "durationMin": 33,
+      "warmup": "8–10 min caminar + trote suave.",
+      "details": "5 × 1 min suave-controlado (~140–150) / 2 min caminar hasta FC <130. Intervalos: 1 min fuerte controlado (~145–160) / 2 min caminar hasta bajar de 130. Calentamiento 8–10 min, enfriamiento 5–8 min. Sensación primero.",
+      "cooldown": "5–8 min caminar + estirar.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "3 × 1 min / 2 min caminar. Mismo criterio de sensación."
+        },
+        {
+          "label": "Más exigente",
+          "details": "6 × 1 min / 2 min caminar. Solo si te sientes bien."
+        }
+      ],
+      "note": "Descarga: intervalos más suaves."
+    },
+    {
+      "date": "2026-11-21",
+      "type": "juoksu",
+      "subtype": "long",
+      "title": "Larga caminar-trotar 50 min (descarga)",
+      "durationMin": 50,
+      "warmup": "5 min caminar + movilidad ~5 min.",
+      "details": "Larga caminar-trotar 50 min (descarga). Tirada larga caminar-trotar. Zona 2: 110–128; si FC >130 camina. Ritmo conversación todo el rato. Bebe agua si supera ~50 min.",
+      "cooldown": "5 min caminar + estiramiento ~10 min: gemelos, isquiotibiales, cuádriceps, flexores, glúteos.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "Larga 35 min caminar-trotar. Techo FC 110–128."
+        }
+      ],
+      "note": "Descarga: misma calidad fácil, menos tiempo."
+    }
   ]
- },
- "days": [
-  {
-   "date": "2026-10-26",
-   "type": "koti",
-   "title": "Fuerza casa 2 rondas",
-   "durationMin": 41,
-   "warmup": "Calentamiento 5 min: caminar en el sitio, círculos de brazos, sentadillas sin peso, activar glúteos.",
-   "details": "2 rondas. Circuito casa (8–12 reps):\n• Sentadilla o RDL\n• Zancadas\n• Flexiones (rodillas ok)\n• Remo con banda/mancuernas\n• Plancha 30–45 s\n• Puente de glúteos\nDescanso 60–90 s entre rondas.",
-   "cooldown": "Estiramiento 5–7 min: isquiotibiales, cuádriceps, flexores de cadera, pecho, espalda.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "1 ronda(s) del mismo circuito. Calentamiento y estiramiento igual."
-    }
-   ],
-   "note": "Si eres nueva: prioriza técnica sobre peso. Rodillas ok en flexiones."
-  },
-  {
-   "date": "2026-10-27",
-   "type": "juoksu",
-   "subtype": "easy",
-   "title": "Fácil caminar-trotar 30 min",
-   "durationMin": 30,
-   "warmup": "5 min caminar suave + movilidad dinámica ligera.",
-   "details": "Fácil caminar-trotar 30 min. Caminar-trotar fácil. Zona 2: 110–128. Si la FC pasa de 130, camina hasta bajar. Prioridad: sensación/conversación (puedes hablar). El reloj es apoyo, no un juez.",
-   "cooldown": "3–5 min caminar + estirar gemelos e isquiotibiales.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "Caminar-trotar 20 min. Mismo techo FC 110–128."
-    },
-    {
-     "label": "Solo caminar",
-     "details": "Caminata 30 min a ritmo cómodo."
-    }
-   ],
-   "note": "Fácil de verdad. Ego en casa."
-  },
-  {
-   "date": "2026-10-28",
-   "type": "koti",
-   "title": "Fuerza casa 2 rondas",
-   "durationMin": 41,
-   "warmup": "Calentamiento 5 min: caminar en el sitio, círculos de brazos, sentadillas sin peso, activar glúteos.",
-   "details": "2 rondas. Circuito casa (8–12 reps):\n• Sentadilla o RDL\n• Zancadas\n• Flexiones (rodillas ok)\n• Remo con banda/mancuernas\n• Plancha 30–45 s\n• Puente de glúteos\nDescanso 60–90 s entre rondas.",
-   "cooldown": "Estiramiento 5–7 min: isquiotibiales, cuádriceps, flexores de cadera, pecho, espalda.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "1 ronda(s) del mismo circuito. Calentamiento y estiramiento igual."
-    }
-   ],
-   "note": "Si eres nueva: prioriza técnica sobre peso. Rodillas ok en flexiones."
-  },
-  {
-   "date": "2026-10-29",
-   "type": "juoksu",
-   "subtype": "intervals",
-   "title": "Intervalos 6×1 min (FC)",
-   "durationMin": 36,
-   "warmup": "8–10 min caminar + trote suave.",
-   "details": "6 × 1 min fuerte controlado (~145–160) / 2 min caminar hasta FC <130. Intervalos: 1 min fuerte controlado (~145–160) / 2 min caminar hasta bajar de 130. Calentamiento 8–10 min, enfriamiento 5–8 min. Sensación primero.",
-   "cooldown": "5–8 min caminar + estirar.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "4 × 1 min / 2 min caminar. Mismo criterio de sensación."
-    },
-    {
-     "label": "Más exigente",
-     "details": "7 × 1 min / 2 min caminar. Solo si te sientes bien."
-    }
-   ],
-   "note": "Un día duro a la semana. El resto fácil."
-  },
-  {
-   "date": "2026-10-31",
-   "type": "juoksu",
-   "subtype": "long",
-   "title": "Larga caminar-trotar 50 min",
-   "durationMin": 50,
-   "warmup": "5 min caminar + movilidad ~5 min.",
-   "details": "Larga caminar-trotar 50 min. Tirada larga caminar-trotar. Zona 2: 110–128; si FC >130 camina. Ritmo conversación todo el rato. Bebe agua si supera ~50 min.",
-   "cooldown": "5 min caminar + estiramiento ~10 min: gemelos, isquiotibiales, cuádriceps, flexores, glúteos.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "Larga 35 min caminar-trotar. Techo FC 110–128."
-    }
-   ],
-   "note": "Los km fáciles construyen la base para 10k → 16k → 21k."
-  },
-  {
-   "date": "2026-11-02",
-   "type": "koti",
-   "title": "Fuerza casa 3 rondas",
-   "durationMin": 49,
-   "warmup": "Calentamiento 5 min: caminar en el sitio, círculos de brazos, sentadillas sin peso, activar glúteos.",
-   "details": "3 rondas. Circuito casa (8–12 reps):\n• Sentadilla o RDL\n• Zancadas\n• Flexiones (rodillas ok)\n• Remo con banda/mancuernas\n• Plancha 30–45 s\n• Puente de glúteos\nDescanso 60–90 s entre rondas.",
-   "cooldown": "Estiramiento 5–7 min: isquiotibiales, cuádriceps, flexores de cadera, pecho, espalda.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "2 ronda(s) del mismo circuito. Calentamiento y estiramiento igual."
-    },
-    {
-     "label": "Más exigente",
-     "details": "3 rondas + 2–3 reps extra en sentadilla y remo. Sin forzar."
-    }
-   ],
-   "note": "Tres rondas completas. Técnica limpia, RPE cómodo."
-  },
-  {
-   "date": "2026-11-03",
-   "type": "juoksu",
-   "subtype": "easy",
-   "title": "Fácil caminar-trotar 35 min",
-   "durationMin": 35,
-   "warmup": "5 min caminar suave + movilidad dinámica ligera.",
-   "details": "Fácil caminar-trotar 35 min. Caminar-trotar fácil. Zona 2: 110–128. Si la FC pasa de 130, camina hasta bajar. Prioridad: sensación/conversación (puedes hablar). El reloj es apoyo, no un juez.",
-   "cooldown": "3–5 min caminar + estirar gemelos e isquiotibiales.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "Caminar-trotar 25 min. Mismo techo FC 110–128."
-    },
-    {
-     "label": "Solo caminar",
-     "details": "Caminata 35 min a ritmo cómodo."
-    }
-   ],
-   "note": "Fácil de verdad. Ego en casa."
-  },
-  {
-   "date": "2026-11-04",
-   "type": "koti",
-   "title": "Fuerza casa 3 rondas",
-   "durationMin": 49,
-   "warmup": "Calentamiento 5 min: caminar en el sitio, círculos de brazos, sentadillas sin peso, activar glúteos.",
-   "details": "3 rondas. Circuito casa (8–12 reps):\n• Sentadilla o RDL\n• Zancadas\n• Flexiones (rodillas ok)\n• Remo con banda/mancuernas\n• Plancha 30–45 s\n• Puente de glúteos\nDescanso 60–90 s entre rondas.",
-   "cooldown": "Estiramiento 5–7 min: isquiotibiales, cuádriceps, flexores de cadera, pecho, espalda.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "2 ronda(s) del mismo circuito. Calentamiento y estiramiento igual."
-    },
-    {
-     "label": "Más exigente",
-     "details": "3 rondas + 2–3 reps extra en sentadilla y remo. Sin forzar."
-    }
-   ],
-   "note": "Tres rondas completas. Técnica limpia, RPE cómodo."
-  },
-  {
-   "date": "2026-11-05",
-   "type": "juoksu",
-   "subtype": "intervals",
-   "title": "Intervalos 7×1 min (FC)",
-   "durationMin": 39,
-   "warmup": "8–10 min caminar + trote suave.",
-   "details": "7 × 1 min fuerte controlado (~145–160) / 2 min caminar hasta FC <130. Intervalos: 1 min fuerte controlado (~145–160) / 2 min caminar hasta bajar de 130. Calentamiento 8–10 min, enfriamiento 5–8 min. Sensación primero.",
-   "cooldown": "5–8 min caminar + estirar.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "5 × 1 min / 2 min caminar. Mismo criterio de sensación."
-    },
-    {
-     "label": "Más exigente",
-     "details": "8 × 1 min / 2 min caminar. Solo si te sientes bien."
-    }
-   ],
-   "note": "Un día duro a la semana. El resto fácil."
-  },
-  {
-   "date": "2026-11-07",
-   "type": "juoksu",
-   "subtype": "long",
-   "title": "Larga caminar-trotar 58 min",
-   "durationMin": 58,
-   "warmup": "5 min caminar + movilidad ~5 min.",
-   "details": "Larga caminar-trotar 58 min. Tirada larga caminar-trotar. Zona 2: 110–128; si FC >130 camina. Ritmo conversación todo el rato. Bebe agua si supera ~50 min.",
-   "cooldown": "5 min caminar + estiramiento ~10 min: gemelos, isquiotibiales, cuádriceps, flexores, glúteos.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "Larga 43 min caminar-trotar. Techo FC 110–128."
-    }
-   ],
-   "note": "Los km fáciles construyen la base para 10k → 16k → 21k."
-  },
-  {
-   "date": "2026-11-09",
-   "type": "koti",
-   "title": "Fuerza casa 3 rondas",
-   "durationMin": 49,
-   "warmup": "Calentamiento 5 min: caminar en el sitio, círculos de brazos, sentadillas sin peso, activar glúteos.",
-   "details": "3 rondas. Circuito casa (8–12 reps):\n• Sentadilla o RDL\n• Zancadas\n• Flexiones (rodillas ok)\n• Remo con banda/mancuernas\n• Plancha 30–45 s\n• Puente de glúteos\nDescanso 60–90 s entre rondas.",
-   "cooldown": "Estiramiento 5–7 min: isquiotibiales, cuádriceps, flexores de cadera, pecho, espalda.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "2 ronda(s) del mismo circuito. Calentamiento y estiramiento igual."
-    },
-    {
-     "label": "Más exigente",
-     "details": "3 rondas + 2–3 reps extra en sentadilla y remo. Sin forzar."
-    }
-   ],
-   "note": "Tres rondas completas. Técnica limpia, RPE cómodo."
-  },
-  {
-   "date": "2026-11-10",
-   "type": "juoksu",
-   "subtype": "easy",
-   "title": "Fácil caminar-trotar 40 min",
-   "durationMin": 40,
-   "warmup": "5 min caminar suave + movilidad dinámica ligera.",
-   "details": "Fácil caminar-trotar 40 min. Caminar-trotar fácil. Zona 2: 110–128. Si la FC pasa de 130, camina hasta bajar. Prioridad: sensación/conversación (puedes hablar). El reloj es apoyo, no un juez.",
-   "cooldown": "3–5 min caminar + estirar gemelos e isquiotibiales.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "Caminar-trotar 30 min. Mismo techo FC 110–128."
-    },
-    {
-     "label": "Solo caminar",
-     "details": "Caminata 40 min a ritmo cómodo."
-    }
-   ],
-   "note": "Fácil de verdad. Ego en casa."
-  },
-  {
-   "date": "2026-11-11",
-   "type": "koti",
-   "title": "Fuerza casa 3 rondas",
-   "durationMin": 49,
-   "warmup": "Calentamiento 5 min: caminar en el sitio, círculos de brazos, sentadillas sin peso, activar glúteos.",
-   "details": "3 rondas. Circuito casa (8–12 reps):\n• Sentadilla o RDL\n• Zancadas\n• Flexiones (rodillas ok)\n• Remo con banda/mancuernas\n• Plancha 30–45 s\n• Puente de glúteos\nDescanso 60–90 s entre rondas.",
-   "cooldown": "Estiramiento 5–7 min: isquiotibiales, cuádriceps, flexores de cadera, pecho, espalda.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "2 ronda(s) del mismo circuito. Calentamiento y estiramiento igual."
-    },
-    {
-     "label": "Más exigente",
-     "details": "3 rondas + 2–3 reps extra en sentadilla y remo. Sin forzar."
-    }
-   ],
-   "note": "Tres rondas completas. Técnica limpia, RPE cómodo."
-  },
-  {
-   "date": "2026-11-12",
-   "type": "juoksu",
-   "subtype": "intervals",
-   "title": "Intervalos 8×1 min (FC)",
-   "durationMin": 42,
-   "warmup": "8–10 min caminar + trote suave.",
-   "details": "8 × 1 min fuerte controlado (~145–160) / 2 min caminar hasta FC <130. Intervalos: 1 min fuerte controlado (~145–160) / 2 min caminar hasta bajar de 130. Calentamiento 8–10 min, enfriamiento 5–8 min. Sensación primero.",
-   "cooldown": "5–8 min caminar + estirar.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "6 × 1 min / 2 min caminar. Mismo criterio de sensación."
-    },
-    {
-     "label": "Más exigente",
-     "details": "9 × 1 min / 2 min caminar. Solo si te sientes bien."
-    }
-   ],
-   "note": "Un día duro a la semana. El resto fácil."
-  },
-  {
-   "date": "2026-11-14",
-   "type": "juoksu",
-   "subtype": "long",
-   "title": "Larga caminar-trotar 63 min",
-   "durationMin": 63,
-   "warmup": "5 min caminar + movilidad ~5 min.",
-   "details": "Larga caminar-trotar 63 min. Tirada larga caminar-trotar. Zona 2: 110–128; si FC >130 camina. Ritmo conversación todo el rato. Bebe agua si supera ~50 min.",
-   "cooldown": "5 min caminar + estiramiento ~10 min: gemelos, isquiotibiales, cuádriceps, flexores, glúteos.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "Larga 48 min caminar-trotar. Techo FC 110–128."
-    }
-   ],
-   "note": "Los km fáciles construyen la base para 10k → 16k → 21k."
-  },
-  {
-   "date": "2026-11-16",
-   "type": "koti",
-   "title": "Fuerza casa 2 rondas (descarga)",
-   "durationMin": 41,
-   "warmup": "Calentamiento 5 min: caminar en el sitio, círculos de brazos, sentadillas sin peso, activar glúteos.",
-   "details": "Descarga. 2 rondas. Circuito casa (8–12 reps):\n• Sentadilla o RDL\n• Zancadas\n• Flexiones (rodillas ok)\n• Remo con banda/mancuernas\n• Plancha 30–45 s\n• Puente de glúteos\nDescanso 60–90 s entre rondas.",
-   "cooldown": "Estiramiento 5–7 min: isquiotibiales, cuádriceps, flexores de cadera, pecho, espalda.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "1 ronda(s) del mismo circuito. Calentamiento y estiramiento igual."
-    }
-   ],
-   "note": "Semana de descarga: menos volumen, misma calidad técnica."
-  },
-  {
-   "date": "2026-11-17",
-   "type": "juoksu",
-   "subtype": "easy",
-   "title": "Fácil caminar-trotar 30 min (descarga)",
-   "durationMin": 30,
-   "warmup": "5 min caminar suave + movilidad dinámica ligera.",
-   "details": "Fácil caminar-trotar 30 min (descarga). Caminar-trotar fácil. Zona 2: 110–128. Si la FC pasa de 130, camina hasta bajar. Prioridad: sensación/conversación (puedes hablar). El reloj es apoyo, no un juez.",
-   "cooldown": "3–5 min caminar + estirar gemelos e isquiotibiales.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "Caminar-trotar 20 min. Mismo techo FC 110–128."
-    },
-    {
-     "label": "Solo caminar",
-     "details": "Caminata 30 min a ritmo cómodo."
-    }
-   ],
-   "note": "Descarga: menos volumen, misma calidad fácil."
-  },
-  {
-   "date": "2026-11-18",
-   "type": "koti",
-   "title": "Fuerza casa 2 rondas (descarga)",
-   "durationMin": 41,
-   "warmup": "Calentamiento 5 min: caminar en el sitio, círculos de brazos, sentadillas sin peso, activar glúteos.",
-   "details": "Descarga. 2 rondas. Circuito casa (8–12 reps):\n• Sentadilla o RDL\n• Zancadas\n• Flexiones (rodillas ok)\n• Remo con banda/mancuernas\n• Plancha 30–45 s\n• Puente de glúteos\nDescanso 60–90 s entre rondas.",
-   "cooldown": "Estiramiento 5–7 min: isquiotibiales, cuádriceps, flexores de cadera, pecho, espalda.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "1 ronda(s) del mismo circuito. Calentamiento y estiramiento igual."
-    }
-   ],
-   "note": "Semana de descarga: menos volumen, misma calidad técnica."
-  },
-  {
-   "date": "2026-11-19",
-   "type": "juoksu",
-   "subtype": "intervals",
-   "title": "Intervalos 5×1 min suave (FC)",
-   "durationMin": 33,
-   "warmup": "8–10 min caminar + trote suave.",
-   "details": "5 × 1 min suave-controlado (~140–150) / 2 min caminar hasta FC <130. Intervalos: 1 min fuerte controlado (~145–160) / 2 min caminar hasta bajar de 130. Calentamiento 8–10 min, enfriamiento 5–8 min. Sensación primero.",
-   "cooldown": "5–8 min caminar + estirar.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "3 × 1 min / 2 min caminar. Mismo criterio de sensación."
-    },
-    {
-     "label": "Más exigente",
-     "details": "6 × 1 min / 2 min caminar. Solo si te sientes bien."
-    }
-   ],
-   "note": "Descarga: intervalos más suaves."
-  },
-  {
-   "date": "2026-11-21",
-   "type": "juoksu",
-   "subtype": "long",
-   "title": "Larga caminar-trotar 50 min (descarga)",
-   "durationMin": 50,
-   "warmup": "5 min caminar + movilidad ~5 min.",
-   "details": "Larga caminar-trotar 50 min (descarga). Tirada larga caminar-trotar. Zona 2: 110–128; si FC >130 camina. Ritmo conversación todo el rato. Bebe agua si supera ~50 min.",
-   "cooldown": "5 min caminar + estiramiento ~10 min: gemelos, isquiotibiales, cuádriceps, flexores, glúteos.",
-   "options": [
-    {
-     "label": "Suave",
-     "details": "Larga 35 min caminar-trotar. Techo FC 110–128."
-    }
-   ],
-   "note": "Descarga: misma calidad fácil, menos tiempo."
-  }
- ]
 }
