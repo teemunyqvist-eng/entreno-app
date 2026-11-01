@@ -70,8 +70,9 @@ const missing = need.filter(d => !dates.includes(d));
 if (missing.length) bad('missing coach days: ' + missing.join(',')); else ok('20 month-1 coach days');
 const strength = coach.days.filter(d => d.type === 'koti');
 const runs = coach.days.filter(d => d.type === 'juoksu');
-if (strength.length === 8) ok('8 strength'); else bad('strength count ' + strength.length);
-if (runs.length === 12) ok('12 runs'); else bad('runs count ' + runs.length);
+// 1.11.2026: viikko 2 kevennetty (alaselkä) → 2.11 lihashuolto, 3.11 kävely
+if (strength.length === 7) ok('7 strength'); else bad('strength count ' + strength.length);
+if (runs.length === 11) ok('11 runs'); else bad('runs count ' + runs.length);
 const titlesOk = coach.days.every(d => d.title && /[áéíóúñÁÉÍÓÚÑa-zA-Z]/.test(d.title));
 if (titlesOk) ok('Spanish titles present'); else bad('titles');
 
