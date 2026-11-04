@@ -71,7 +71,7 @@ if (missing.length) bad('missing coach days: ' + missing.join(',')); else ok('20
 const strength = coach.days.filter(d => d.type === 'koti');
 const runs = coach.days.filter(d => d.type === 'juoksu');
 // 1.11.2026: viikko 2 kevennetty (alaselkä) → 2.11 lihashuolto, 3.11 kävely
-// 4.11.2026: lumbago → 4.–8.11 recuperación, 9.–15.11 vuelta suave
+// 4.11.2026: molestias → 4.–8.11 recuperación, 9.–15.11 vuelta suave
 if (strength.length === 5) ok('5 strength'); else bad('strength count ' + strength.length);
 if (runs.length === 8) ok('8 runs'); else bad('runs count ' + runs.length);
 const titlesOk = coach.days.every(d => d.title && /[áéíóúñÁÉÍÓÚÑa-zA-Z]/.test(d.title));
