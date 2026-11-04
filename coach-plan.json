@@ -1,6 +1,6 @@
 {
-  "version": 4,
-  "updatedAt": "2026-11-01T09:30:00+02:00",
+  "version": 5,
+  "updatedAt": "2026-11-04T20:25:00+02:00",
   "feedback": {
     "2026-10-26": {
       "title": "Fuerza en casa · 27 min",
@@ -25,6 +25,10 @@
     "2026-11-01": {
       "title": "Plan ajustado por tus molestias",
       "text": "¡Gracias por avisar! He cambiado los próximos días: hoy y mañana solo movilidad suave y paseos cortos; martes caminata 30 min; miércoles core básico sin pesas (solo si ya te mueves bien); jueves sin series, solo caminar-trotar muy fácil si no molesta. El sábado la larga solo si ya estás sin molestias (si no, caminata). Moverse suave suele ayudar más que quedarse quieta del todo; el calor local también puede aliviar. Evita levantar cosas pesadas, giros rápidos y agacharte bruscamente.\nSi el dolor baja por la pierna, aparece hormigueo o falta de fuerza, tienes fiebre, o no mejora en una semana, consulta al médico."
+    },
+    "2026-11-04": {
+      "title": "Entrenos en pausa: primero recuperarte",
+      "text": "¡Gracias por avisar, y mucho ánimo! He pausado el plan: hasta el domingo solo descanso, movilidad muy suave y paseos cortos si te sientan bien (sin fuerza, sin trote, sin tirada larga). La semana del 9.11 es una vuelta suave: core básico sin cargas, caminatas y, solo si ya no hay dolor, algo de caminar-trotar muy fácil. Sin series. Si aún duele, cambia cualquier día a paseo o descanso. El calor local y moverte un poco cada hora suelen ayudar.\nConsulta al médico si el dolor baja por la pierna, notas hormigueo o falta de fuerza, tienes fiebre, o si no mejora claramente en unos días."
     }
   },
   "done": {
@@ -216,8 +220,56 @@
     },
     {
       "date": "2026-11-04",
+      "type": "lihashuolto",
+      "title": "Recuperación: descanso + movilidad muy suave",
+      "durationMin": 15,
+      "warmup": "Sin calentamiento. Muévete despacio, sin giros bruscos.",
+      "details": "Fuerza cancelada. Hoy solo lo que te alivie:\n• Balanceo de rodillas tumbada 10×\n• Báscula pélvica 10×, muy suave\n• Rodillas al pecho 3×20 s\n• Gato-vaca 8× lento (si no molesta)\n• Calor local 15–20 min si te alivia\n• Paseo corto por casa o fuera si caminar sienta bien\nSi algo aumenta el dolor, sáltalo.",
+      "cooldown": "Sin estiramientos forzados. Termina tumbada boca arriba con rodillas dobladas, respirando tranquila 2–3 min.",
+      "options": [
+        {
+          "label": "Solo descanso",
+          "details": "Descanso, calor local y levantarte a caminar un poco cada hora."
+        }
+      ],
+      "note": "Entreno pausado hasta que te sientas mejor. Sin prisa."
+    },
+    {
+      "date": "2026-11-05",
+      "type": "lihashuolto",
+      "title": "Recuperación: paseo corto + movilidad",
+      "durationMin": 20,
+      "warmup": "Sin calentamiento especial.",
+      "details": "Nada de trotar ni fuerza esta semana.\n• Paseo tranquilo 10–20 min solo si caminar no molesta\n• Balanceo de rodillas tumbada 10×\n• Báscula pélvica 10×, muy suave\n• Rodillas al pecho 3×20 s\n• Gato-vaca 8× lento (si no molesta)\n• Calor local 15–20 min si te alivia",
+      "cooldown": "Sin estiramientos forzados. Termina tumbada boca arriba con rodillas dobladas, respirando tranquila 2–3 min.",
+      "options": [
+        {
+          "label": "Solo descanso",
+          "details": "Si sigue doliendo igual: descanso, calor local y movilidad muy suave."
+        }
+      ],
+      "note": "Moverse suave suele ayudar más que estar quieta del todo, pero sin forzar."
+    },
+    {
+      "date": "2026-11-07",
+      "type": "kavely",
+      "title": "Paseo suave 20–30 min (opcional)",
+      "durationMin": 25,
+      "warmup": "5 min caminar muy despacio.",
+      "details": "La tirada larga queda cancelada. Solo si caminar ya sienta bien: paseo tranquilo 20–30 min en llano. Al volver, balanceo de rodillas y báscula pélvica 10× cada uno.",
+      "cooldown": "Sin estiramientos forzados. Termina tumbada boca arriba con rodillas dobladas, respirando tranquila 2–3 min.",
+      "options": [
+        {
+          "label": "Solo descanso",
+          "details": "Si aún hay dolor: descanso + movilidad muy suave."
+        }
+      ],
+      "note": "Sin trote hasta que caminar no moleste nada."
+    },
+    {
+      "date": "2026-11-09",
       "type": "koti",
-      "title": "Fuerza suave: core básico (sin cargas)",
+      "title": "Vuelta suave: core básico (sin cargas)",
       "durationMin": 25,
       "warmup": "5 min caminar en el sitio + gato-vaca 8×.",
       "details": "Solo si ya te mueves con facilidad. 2 rondas, sin pesas:\n• Puente de glúteos 10–12\n• Bird dog (cuadrupedia, brazo y pierna contrarios) 6–8 por lado, lento\n• Dead bug 6–8 por lado\n• Plancha lateral con rodillas apoyadas 15–20 s por lado\n• Sentadilla a una silla sin peso 8–10\nNada de zancadas, RDL, remo inclinado ni ejercicios con giro todavía. Si algo duele, para.",
@@ -228,16 +280,48 @@
           "details": "Si aún hay molestias: caminata 30 min + movilidad suave en lugar de fuerza."
         }
       ],
-      "note": "Volvemos a la fuerza normal cuando estos ejercicios no den ninguna molestia."
+      "note": "Solo si ya no hay dolor. Si aún molesta: paseo corto + movilidad."
     },
     {
-      "date": "2026-11-05",
+      "date": "2026-11-10",
+      "type": "kavely",
+      "title": "Caminata 30 min",
+      "durationMin": 30,
+      "warmup": "5 min caminar muy suave.",
+      "details": "Caminata 30 min a ritmo cómodo, en llano. Nada de trotar todavía. Si molesta, acorta a 15–20 min. Al volver: báscula pélvica y gato-vaca 10×.",
+      "cooldown": "Sin estiramientos forzados. Termina tumbada boca arriba con rodillas dobladas, respirando tranquila 2–3 min.",
+      "options": [
+        {
+          "label": "Suave",
+          "details": "Caminata 15–20 min + movilidad suave."
+        }
+      ],
+      "note": "Semana de vuelta: todo suave."
+    },
+    {
+      "date": "2026-11-11",
+      "type": "lihashuolto",
+      "title": "Movilidad + paseo 20–30 min",
+      "durationMin": 30,
+      "warmup": "Paseo tranquilo 5 min.",
+      "details": "• Paseo 20–30 min a ritmo cómodo\n• Gato-vaca 10×\n• Bird dog 6 por lado, lento\n• Puente de glúteos 10\n• Postura del niño 3×30 s\nSin cargas ni giros rápidos.",
+      "cooldown": "Estiramiento suave 5 min: flexores de cadera, glúteos.",
+      "options": [
+        {
+          "label": "Solo descanso",
+          "details": "Si hay dolor: solo paseo corto."
+        }
+      ],
+      "note": "La fuerza normal vuelve cuando el core básico no dé ninguna molestia."
+    },
+    {
+      "date": "2026-11-12",
       "type": "juoksu",
       "subtype": "easy",
-      "title": "Caminar-trotar fácil 25 min (sin series)",
+      "title": "Caminar-trotar muy fácil 25 min (sin series)",
       "durationMin": 25,
       "warmup": "5–10 min caminar.",
-      "details": "Esta semana no hay series. Solo si caminar ya no molesta nada: caminar-trotar muy fácil 25 min (1 min trote / 2 min caminar). Zona 2: 110–128. Si el trote molesta, sigue caminando.",
+      "details": "Sin series esta semana. Solo si caminar ya no molesta nada: 1 min trote / 2 min caminar, muy suave. Zona 2: 110–128. Si el trote molesta, sigue caminando.",
       "cooldown": "5 min caminar + movilidad suave.",
       "options": [
         {
@@ -248,124 +332,21 @@
       "note": "Las series vuelven cuando la espalda esté al 100 %."
     },
     {
-      "date": "2026-11-07",
-      "type": "juoksu",
-      "subtype": "long",
-      "title": "Larga caminar-trotar 58 min",
-      "durationMin": 58,
-      "warmup": "5 min caminar + movilidad ~5 min.",
-      "details": "Larga caminar-trotar 58 min. Tirada larga caminar-trotar. Zona 2: 110–128; si FC >130 camina. Ritmo conversación todo el rato. Bebe agua si supera ~50 min.",
-      "cooldown": "5 min caminar + estiramiento ~10 min: gemelos, isquiotibiales, cuádriceps, flexores, glúteos.",
-      "options": [
-        {
-          "label": "Suave",
-          "details": "Larga 35–40 min caminar-trotar. Techo FC 110–128."
-        },
-        {
-          "label": "Solo caminar",
-          "details": "Caminata 45 min a ritmo cómodo."
-        }
-      ],
-      "note": "Solo si ya estás sin molestias. Si no: caminata 40–50 min con algún trote suave si se siente bien."
-    },
-    {
-      "date": "2026-11-09",
-      "type": "koti",
-      "title": "Fuerza casa 3 rondas",
-      "durationMin": 49,
-      "warmup": "Calentamiento 5 min: caminar en el sitio, círculos de brazos, sentadillas sin peso, activar glúteos.",
-      "details": "3 rondas. Circuito casa (8–12 reps):\n• Sentadilla o RDL\n• Zancadas\n• Flexiones (rodillas ok)\n• Remo con banda/mancuernas\n• Plancha 30–45 s\n• Puente de glúteos\nDescanso 60–90 s entre rondas.",
-      "cooldown": "Estiramiento 5–7 min: isquiotibiales, cuádriceps, flexores de cadera, pecho, espalda.",
-      "options": [
-        {
-          "label": "Suave",
-          "details": "2 ronda(s) del mismo circuito. Calentamiento y estiramiento igual."
-        },
-        {
-          "label": "Más exigente",
-          "details": "3 rondas + 2–3 reps extra en sentadilla y remo. Sin forzar."
-        }
-      ],
-      "note": "Tres rondas completas. Técnica limpia, RPE cómodo."
-    },
-    {
-      "date": "2026-11-10",
-      "type": "juoksu",
-      "subtype": "easy",
-      "title": "Fácil caminar-trotar 40 min",
-      "durationMin": 40,
-      "warmup": "5 min caminar suave + movilidad dinámica ligera.",
-      "details": "Fácil caminar-trotar 40 min. Caminar-trotar fácil. Zona 2: 110–128. Si la FC pasa de 130, camina hasta bajar. Prioridad: sensación/conversación (puedes hablar). El reloj es apoyo, no un juez.",
-      "cooldown": "3–5 min caminar + estirar gemelos e isquiotibiales.",
-      "options": [
-        {
-          "label": "Suave",
-          "details": "Caminar-trotar 30 min. Mismo techo FC 110–128."
-        },
-        {
-          "label": "Solo caminar",
-          "details": "Caminata 40 min a ritmo cómodo."
-        }
-      ],
-      "note": "Fácil de verdad. Ego en casa."
-    },
-    {
-      "date": "2026-11-11",
-      "type": "koti",
-      "title": "Fuerza casa 3 rondas",
-      "durationMin": 49,
-      "warmup": "Calentamiento 5 min: caminar en el sitio, círculos de brazos, sentadillas sin peso, activar glúteos.",
-      "details": "3 rondas. Circuito casa (8–12 reps):\n• Sentadilla o RDL\n• Zancadas\n• Flexiones (rodillas ok)\n• Remo con banda/mancuernas\n• Plancha 30–45 s\n• Puente de glúteos\nDescanso 60–90 s entre rondas.",
-      "cooldown": "Estiramiento 5–7 min: isquiotibiales, cuádriceps, flexores de cadera, pecho, espalda.",
-      "options": [
-        {
-          "label": "Suave",
-          "details": "2 ronda(s) del mismo circuito. Calentamiento y estiramiento igual."
-        },
-        {
-          "label": "Más exigente",
-          "details": "3 rondas + 2–3 reps extra en sentadilla y remo. Sin forzar."
-        }
-      ],
-      "note": "Tres rondas completas. Técnica limpia, RPE cómodo."
-    },
-    {
-      "date": "2026-11-12",
-      "type": "juoksu",
-      "subtype": "intervals",
-      "title": "Intervalos 8×1 min (FC)",
-      "durationMin": 42,
-      "warmup": "8–10 min caminar + trote suave.",
-      "details": "8 × 1 min fuerte controlado (~145–160) / 2 min caminar hasta FC <130. Intervalos: 1 min fuerte controlado (~145–160) / 2 min caminar hasta bajar de 130. Calentamiento 8–10 min, enfriamiento 5–8 min. Sensación primero.",
-      "cooldown": "5–8 min caminar + estirar.",
-      "options": [
-        {
-          "label": "Suave",
-          "details": "6 × 1 min / 2 min caminar. Mismo criterio de sensación."
-        },
-        {
-          "label": "Más exigente",
-          "details": "9 × 1 min / 2 min caminar. Solo si te sientes bien."
-        }
-      ],
-      "note": "Un día duro a la semana. El resto fácil."
-    },
-    {
       "date": "2026-11-14",
       "type": "juoksu",
       "subtype": "long",
-      "title": "Larga caminar-trotar 63 min",
-      "durationMin": 63,
+      "title": "Larga suave: caminar-trotar 40 min",
+      "durationMin": 40,
       "warmup": "5 min caminar + movilidad ~5 min.",
-      "details": "Larga caminar-trotar 63 min. Tirada larga caminar-trotar. Zona 2: 110–128; si FC >130 camina. Ritmo conversación todo el rato. Bebe agua si supera ~50 min.",
-      "cooldown": "5 min caminar + estiramiento ~10 min: gemelos, isquiotibiales, cuádriceps, flexores, glúteos.",
+      "details": "Solo si ya estás sin molestias: caminar-trotar 40 min, ritmo de conversación, mucho caminar. Zona 2: 110–128; si FC >130 camina.",
+      "cooldown": "5 min caminar + estiramiento suave 5–10 min.",
       "options": [
         {
-          "label": "Suave",
-          "details": "Larga 48 min caminar-trotar. Techo FC 110–128."
+          "label": "Solo caminar",
+          "details": "Caminata 40–45 min a ritmo cómodo."
         }
       ],
-      "note": "Los km fáciles construyen la base para 10k → 16k → 21k."
+      "note": "Vuelta gradual: mejor quedarse corta que recaer."
     },
     {
       "date": "2026-11-16",

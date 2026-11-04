@@ -71,8 +71,9 @@ if (missing.length) bad('missing coach days: ' + missing.join(',')); else ok('20
 const strength = coach.days.filter(d => d.type === 'koti');
 const runs = coach.days.filter(d => d.type === 'juoksu');
 // 1.11.2026: viikko 2 kevennetty (alaselkä) → 2.11 lihashuolto, 3.11 kävely
-if (strength.length === 7) ok('7 strength'); else bad('strength count ' + strength.length);
-if (runs.length === 11) ok('11 runs'); else bad('runs count ' + runs.length);
+// 4.11.2026: lumbago → 4.–8.11 recuperación, 9.–15.11 vuelta suave
+if (strength.length === 5) ok('5 strength'); else bad('strength count ' + strength.length);
+if (runs.length === 8) ok('8 runs'); else bad('runs count ' + runs.length);
 const titlesOk = coach.days.every(d => d.title && /[áéíóúñÁÉÍÓÚÑa-zA-Z]/.test(d.title));
 if (titlesOk) ok('Spanish titles present'); else bad('titles');
 
@@ -111,7 +112,7 @@ function httpGet(url) {
     const cp = await httpGet('http://127.0.0.1:8766/coach-plan.json');
     if (cp.status === 200) {
       const j = JSON.parse(cp.body);
-      if (j.days && j.days.length === 20) ok('HTTP coach-plan 20 days'); else bad('HTTP coach days');
+      if (j.days && j.days.length === 21) ok('HTTP coach-plan 21 days'); else bad('HTTP coach days');
     } else bad('HTTP coach-plan ' + cp.status);
   } catch (e) {
     console.log('SKIP HTTP (server not up):', e.message);
