@@ -2258,7 +2258,7 @@
   }
 
   // ---------- Mensaje al entrenador (mailto, sin backend) ----------
-  const APP_VERSION = 'v5'; // = sw.js CACHE 'entreno-esposa-shell-v5' (smoke-check lo comprueba)
+  const APP_VERSION = 'v6'; // = sw.js CACHE 'entreno-esposa-shell-v6' (smoke-check lo comprueba)
   const COACH_EMAIL = 'treenibot+entreno@mail.grokbot.com';
   const COACH_MSG_TYPES = ['Corregir un entreno', 'Cambiar el plan', 'Idea para la app', 'Otro'];
 
